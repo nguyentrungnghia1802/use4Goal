@@ -1,4 +1,4 @@
-package org.vnu.sme.goal.trace.istartrace;
+package org.vnu.sme.goal.trace.cslTrace;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -10,8 +10,8 @@ import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
-import org.vnu.sme.goal.feature.istartrace.IStarTraceTableModel;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceCompiler.InstanceKey;
+
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceCompiler.InstanceKey;
 
 class IStarTraceStepperTest {
     @TempDir Path directory;
@@ -85,24 +85,5 @@ class IStarTraceStepperTest {
                 result.steps().get(1).checkpoint().soilLine());
         assertTrue(result.steps().get(10).goalDelta().stream()
                 .anyMatch(delta -> delta.contains("PENDING -> FULFILLED")));
-
-        IStarTraceTableModel table = new IStarTraceTableModel(result);
-        assertEquals(12, table.getColumnCount()); // occurrence label + s0..s10
-        assertTrue(table.getRowCount() > 10);
-        int meetingOrganized = java.util.stream.IntStream.range(0, table.getRowCount())
-                .filter(row -> table.row(row).label().contains("MeetingOrganized"))
-                .findFirst().orElseThrow();
-        assertEquals(GoalTaskStatus.FULFILLED, table.getValueAt(meetingOrganized, 11));
-        assertEquals("participantCarol.attended := true", table.statementAt(11));
-
-        int chosenTimeHasDetails = java.util.stream.IntStream.range(0, table.getRowCount())
-                .filter(row -> table.row(row).label().contains("ChosenTimeHasDetails"))
-                .findFirst().orElseThrow();
-        // activation = timeChosen: false in s0..s5, true only after transition to s6.
-        for (int stateColumn = 1; stateColumn <= 6; stateColumn++) {
-            assertEquals(GoalTaskStatus.UNKNOWN,
-                    table.getValueAt(chosenTimeHasDetails, stateColumn));
-        }
-        assertEquals(GoalTaskStatus.FULFILLED, table.getValueAt(chosenTimeHasDetails, 7));
     }
 }

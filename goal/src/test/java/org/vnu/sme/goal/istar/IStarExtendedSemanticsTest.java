@@ -14,7 +14,7 @@ import org.vnu.sme.goal.dsl.bpmn.parser.BpmnCompiler;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
 import org.vnu.sme.goal.dsl.istar.parser.IStarCompiler;
 import org.vnu.sme.goal.dsl.istar.mm.GoalActivationGraph;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceCompiler;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceCompiler;
 
 class IStarExtendedSemanticsTest {
 

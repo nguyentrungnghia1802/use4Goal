@@ -1,4 +1,4 @@
-package org.vnu.sme.goal.trace.bpmn;
+package org.vnu.sme.goal.trace.bpmnTrace;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -8,8 +8,8 @@ import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import org.vnu.sme.goal.trace.bpmn.BpmnAolTraceFile.InstanceTrace;
-import org.vnu.sme.goal.trace.bpmn.BpmnAolTraceFile.Step;
+import org.vnu.sme.goal.trace.bpmnTrace.BpmnAolTraceFile.InstanceTrace;
+import org.vnu.sme.goal.trace.bpmnTrace.BpmnAolTraceFile.Step;
 import org.vnu.sme.goal.verify.conformance.AolBpmnTraceRunner;
 
 class BpmnAolTraceFileTest {

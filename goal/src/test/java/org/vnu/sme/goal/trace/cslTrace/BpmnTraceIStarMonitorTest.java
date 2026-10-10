@@ -1,4 +1,4 @@
-package org.vnu.sme.goal.trace.istartrace;
+package org.vnu.sme.goal.trace.cslTrace;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,7 +7,7 @@ import java.nio.file.Path;
 
 import org.junit.jupiter.api.Test;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
-import org.vnu.sme.goal.trace.istartrace.nativecsl.BpmnTraceIStarMonitor;
+import org.vnu.sme.goal.trace.cslTrace.nativecsl.BpmnTraceIStarMonitor;
 
 class BpmnTraceIStarMonitorTest {
     private static final Path MTG = Path.of("src/main/resources/examples/mtg");

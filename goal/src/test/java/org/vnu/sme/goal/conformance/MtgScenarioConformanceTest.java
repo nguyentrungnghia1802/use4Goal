@@ -11,9 +11,9 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assumptions;
 import org.vnu.sme.goal.dsl.bpmn.view.BpmnView;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.BpmnScenarioSnapshot;
+import org.vnu.sme.goal.dsl.bscn.mm.BpmnScenarioSnapshot;
 import org.vnu.sme.goal.dsl.istar.view.IStarView;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceEvaluator;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceEvaluator;
 
 class MtgScenarioConformanceTest {
     private static final Path BASE = Path.of("src/main/resources/examples/mtg");

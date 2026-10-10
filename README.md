@@ -4,15 +4,17 @@
 
 ## Plugin features
 
-The plugin adds the **Conformance of Processes and Goals** menu to USE with five tools:
+The plugin adds the **Conformance of Processes and Goals** menu to USE with seven tools:
 
 | Tool | Purpose | Main input |
 |---|---|---|
-| **Process View Model** | Compile and visualize a BPMN process | `.bpmn2` |
+| **CSL View Model** | Compile and visualize a CSL state model | `.csl` |
 | **Goal View Model** | Compile and visualize an iStar goal model | `.istar` |
-| **State View Model** | Compile and visualize a CSL state model | `.csl` |
-| **Conformance Checking** | Check consistency across state, process, and goal models | `.csl`, `.bpmn2`/`.bpmn`, `.istar`, optional `.cslboundary` |
-| **Generate Process Scenarios** | Execute a BPMN process from an initial state and save its trace | `.bpmn2`, `.csl`, `.aol` |
+| **Process View Model** | Compile and visualize a BPMN process | `.bpmn2` |
+| **Norm View Model** | Compile and visualize a NormML norm model | `.normml` |
+| **CSL State View** | Evaluate OCL invariants over a CSL state snapshot | `.csl`, `.aol` |
+| **Conformance Checking** | Verify conformance of iStar goals against BPMN processes via CSL state | `.csl`, `.bpmn2`/`.bpmn`, `.istar` |
+| **DCR View Model** | Compile and visualize a DCR graph | `.dcr` |
 
 ## Screenshots
 
@@ -99,8 +101,8 @@ Ready-to-use model sets are available in [`examples/`](examples/). The [`example
 ### Visualize a model
 
 1. Open **Conformance of Processes and Goals**.
-2. Select **Process View Model**, **Goal View Model**, or **State View Model**.
-3. Click **Browse** and select a `.bpmn2`, `.istar`, or `.csl` file respectively.
+2. Select **CSL View Model**, **Goal View Model**, **Process View Model**, **Norm View Model**, or **DCR View Model**.
+3. Click **Browse** and select the corresponding model file.
 4. Click **Open** to compile and display the model.
 
 ### Check model conformance
@@ -109,18 +111,16 @@ Ready-to-use model sets are available in [`examples/`](examples/). The [`example
 2. Choose the **CSL state model** (`.csl`).
 3. Choose the **BPMN process** (`.bpmn2` or `.bpmn`).
 4. Choose the **iStar requirements** (`.istar`).
-5. Choose a **Validation boundary** (`.cslboundary`) when provided by the model set.
-6. Click **Verify conformance**.
+5. Click **Verify conformance**.
 
 The result view reports the conformance verdict and risk level. When a violation is found, its state and failing process checkpoint can be inspected from the result tabs.
 
-### Generate process scenarios
+### Evaluate CSL state
 
-1. Select **Generate Process Scenarios**.
-2. Choose the **BPMN process** (`.bpmn2`).
-3. Choose the **CSL state model** (`.csl`).
-4. Choose the **Initial state snapshot** (`.aol`).
-5. Click **Run**, then use **Save Trace…** to save the generated `.bpmntrace` file.
+1. Select **CSL State View**.
+2. Choose the **CSL state model** (`.csl`).
+3. Choose the **State snapshot** (`.aol`).
+4. Click **Evaluate** to check OCL invariants directly over the CSL state.
 
 ## Troubleshooting
 
