@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bpmn" nsURI="https://vnu.edu.vn/sme/goal/bpmn/2.0" nsPrefix="bpmn">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="Canonical Ecore metamodel for the project's state-oriented BPMN subset. It extends process control flow with ACL-scoped OCL preconditions, postconditions and gateway guards. v2.1 completion pass: Event.trigger (EventTrigger enum), typed IntermediateEvent.direction (EventDirection enum), GatewayKind::EVENT_BASED, and SupportedGatewayKind widened to XOR/AND/OR/EVENT_BASED so the enum and the constraint agree. Bpmn.g4 is now a faithful concrete syntax of this metamodel."/>
+    <details key="documentation" value="Canonical Ecore metamodel for the project's state-oriented BPMN subset. It extends process control flow with CSL-scoped OCL preconditions, postconditions and gateway guards. v2.1 completion pass: Event.trigger (EventTrigger enum), typed IntermediateEvent.direction (EventDirection enum), GatewayKind::EVENT_BASED, and SupportedGatewayKind widened to XOR/AND/OR/EVENT_BASED so the enum and the constraint agree. Bpmn.g4 is now a faithful concrete syntax of this metamodel."/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG"/>
@@ -32,7 +32,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Process">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="One pool/process schema. groupClass is the ACL Group type whose runtime occurrence is bound to self."/>
+      <details key="documentation" value="One pool/process schema. groupClass is the CSL Group type whose runtime occurrence is bound to self."/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="NonEmptyId UniqueLaneIds UniqueElementIds ExactlyOneStart AtLeastOneEnd SequenceFlowsStayInProcess EveryElementHasExactlyOneLane AllElementsReachable"/>
@@ -61,7 +61,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lane">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A visual partition that references, but does not own, the FlowElements performed by one ACL Role."/>
+      <details key="documentation" value="A visual partition that references, but does not own, the FlowElements performed by one CSL Role."/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="NonEmptyId NonEmptyRoleName"/>

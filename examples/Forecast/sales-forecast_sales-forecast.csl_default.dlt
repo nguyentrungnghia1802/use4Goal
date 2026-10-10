@@ -20,7 +20,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::CustomerManager"
-        sizeCalculated="false" type="AclNode" width="165.0">
+        sizeCalculated="false" type="CslNode" width="165.0">
         <name>role::CustomerManager</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>1129.0</x>
@@ -29,7 +29,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::PresaleEngineer"
-        sizeCalculated="false" type="AclNode" width="165.0">
+        sizeCalculated="false" type="CslNode" width="165.0">
         <name>role::PresaleEngineer</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>1056.0</x>
@@ -38,7 +38,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::ServiceAgreements"
-        sizeCalculated="false" type="AclNode" width="165.0">
+        sizeCalculated="false" type="CslNode" width="165.0">
         <name>role::ServiceAgreements</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>1027.0</x>
@@ -47,7 +47,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::Approvers" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>role::Approvers</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>166.0</x>
@@ -56,7 +56,7 @@
         <hidden>false</hidden>
     </node>
     <node height="69.0" id="role::DeptManager" sizeCalculated="false"
-        type="AclNode" width="244.0">
+        type="CslNode" width="244.0">
         <name>role::DeptManager</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>331.0</x>
@@ -65,7 +65,7 @@
         <hidden>false</hidden>
     </node>
     <node height="69.0" id="role::SectorManager" sizeCalculated="false"
-        type="AclNode" width="244.0">
+        type="CslNode" width="244.0">
         <name>role::SectorManager</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>521.0</x>
@@ -74,7 +74,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::BusinessVp" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>role::BusinessVp</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>681.0</x>
@@ -83,7 +83,7 @@
         <hidden>false</hidden>
     </node>
     <node height="69.0" id="role::FinancialControl"
-        sizeCalculated="false" type="AclNode" width="258.0">
+        sizeCalculated="false" type="CslNode" width="258.0">
         <name>role::FinancialControl</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>789.0</x>
@@ -92,7 +92,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::CreditControl" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>role::CreditControl</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>933.0</x>
@@ -101,7 +101,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::Economy" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>role::Economy</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>1105.0</x>
@@ -110,7 +110,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::Management" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>role::Management</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>1092.0</x>
@@ -119,7 +119,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="group::DealCase" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>group::DealCase</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>722.0</x>
@@ -1470,14 +1470,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::BusinessVp</source>
         <target>role::Approvers</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::BusinessVp::role::Approvers::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::BusinessVp::role::Approvers::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -1490,7 +1490,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::BusinessVp::role::Approvers::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::BusinessVp::role::Approvers::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>
@@ -1505,14 +1505,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::CreditControl</source>
         <target>role::Approvers</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::CreditControl::role::Approvers::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::CreditControl::role::Approvers::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -1525,7 +1525,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::CreditControl::role::Approvers::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::CreditControl::role::Approvers::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>
@@ -1540,14 +1540,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::DeptManager</source>
         <target>role::Approvers</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::DeptManager::role::Approvers::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::DeptManager::role::Approvers::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -1560,7 +1560,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::DeptManager::role::Approvers::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::DeptManager::role::Approvers::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>
@@ -1575,14 +1575,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::Economy</source>
         <target>role::Approvers</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::Economy::role::Approvers::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::Economy::role::Approvers::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -1595,7 +1595,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::Economy::role::Approvers::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::Economy::role::Approvers::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>
@@ -1610,14 +1610,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::FinancialControl</source>
         <target>role::Approvers</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::FinancialControl::role::Approvers::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::FinancialControl::role::Approvers::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -1630,7 +1630,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::FinancialControl::role::Approvers::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::FinancialControl::role::Approvers::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>
@@ -1645,14 +1645,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::SectorManager</source>
         <target>role::Approvers</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::SectorManager::role::Approvers::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::SectorManager::role::Approvers::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -1665,7 +1665,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::SectorManager::role::Approvers::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::SectorManager::role::Approvers::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>

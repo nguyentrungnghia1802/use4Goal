@@ -1,6 +1,6 @@
 // Deliberately inconsistent state exercising every classroom OCL invariant.
 // Expected OCL result: 0 true, 4 false.
-aol v2.0 ClassroomInvalid for "classroom.acl" {
+aol v2.0 ClassroomInvalid for "classroom.csl" {
   group Classroom as classroom1 {
     lessonStarted = false;
     attendanceRecorded = true;

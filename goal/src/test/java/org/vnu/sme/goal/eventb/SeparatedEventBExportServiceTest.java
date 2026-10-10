@@ -1,4 +1,4 @@
-package org.vnu.sme.goal.translate.aclistarbpmn2eventb;
+package org.vnu.sme.goal.translate.cslistarbpmn2eventb;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,20 +6,20 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
-import org.vnu.sme.goal.translate.aclbpmn2eventb.*;
-import org.vnu.sme.goal.translate.aclistar2eventb.*;
+import org.vnu.sme.goal.translate.cslbpmn2eventb.*;
+import org.vnu.sme.goal.translate.cslistar2eventb.*;
 
 class SeparatedEventBExportServiceTest {
     @TempDir Path output;
     private static final Path MTG=Path.of("src/main/resources/examples/mtg");
 
-    @Test void aclIStarExtendsCanonicalAclWithoutBpmnState() throws Exception {
-        var result=new AclIStar2EventBService().export(new AclIStar2EventBRequest(
-                MTG.resolve("mtg.acl"),MTG.resolve("mtg.istar"),output,"AclIStarSeparated"));
+    @Test void cslIStarExtendsCanonicalCslWithoutBpmnState() throws Exception {
+        var result=new CslIStar2EventBService().export(new CslIStar2EventBRequest(
+                MTG.resolve("mtg.csl"),MTG.resolve("mtg.istar"),output,"CslIStarSeparated"));
         assertTrue(result.success(),()->String.join("\n",result.diagnostics()));
         assertTrue(result.diagnostics().isEmpty());
-        String context=Files.readString(result.projectDirectory().resolve("AclIStarSeparated_ctx.buc"));
-        String machine=Files.readString(result.projectDirectory().resolve("AclIStarSeparated_machine.bum"));
+        String context=Files.readString(result.projectDirectory().resolve("CslIStarSeparated_ctx.buc"));
+        String machine=Files.readString(result.projectDirectory().resolve("CslIStarSeparated_machine.bum"));
         assertFalse(context.contains("OBJECTS"));
         assertTrue(machine.contains("MeetingParty_name ∈ R_MeetingParty → STRING"));
         assertTrue(machine.contains("G_MeetingOrganized_A ⊆ R_Initiator"));
@@ -33,16 +33,16 @@ class SeparatedEventBExportServiceTest {
         assertTrue(machine.contains("EvaluateAllGoals"));
         assertFalse(machine.contains("tk_"));
         assertFalse(machine.contains("processState_"));
-        assertTrue(Files.exists(result.projectDirectory().resolve("AclIStarSeparated_properties.ltl")));
+        assertTrue(Files.exists(result.projectDirectory().resolve("CslIStarSeparated_properties.ltl")));
     }
 
-    @Test void aclBpmnSeparatesProcessIdentityFromAclGroupAndReusesLaneRoles() throws Exception {
-        var result=new AclBpmn2EventBService().export(new AclBpmn2EventBRequest(
-                MTG.resolve("mtg.acl"),MTG.resolve("mtg.bpmn2"),output,"AclBpmnSeparated"));
+    @Test void cslBpmnSeparatesProcessIdentityFromCslGroupAndReusesLaneRoles() throws Exception {
+        var result=new CslBpmn2EventBService().export(new CslBpmn2EventBRequest(
+                MTG.resolve("mtg.csl"),MTG.resolve("mtg.bpmn2"),output,"CslBpmnSeparated"));
         assertTrue(result.success(),()->String.join("\n",result.diagnostics()));
         assertTrue(result.diagnostics().isEmpty());
-        String context=Files.readString(result.projectDirectory().resolve("AclBpmnSeparated_ctx.buc"));
-        String machine=Files.readString(result.projectDirectory().resolve("AclBpmnSeparated_machine.bum"));
+        String context=Files.readString(result.projectDirectory().resolve("CslBpmnSeparated_ctx.buc"));
+        String machine=Files.readString(result.projectDirectory().resolve("CslBpmnSeparated_machine.bum"));
         assertFalse(context.contains("OBJECTS"));
         assertTrue(machine.contains("MeetingUnit_detailsDecided ∈ G_MeetingUnit → BOOL"));
         assertTrue(context.contains("PI_MeetingOrganization_ID"));
@@ -55,6 +55,6 @@ class SeparatedEventBExportServiceTest {
         assertTrue(machine.contains("¬((∃p·"),"default XOR flow must negate the ordinary branch guard");
         assertFalse(machine.contains("G_MeetingOrganized_A"));
         assertFalse(machine.contains("EvaluateAllGoals"));
-        assertFalse(Files.exists(result.projectDirectory().resolve("AclBpmnSeparated_properties.ltl")));
+        assertFalse(Files.exists(result.projectDirectory().resolve("CslBpmnSeparated_properties.ltl")));
     }
 }

@@ -1,4 +1,4 @@
--- Generated from ACL. Regenerate instead of editing this file.
+-- Generated from CSL. Regenerate instead of editing this file.
 -- Role 'extends' is a play chain (Owner[1]--Role[mult] association), not USE
 -- generalization: no two Role classes are ever related by '<'. Agent is an empty
 -- class. Every play association is parent[1]--child[0..*].

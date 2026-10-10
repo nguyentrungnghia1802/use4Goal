@@ -3,17 +3,17 @@ package org.vnu.sme.goal.dsl.aol.ast;
 import java.util.List;
 import java.util.Objects;
 
-import org.vnu.sme.goal.dsl.acl.ast.AclSourceLocationCS;
+import org.vnu.sme.goal.dsl.csl.ast.CslSourceLocationCS;
 
-public record AolModelCS(String version, String name, String aclFile,
+public record AolModelCS(String version, String name, String cslFile,
                          List<AolAgentCS> agents, List<AolGroupInstanceCS> groupInstances,
                          List<AolEntityInstanceCS> entities, List<AolRoleInstanceCS> roles,
                          List<AolPlayLinkCS> playLinks, List<AolLinkCS> links,
-                         AclSourceLocationCS location) {
+                         CslSourceLocationCS location) {
     public AolModelCS {
         Objects.requireNonNull(version, "version");
         Objects.requireNonNull(name, "name");
-        Objects.requireNonNull(aclFile, "aclFile");
+        Objects.requireNonNull(cslFile, "cslFile");
         agents = List.copyOf(agents);
         groupInstances = List.copyOf(groupInstances);
         entities = List.copyOf(entities);

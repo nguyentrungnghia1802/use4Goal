@@ -151,7 +151,7 @@ giữa hành vi workaround và ý định của tổ chức:
   của Management không được đạt.
 
 Do đó lỗi không còn được diễn đạt bằng một câu cấm đặt trong goal model. Nó
-được quan sát bằng hai condition trên cùng trạng thái ACL: workaround đạt trạng
+được quan sát bằng hai condition trên cùng trạng thái CSL: workaround đạt trạng
 thái giao hàng nhưng không đạt trạng thái giao hàng đã được ủy quyền. Ở giai
 đoạn hiện tại, hai mô hình chỉ cần làm rõ tình huống nghiệp vụ đó; việc kiểm
 chứng được tách sang các verification model của case study.

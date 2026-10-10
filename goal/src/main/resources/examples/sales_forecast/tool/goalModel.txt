@@ -139,7 +139,7 @@
     "height": 930,
     "name": "Proposal Review — missing re-validation loop",
     "customProperties": {
-      "Description": "Focused iStar 2.0 motivating model aligned with the proposal-review BPMN. Proposal completion requires a proposal that is ready for finalization and then finalized and sent. Readiness requires the current proposal to remain prepared and validated, the customer review to be received, and the customer feedback to be resolved. Feedback is resolved either when the proposal is accepted without changes or when requested changes are incorporated. The Update proposal task realizes the latter goal. Its negative impact on the previously satisfied validation goal is intentionally not encoded as a static contribution; it is derived from the shared ACL state."
+      "Description": "Focused iStar 2.0 motivating model aligned with the proposal-review BPMN. Proposal completion requires a proposal that is ready for finalization and then finalized and sent. Readiness requires the current proposal to remain prepared and validated, the customer review to be received, and the customer feedback to be resolved. Feedback is resolved either when the proposal is accepted without changes or when requested changes are incorporated. The Update proposal task realizes the latter goal. Its negative impact on the previously satisfied validation goal is intentionally not encoded as a static contribution; it is derived from the shared CSL state."
     }
   }
 }

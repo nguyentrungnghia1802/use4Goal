@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<csl:CslModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:csl="https://vnu.edu.vn/sme/goal/csl/2.0"
+    xsi:schemaLocation="https://vnu.edu.vn/sme/goal/csl/2.0 csl.ecore"
+    version="v2.0" name="InvalidOwnerExample">
+  <classifiers xsi:type="csl:Group" name="Team"/>
+  <classifiers xsi:type="csl:Entity" name="Document"/>
+  <!-- Deliberately invalid: Owner may target only Role or Group, never Entity. -->
+  <owners source="//@classifiers.0" target="//@classifiers.1" lower="1" upper="-1"/>
+</csl:CslModel>

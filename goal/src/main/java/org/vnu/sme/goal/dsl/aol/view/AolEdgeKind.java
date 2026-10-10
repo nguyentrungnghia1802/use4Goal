@@ -11,7 +11,7 @@ public enum AolEdgeKind {
     PLAYED_BY,
     /** role instance -> parent role instance (Role generalization/specialization). */
     ROLE_GENERALIZATION,
-    /** instantiates an ACL relation (association/aggregation/composition) between any two
+    /** instantiates an CSL relation (association/aggregation/composition) between any two
      *  instances -- independent of Group nesting, e.g. a play "knows" a free-standing entity. */
     LINK;
 

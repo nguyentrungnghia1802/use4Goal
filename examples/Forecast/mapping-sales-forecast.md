@@ -84,7 +84,7 @@ Theo lựa chọn của bạn: OCL được nhúng dạng text tham khảo, khô
 
 ---
 
-## ACL redesign (structural pass)
+## CSL redesign (structural pass)
 
 `sales-forecast.csl` was reworked from a flag bag into a structural model:
 
@@ -105,7 +105,7 @@ Theo lựa chọn của bạn: OCL được nhúng dạng text tham khảo, khô
   updated to `self.deal.deptApproval = ApprovalOutcome::Approved` etc.
 - A coarse `DealPhase` enum sits on top; `dealHandledBy` /
   `dealForCustomer` associations carry the Deal↔Role structure.
-- New file `sales-forecast.aclboundary` gives the bounded-verification
+- New file `sales-forecast.cslboundary` gives the bounded-verification
   scope (40 snapshots, 3 `ApprovalStep` rows, one loop).
 
 The fine-grained milestone Booleans the paper's Case-A divergence relies

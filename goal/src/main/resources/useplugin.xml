@@ -2,14 +2,14 @@
 <?use version="7.1.1" ?>
 <plugin name="Conformance of Processes and Goals" version="4.0">
     <actions>
-        <action label="Process View Model"
-                icon="images/bpmn2.png"
-                class="org.vnu.sme.goal.feature.openbpmn.ActionOpenBpmn"
-                tooltip="Open and inspect a BPMN process model"
+        <action label="CSL View Model"
+                icon="images/csl.png"
+                class="org.vnu.sme.goal.feature.opencsl.ActionOpenCsl"
+                tooltip="Open and inspect a CSL state model"
                 menu="Conformance of Processes and Goals"
-                menuitem="1. Process View Model"
-                toolbaritem="Process View"
-                id="org.vnu.sme.goal.feature.openbpmn.ActionOpenBpmn">
+                menuitem="1. CSL View Model"
+                toolbaritem="CSL View"
+                id="org.vnu.sme.goal.feature.opencsl.ActionOpenCsl">
         </action>
 
         <action label="Goal View Model"
@@ -22,34 +22,49 @@
                 id="org.vnu.sme.goal.feature.openistar.ActionOpenIStar">
         </action>
 
-        <action label="State View Model"
-                icon="images/csl.png"
-                class="org.vnu.sme.goal.feature.openacl.ActionOpenAcl"
-                tooltip="Open and inspect a CSL state model"
+        <action label="Process View Model"
+                icon="images/bpmn2.png"
+                class="org.vnu.sme.goal.feature.openbpmn.ActionOpenBpmn"
+                tooltip="Open and inspect a BPMN process model"
                 menu="Conformance of Processes and Goals"
-                menuitem="3. State View Model"
-                toolbaritem="State View"
-                id="org.vnu.sme.goal.feature.openacl.ActionOpenAcl">
+                menuitem="3. Process View Model"
+                toolbaritem="Process View"
+                id="org.vnu.sme.goal.feature.openbpmn.ActionOpenBpmn">
+        </action>
+
+        <action label="Norm View Model"
+                class="org.vnu.sme.goal.feature.opennormml.ActionOpenNormML"
+                tooltip="Compile and inspect an independent NormML model"
+                menu="Conformance of Processes and Goals"
+                menuitem="4. Norm View Model"
+                id="org.vnu.sme.goal.feature.opennormml.ActionOpenNormML" />
+
+        <action label="CSL State View"
+                icon="images/conformance.png"
+                class="org.vnu.sme.goal.feature.cslstate.ActionOpenCslStateEvaluator"
+                tooltip="Open and evaluate a CSL state snapshot"
+                menu="Conformance of Processes and Goals"
+                menuitem="5. CSL State View"
+                toolbaritem="CSL State View"
+                id="org.vnu.sme.goal.feature.cslstate.ActionOpenCslStateEvaluator">
         </action>
 
         <action label="Conformance Checking"
                 icon="images/conformance.png"
-                class="org.vnu.sme.goal.feature.aclstate.ActionOpenAclStateEvaluator"
-                tooltip="Check bounded conformance and risk across CSL, BPMN and iStar models"
+                class="org.vnu.sme.goal.feature.conformance.ActionCheckConformance"
+                tooltip="Verify conformance of iStar goals against BPMN processes via CSL state"
                 menu="Conformance of Processes and Goals"
-                menuitem="4. Conformance Checking"
+                menuitem="6. Conformance Checking"
                 toolbaritem="Conformance Checking"
-                id="org.vnu.sme.goal.feature.aclstate.ActionOpenAclStateEvaluator">
+                id="org.vnu.sme.goal.feature.conformance.ActionCheckConformance">
         </action>
 
-        <action label="Generate Process Scenarios"
-                icon="images/bpmn2-scenario.png"
-                class="org.vnu.sme.goal.feature.bpmnscenario.ActionOpenBpmnScenario"
-                tooltip="Generate execution scenarios from a BPMN process and an initial CSL state"
+        <action label="DCR View Model"
+                class="org.vnu.sme.goal.feature.opendcr.ActionOpenDcr"
+                tooltip="Open and inspect a DCR graph model"
                 menu="Conformance of Processes and Goals"
-                menuitem="5. Generate Process Scenarios"
-                toolbaritem="Generate Scenarios"
-                id="org.vnu.sme.goal.feature.bpmnscenario.ActionOpenBpmnScenario">
-        </action>
+                menuitem="7. DCR View Model"
+                toolbaritem="DCR View"
+                id="org.vnu.sme.goal.feature.opendcr.ActionOpenDcr" />
     </actions>
 </plugin>

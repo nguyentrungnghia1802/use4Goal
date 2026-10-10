@@ -38,7 +38,7 @@ grammar Bpmn;
 // bpmn.ecore (adds EventTrigger/EventDirection enums, Event.trigger).
 model : 'model' IDENT '{' pool+ message* messageFlow* topElement* '}' EOF ;
 
-// The optional `for <GroupClass>` names the ACL group/orgContext class one
+// The optional `for <GroupClass>` names the CSL group/orgContext class one
 // instance of this process is scoped to (e.g. `pool MeetingOrganization for
 // MeetingUnit`): every activity/gateway declared for this pool evaluates
 // its pre/effect/post with `self` bound to one concrete instance of that

@@ -14,7 +14,7 @@ public final class AolSpecText {
     public static String render(AolModel model) {
         StringBuilder out = new StringBuilder();
         out.append("aol ").append(model.version()).append(' ').append(model.name())
-                .append(" for \"").append(model.aclFile()).append("\" {\n\n");
+                .append(" for \"").append(model.cslFile()).append("\" {\n\n");
         for (String agent : model.agents()) {
             out.append(INDENT).append("agent ");
             String profile = model.agentProfileRoles().get(agent);

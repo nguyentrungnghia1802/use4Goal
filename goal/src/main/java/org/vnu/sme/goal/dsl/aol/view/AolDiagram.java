@@ -25,7 +25,7 @@ import org.tzi.use.gui.views.diagrams.event.ActionLoadLayout;
 import org.tzi.use.gui.views.diagrams.event.ActionSaveLayout;
 import org.tzi.use.gui.views.diagrams.event.DiagramInputHandling;
 import org.vnu.sme.goal.dsl.aol.mm.AolModel;
-import org.vnu.sme.goal.dsl.aol.state.AclSystemState;
+import org.vnu.sme.goal.dsl.aol.state.CslSystemState;
 import org.w3c.dom.Element;
 
 @SuppressWarnings("serial")
@@ -33,7 +33,7 @@ public final class AolDiagram extends DiagramView {
     private final Map<String, AolDiagramNode> nodeMap = new LinkedHashMap<>();
     private final DiagramInputHandling inputHandling;
     private AolModel model;
-    private AclSystemState state;
+    private CslSystemState state;
     private Path sourceFile;
     private String switchActionLabel;
     private Runnable switchAction;
@@ -75,7 +75,7 @@ public final class AolDiagram extends DiagramView {
         rebuild();
     }
 
-    public void setState(AclSystemState state) {
+    public void setState(CslSystemState state) {
         this.model = null;
         this.state = state;
         rebuild();

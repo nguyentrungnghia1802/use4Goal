@@ -4,10 +4,10 @@ import java.util.*;
 
 import org.vnu.sme.goal.dsl.bpmn.mm.*;
 import org.vnu.sme.goal.dsl.bpmn.mm.Process; // disambiguate from java.lang.Process
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.BpmnScenarioSnapshot;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.NodeOccurrence;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.TokenMark;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.Value;
+import org.vnu.sme.goal.dsl.bscn.mm.BpmnScenarioSnapshot;
+import org.vnu.sme.goal.dsl.bscn.mm.NodeOccurrence;
+import org.vnu.sme.goal.dsl.bscn.mm.TokenMark;
+import org.vnu.sme.goal.dsl.bscn.mm.Value;
 
 /**
  * MM (BpmnModel) -> BpmnLayout / BpmnChoreoLayout. Pure computation — no

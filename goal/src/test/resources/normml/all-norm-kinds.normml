@@ -1,0 +1,20 @@
+normml ProposalReview {
+  Organization reviewOffice { resources: [@proposal]; }
+  Role manager { organization: @reviewOffice; resources: [@proposal]; }
+  Agent alice { plays: [@manager]; resources: [@proposal]; }
+  DataType Boolean { }
+  AttributeResource proposal { dataType: @Boolean; actions: [@read, @update, @fullAccess]; }
+  AtomicAction read { kind: AtomicRead; }
+  AtomicAction update { kind: AtomicUpdate; condition: @editable; }
+  CompositeAction fullAccess { kind: AttributeFullAccess; subordinateActions: [@read, @update]; }
+  Condition editable { condExpr: "self.proposal.validated = false"; }
+  Norm review { type: NormObligation; roles: [@manager]; access: [@read]; constraints: [@active]; sanctions: [@reward]; }
+  If active { condition: @ready; }
+  Condition ready { condExpr: "self.proposal.submitted = true"; }
+  Norm edit { type: NormPermission; agents: [@alice]; access: [@fullAccess]; constraints: [@window]; }
+  Date start { value: "2026-10-01T00:00:00Z"; }
+  Date end { value: "2026-11-01T00:00:00Z"; }
+  Between window { dates: [@start, @end]; startDate: @start; endDate: @end; }
+  Norm freeze { type: NormProhibition; organizations: [@reviewOffice]; access: [@update]; }
+  Sanction reward { type: Reward; activatedNorms: [@freeze]; description: "Record completion of review"; }
+}

@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.*;
 
-import org.vnu.sme.goal.dsl.acl.mm.*;
+import org.vnu.sme.goal.dsl.csl.mm.*;
 import org.vnu.sme.goal.dsl.bpmn.mm.Activity;
 import org.vnu.sme.goal.dsl.bpmn.mm.BpmnModel;
 import org.vnu.sme.goal.dsl.bpmn.mm.FlowElement;
@@ -69,7 +69,7 @@ public final class DiagramModelBrowser extends JPanel {
         return new DiagramModelBrowser(root);
     }
 
-    public static DiagramModelBrowser forAcl(AclModel model) {
+    public static DiagramModelBrowser forCsl(CslModel model) {
         DefaultMutableTreeNode root = node("CSL: " + model.name(), "CSL state specification",
                 "Version", model.version(),
                 model.rootGroup().isOrganizationalContext() ? "Root organizational context" : "Root group",
@@ -90,13 +90,13 @@ public final class DiagramModelBrowser extends JPanel {
             entities.add(entityNode);
             entity.attributes().forEach(a -> entityNode.add(attribute(a)));
         });
-        root.add(aclGroup(model.rootGroup(), true));
+        root.add(cslGroup(model.rootGroup(), true));
         return new DiagramModelBrowser(root);
     }
 
     public static DiagramModelBrowser forAol(org.vnu.sme.goal.dsl.aol.mm.AolModel model) {
         DefaultMutableTreeNode root = node("AOL: " + model.name(), "AOL object snapshot",
-                "Version", model.version(), "CSL file", model.aclFile());
+                "Version", model.version(), "CSL file", model.cslFile());
         DefaultMutableTreeNode agents = group(root, "Agents", model.agents().size());
         model.agents().forEach(a -> agents.add(node(a, "Agent identity",
                 "Profile role", model.agentProfileRoles().get(a),
@@ -147,7 +147,7 @@ public final class DiagramModelBrowser extends JPanel {
         return result;
     }
 
-    private static DefaultMutableTreeNode aclGroup(AclGroup value, boolean rootGroup) {
+    private static DefaultMutableTreeNode cslGroup(CslGroup value, boolean rootGroup) {
         String prefix = value.isOrganizationalContext()
                 ? (rootGroup ? "Root orgContext: " : "Nested orgContext: ")
                 : (rootGroup ? "Root group: " : "Subgroup: ");
@@ -159,7 +159,7 @@ public final class DiagramModelBrowser extends JPanel {
         DefaultMutableTreeNode entities = group(result, "Entity memberships", value.entities().size());
         value.entities().forEach(v -> entities.add(node(v.entityName() + " " + cardinality(v.cardinality()), "Entity membership")));
         DefaultMutableTreeNode subgroups = group(result, "Subgroups", value.subgroups().size());
-        value.subgroups().forEach(v -> subgroups.add(aclGroup(v.group(), false)));
+        value.subgroups().forEach(v -> subgroups.add(cslGroup(v.group(), false)));
         DefaultMutableTreeNode compatibility = group(result, "Compatibility", value.compatibilities().size());
         value.compatibilities().forEach(v -> compatibility.add(node(v.fromRole() + " <-> " + v.toRole(),
                 "Role compatibility", "Type", v.type().sourceName(), "Scope", v.scope().sourceName())));
@@ -192,7 +192,7 @@ public final class DiagramModelBrowser extends JPanel {
                         .reduce((a, b) -> a + ", " + b).orElse(null)};
     }
 
-    private static DefaultMutableTreeNode attribute(AclAttribute value) {
+    private static DefaultMutableTreeNode attribute(CslAttribute value) {
         return node("Attribute: " + value.name(), "Attribute", "Type", value.type().sourceName(),
                 "Optional", value.optional(), "Mutable", value.mutable(), "Default", value.defaultValue().orElse(null));
     }
@@ -275,7 +275,7 @@ public final class DiagramModelBrowser extends JPanel {
         return oneLine.length() <= 72 ? oneLine : oneLine.substring(0, 69) + "...";
     }
 
-    private static String cardinality(AclCardinality value) {
+    private static String cardinality(CslCardinality value) {
         return "[" + value.min() + ".." + (value.max().isPresent() ? value.max().getAsInt() : "*") + "]";
     }
 

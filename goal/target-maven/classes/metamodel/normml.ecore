@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ecore:EPackage xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="normml" nsURI="https://vnu.edu.vn/sme/goal/normml/2.0" nsPrefix="normml" xmi:version="2.0">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG"/>
+  </eAnnotations>
+  <eClassifiers name="NormModel" xsi:type="ecore:EClass">
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="norms" eType="#//Norm" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Norm/model"/>
+    <eStructuralFeatures name="resources" eType="#//Resource" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Resource/model"/>
+    <eStructuralFeatures name="sanctions" eType="#//Sanction" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Sanction/model"/>
+    <eStructuralFeatures name="dates" eType="#//Date" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Date/model"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="UniqueNormNames"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="UniqueNormNames" value="norms-&gt;isUnique(name)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Technical document root owning independent normative declarations. No reference to any goal, process or context metamodel."/>
+    </eAnnotations>
+    <eStructuralFeatures name="organizations" eType="#//Organization" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Organization/model"/>
+    <eStructuralFeatures name="agents" eType="#//Agent" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Agent/model"/>
+    <eStructuralFeatures name="dataTypes" eType="#//DataType" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//DataType/model"/>
+  </eClassifiers>
+  <eClassifiers name="Norm" xsi:type="ecore:EClass">
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="type" eType="#//NormType" xsi:type="ecore:EAttribute" lowerBound="1" defaultValueLiteral="NormObligation"/>
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/norms"/>
+    <eStructuralFeatures name="access" eType="#//Action" xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eOpposite="#//Action/norms"/>
+    <eStructuralFeatures name="constraints" eType="#//NormConstraint" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//NormConstraint/norm"/>
+    <eStructuralFeatures name="sanctions" eType="#//Sanction" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Sanction/sanctionedNorms"/>
+    <eStructuralFeatures name="activatedBy" eType="#//Sanction" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Sanction/activatedNorms"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Independent obligation, permission or prohibition over local subjects and local access actions. Conditions are OCL text interpreted using externally supplied shared state."/>
+    </eAnnotations>
+    <eStructuralFeatures name="roles" eType="#//Role" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Role/norms"/>
+    <eStructuralFeatures name="agents" eType="#//Agent" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Agent/norms"/>
+    <eStructuralFeatures name="organizations" eType="#//Organization" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Organization/norms"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NonEmptyName HasSubject LocalSubjects LocalActions LocalSanctions"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="NonEmptyName" value="name.size() &gt; 0"/>
+      <details key="HasSubject" value="roles-&gt;notEmpty() or agents-&gt;notEmpty() or organizations-&gt;notEmpty()"/>
+      <details key="LocalSubjects" value="roles-&gt;forAll(r | r.organization.model = self.model) and agents-&gt;forAll(a | a.model = self.model) and organizations-&gt;forAll(o | o.model = self.model)"/>
+      <details key="LocalActions" value="access-&gt;forAll(a | a.resource.model = self.model)"/>
+      <details key="LocalSanctions" value="sanctions-&gt;forAll(s | s.model = self.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="Resource" xsi:type="ecore:EClass" abstract="true">
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/resources"/>
+    <eStructuralFeatures name="actions" eType="#//Action" xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" containment="true" eOpposite="#//Action/resource"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract resource declared in this normative model, not a wrapper around an external model element."/>
+    </eAnnotations>
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+  </eClassifiers>
+  <eClassifiers name="EntityResource" xsi:type="ecore:EClass" eSuperTypes="#//Resource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Entity resource declared in the normative view."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="AttributeResource" xsi:type="ecore:EClass" eSuperTypes="#//Resource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Attribute resource declared locally. Datatype describes its values; no runtime value is stored here."/>
+    </eAnnotations>
+    <eStructuralFeatures name="dataType" eType="#//DataType" xsi:type="ecore:EReference" lowerBound="1"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LocalDataType"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="LocalDataType" value="dataType.model = model"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="AssociationEndResource" xsi:type="ecore:EClass" eSuperTypes="#//Resource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Association-end resource declared locally."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="AgentAction" xsi:type="ecore:EClass" eSuperTypes="#//Resource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Agent action resource local to NormML, as in the supplied NormML figure. AtomicExecute regulates its execution; this is not a BPMN Activity reference."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="MessageResource" xsi:type="ecore:EClass" eSuperTypes="#//Resource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Message resource declared locally; optional payload datatype is local to this model."/>
+    </eAnnotations>
+    <eStructuralFeatures name="dataType" eType="#//DataType" xsi:type="ecore:EReference"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LocalDataType"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="LocalDataType" value="dataType.oclIsUndefined() or dataType.model = model"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="Action" xsi:type="ecore:EClass" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Abstract access action on one resource. Atomic and composite are alternative forms. Does not duplicate BPMN control flow."/>
+    </eAnnotations>
+    <eStructuralFeatures name="resource" eType="#//Resource" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//Resource/actions"/>
+    <eStructuralFeatures name="norms" eType="#//Norm" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Norm/access"/>
+    <eStructuralFeatures name="condition" eType="#//Condition" containment="true" xsi:type="ecore:EReference">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Optional state predicate qualifying this action. Inherited by atomic and composite actions. Not a postcondition or an enforcement mechanism."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers name="AtomicAction" xsi:type="ecore:EClass" eSuperTypes="#//Action">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="One primitive access kind from the supplied NormML figure, encoded as an enum rather than seven empty subclasses."/>
+    </eAnnotations>
+    <eStructuralFeatures name="kind" eType="#//AtomicActionKind" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="CompatibleResource"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="CompatibleResource" value="if resource.oclIsKindOf(EntityResource) then Set{AtomicActionKind::AtomicCreate, AtomicActionKind::AtomicRead, AtomicActionKind::AtomicUpdate, AtomicActionKind::AtomicDelete}-&gt;includes(kind) else if resource.oclIsKindOf(AttributeResource) then Set{AtomicActionKind::AtomicRead, AtomicActionKind::AtomicUpdate}-&gt;includes(kind) else if resource.oclIsKindOf(AssociationEndResource) then Set{AtomicActionKind::AtomicCreate, AtomicActionKind::AtomicRead, AtomicActionKind::AtomicUpdate, AtomicActionKind::AtomicDelete}-&gt;includes(kind) else if resource.oclIsKindOf(AgentAction) then kind = AtomicActionKind::AtomicExecute else Set{AtomicActionKind::AtomicSend, AtomicActionKind::AtomicReceive}-&gt;includes(kind) endif endif endif endif"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="CompositeAction" xsi:type="ecore:EClass" eSuperTypes="#//Action">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Group of subordinate access capabilities, not a sequence of BPMN tasks. Membership is explicit; kind does not automatically expand to primitive actions. Enum preserves the six composite kinds in the supplied figure."/>
+    </eAnnotations>
+    <eStructuralFeatures name="kind" eType="#//CompositeActionKind" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="subordinateActions" eType="#//Action" xsi:type="ecore:EReference" lowerBound="1" upperBound="-1"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AcyclicComposition LocalSubordinates CompatibleResource"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="AcyclicComposition" value="subordinateActions-&gt;closure(a | if a.oclIsKindOf(CompositeAction) then a.oclAsType(CompositeAction).subordinateActions else Set{} endif)-&gt;excludes(self)"/>
+      <details key="LocalSubordinates" value="subordinateActions-&gt;forAll(a | a.resource.model = self.resource.model)"/>
+      <details key="CompatibleResource" value="if Set{CompositeActionKind::EntityRead, CompositeActionKind::EntityUpdate, CompositeActionKind::EntityFullAccess}-&gt;includes(kind) then resource.oclIsKindOf(EntityResource) else if kind = CompositeActionKind::AttributeFullAccess then resource.oclIsKindOf(AttributeResource) else if kind = CompositeActionKind::AssociationEndFullAccess then resource.oclIsKindOf(AssociationEndResource) else resource.oclIsKindOf(MessageResource) endif endif endif"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="NormConstraint" xsi:type="ecore:EClass" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Activation condition. Constraint conjunction is the project convention; does not disable BPMN transitions."/>
+    </eAnnotations>
+    <eStructuralFeatures name="norm" eType="#//Norm" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//Norm/constraints"/>
+    <eStructuralFeatures name="dates" eType="#//Date" xsi:type="ecore:EReference" upperBound="-1"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LocalDates"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="LocalDates" value="dates-&gt;forAll(d | d.model = norm.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="Before" xsi:type="ecore:EClass" eSuperTypes="#//NormConstraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Activation before/after an action or an absolute date. No action occurrence/executor semantics is implied by the declaration."/>
+    </eAnnotations>
+    <eStructuralFeatures name="beforeActions" eType="#//Action" xsi:type="ecore:EReference" upperBound="-1"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="HasBoundary LocalBoundaryActions"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="HasBoundary" value="beforeActions-&gt;notEmpty() or dates-&gt;notEmpty()"/>
+      <details key="LocalBoundaryActions" value="beforeActions-&gt;forAll(a | a.resource.model = norm.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="After" xsi:type="ecore:EClass" eSuperTypes="#//NormConstraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Activation before/after an action or an absolute date. No action occurrence/executor semantics is implied by the declaration."/>
+    </eAnnotations>
+    <eStructuralFeatures name="afterActions" eType="#//Action" xsi:type="ecore:EReference" upperBound="-1"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="HasBoundary LocalBoundaryActions"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="HasBoundary" value="afterActions-&gt;notEmpty() or dates-&gt;notEmpty()"/>
+      <details key="LocalBoundaryActions" value="afterActions-&gt;forAll(a | a.resource.model = norm.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="Between" xsi:type="ecore:EClass" eSuperTypes="#//NormConstraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Activation window. startDate and endDate distinguish boundary roles while dates remains the common non-containment association. Dates used here must be selected as one of these boundaries."/>
+    </eAnnotations>
+    <eStructuralFeatures name="afterActions" eType="#//Action" xsi:type="ecore:EReference" upperBound="-1"/>
+    <eStructuralFeatures name="beforeActions" eType="#//Action" xsi:type="ecore:EReference" upperBound="-1"/>
+    <eStructuralFeatures name="startDate" eType="#//Date" xsi:type="ecore:EReference"/>
+    <eStructuralFeatures name="endDate" eType="#//Date" xsi:type="ecore:EReference"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="HasOpeningBoundary HasClosingBoundary DatesAreBoundaries DistinctDateBoundaries DistinctActionBoundaries LocalBoundaryActions"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="HasOpeningBoundary" value="afterActions-&gt;notEmpty() or not startDate.oclIsUndefined()"/>
+      <details key="HasClosingBoundary" value="beforeActions-&gt;notEmpty() or not endDate.oclIsUndefined()"/>
+      <details key="DatesAreBoundaries" value="dates-&gt;forAll(d | d = startDate or d = endDate) and (startDate.oclIsUndefined() or dates-&gt;includes(startDate)) and (endDate.oclIsUndefined() or dates-&gt;includes(endDate))"/>
+      <details key="DistinctDateBoundaries" value="startDate.oclIsUndefined() or endDate.oclIsUndefined() or startDate &lt;&gt; endDate"/>
+      <details key="DistinctActionBoundaries" value="afterActions-&gt;intersection(beforeActions)-&gt;isEmpty()"/>
+      <details key="LocalBoundaryActions" value="afterActions-&gt;union(beforeActions)-&gt;forAll(a | a.resource.model = norm.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="If" xsi:type="ecore:EClass" eSuperTypes="#//NormConstraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="State-dependent activation guard containing a Condition. Condition text may use the shared CSL state supplied by the evaluator; no classifier reference is stored."/>
+    </eAnnotations>
+    <eStructuralFeatures name="condition" eType="#//Condition" xsi:type="ecore:EReference" lowerBound="1" containment="true"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NoDateGuard"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="NoDateGuard" value="dates-&gt;isEmpty()"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="Date" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Absolute temporal value, owned by the normative document and referenced by activation guards."/>
+    </eAnnotations>
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/dates"/>
+    <eStructuralFeatures name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate" xsi:type="ecore:EAttribute" lowerBound="1"/>
+  </eClassifiers>
+  <eClassifiers name="Sanction" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Reward or punishment caused by source norms, optionally activating target norms."/>
+    </eAnnotations>
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/sanctions"/>
+    <eStructuralFeatures name="type" eType="#//SanctionType" xsi:type="ecore:EAttribute" lowerBound="1" defaultValueLiteral="Punishment"/>
+    <eStructuralFeatures name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute"/>
+    <eStructuralFeatures name="sanctionedNorms" eType="#//Norm" xsi:type="ecore:EReference" lowerBound="1" upperBound="-1" eOpposite="#//Norm/sanctions"/>
+    <eStructuralFeatures name="activatedNorms" eType="#//Norm" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Norm/activatedBy"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LocalSourceNorms LocalActivatedNorms"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="LocalSourceNorms" value="sanctionedNorms-&gt;forAll(n | n.model = self.model)"/>
+      <details key="LocalActivatedNorms" value="activatedNorms-&gt;forAll(n | n.model = self.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="NormType" xsi:type="ecore:EEnum">
+    <eLiterals name="NormProhibition" value="0"/>
+    <eLiterals name="NormPermission" value="1"/>
+    <eLiterals name="NormObligation" value="2"/>
+  </eClassifiers>
+  <eClassifiers name="SanctionType" xsi:type="ecore:EEnum">
+    <eLiterals name="Punishment" value="0"/>
+    <eLiterals name="Reward" value="1"/>
+  </eClassifiers>
+  <eClassifiers name="AtomicActionKind" xsi:type="ecore:EEnum">
+    <eLiterals name="AtomicCreate" value="0"/>
+    <eLiterals name="AtomicRead" value="1"/>
+    <eLiterals name="AtomicUpdate" value="2"/>
+    <eLiterals name="AtomicDelete" value="3"/>
+    <eLiterals name="AtomicExecute" value="4"/>
+    <eLiterals name="AtomicSend" value="5"/>
+    <eLiterals name="AtomicReceive" value="6"/>
+  </eClassifiers>
+  <eClassifiers name="CompositeActionKind" xsi:type="ecore:EEnum">
+    <eLiterals name="EntityRead" value="0"/>
+    <eLiterals name="EntityUpdate" value="1"/>
+    <eLiterals name="EntityFullAccess" value="2"/>
+    <eLiterals name="AttributeFullAccess" value="3"/>
+    <eLiterals name="AssociationEndFullAccess" value="4"/>
+    <eLiterals name="MessageFullAccess" value="5"/>
+  </eClassifiers>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Independent NormML metamodel. No references to iStar, BPMN or CSL classifiers. Condition stores OCL text; execution supplies the shared state and self binding externally. NormModel is a document root, not Environment. Atomic/composite action kinds follow the supplied NormML taxonomy."/>
+  </eAnnotations>
+  <eClassifiers name="Organization" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Organization declaration local to the normative view. Not a reference to a CSL context."/>
+    </eAnnotations>
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/organizations"/>
+    <eStructuralFeatures name="subOrganizations" eType="#//Organization" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Organization/parent"/>
+    <eStructuralFeatures name="parent" eType="#//Organization" xsi:type="ecore:EReference" eOpposite="#//Organization/subOrganizations"/>
+    <eStructuralFeatures name="roles" eType="#//Role" xsi:type="ecore:EReference" upperBound="-1" containment="true" eOpposite="#//Role/organization"/>
+    <eStructuralFeatures name="norms" eType="#//Norm" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Norm/organizations"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AcyclicOrganization LocalChildren LocalResources"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="AcyclicOrganization" value="subOrganizations-&gt;closure(o | o.subOrganizations)-&gt;excludes(self)"/>
+      <details key="LocalChildren" value="subOrganizations-&gt;forAll(o | o.model = self.model)"/>
+      <details key="LocalResources" value="resources-&gt;forAll(r | r.model = self.model)"/>
+    </eAnnotations>
+    <eStructuralFeatures name="resources" eType="#//Resource" upperBound="-1" xsi:type="ecore:EReference">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Resources held by this normative subject. A local association, not an access permission; norms separately regulate actions on these resources."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers name="Agent" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Agent subject declared within NormML; runtime identity is supplied by the execution integration, not an external metamodel reference."/>
+    </eAnnotations>
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/agents"/>
+    <eStructuralFeatures name="plays" eType="#//Role" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Role/players"/>
+    <eStructuralFeatures name="norms" eType="#//Norm" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Norm/agents"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LocalRoles LocalResources"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="LocalRoles" value="plays-&gt;forAll(r | r.organization.model = self.model)"/>
+      <details key="LocalResources" value="resources-&gt;forAll(r | r.model = self.model)"/>
+    </eAnnotations>
+    <eStructuralFeatures name="resources" eType="#//Resource" upperBound="-1" xsi:type="ecore:EReference">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Resources held by this normative subject. A local association, not an access permission; norms separately regulate actions on these resources."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers name="Role" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="NormML role subject. Distinct from a role declaration in another independently authored model."/>
+    </eAnnotations>
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="organization" eType="#//Organization" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//Organization/roles"/>
+    <eStructuralFeatures name="players" eType="#//Agent" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Agent/plays"/>
+    <eStructuralFeatures name="norms" eType="#//Norm" xsi:type="ecore:EReference" upperBound="-1" eOpposite="#//Norm/roles"/>
+    <eStructuralFeatures name="resources" eType="#//Resource" upperBound="-1" xsi:type="ecore:EReference">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Resources held by this normative subject. A local association, not an access permission; norms separately regulate actions on these resources."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="LocalResources"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="LocalResources" value="resources-&gt;forAll(r | r.model = self.organization.model)"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers name="DataType" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Local datatype declaration for normative resources. It does not reference CSL.DataType or prescribe runtime OCL type resolution."/>
+    </eAnnotations>
+    <eStructuralFeatures name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="model" eType="#//NormModel" xsi:type="ecore:EReference" lowerBound="1" eOpposite="#//NormModel/dataTypes"/>
+  </eClassifiers>
+  <eClassifiers name="Condition" xsi:type="ecore:EClass">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Textual state condition, following the Condition pattern of the other independent languages. OCL compilation and self binding belong to execution integration."/>
+    </eAnnotations>
+    <eStructuralFeatures name="condExpr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1"/>
+    <eStructuralFeatures name="condLang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" xsi:type="ecore:EAttribute" lowerBound="1" defaultValueLiteral="OCL"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NonEmptyExpression NonEmptyLanguage"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
+      <details key="NonEmptyExpression" value="condExpr.size() &gt; 0"/>
+      <details key="NonEmptyLanguage" value="condLang.size() &gt; 0"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

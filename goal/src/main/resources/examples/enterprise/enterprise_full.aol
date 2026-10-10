@@ -4,7 +4,7 @@
 // association/aggregation/composition relation linked at least once,
 // including the composition-only Milestone entity.
 
-aol v1.0 EnterpriseFull for "enterprise.acl" {
+aol v1.0 EnterpriseFull for "enterprise.csl" {
 
   agent Executive     as alice { name = "Alice Nguyen"; email = "alice@acme.example"; employeeId = "E001"; hireDate = "2010-03-01"; managementLevel = 5; budgetAuthority = 500000.0; title = "Chair"; }
   agent Executive     as carol { name = "Carol Le";     email = "carol@acme.example"; employeeId = "E003"; hireDate = "2012-09-20"; managementLevel = 5; budgetAuthority = 450000.0; title = "CFO"; }
@@ -87,7 +87,7 @@ aol v1.0 EnterpriseFull for "enterprise.acl" {
   }
 
   // Document is reached only through the explicit `auditDocuments`
-  // composition, not a Group member list -- see enterprise.acl's comment on
+  // composition, not a Group member list -- see enterprise.csl's comment on
   // why Document/Budget can't both use the legacy member-list form.
   entity Document as doc_policy   { title = "Audit Policy 2026";   version = 3; classification = Internal; }
   entity Document as doc_findings { title = "Q1 Findings Report"; version = 1; classification = Confidential; }

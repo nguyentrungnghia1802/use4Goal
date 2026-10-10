@@ -12,7 +12,7 @@ public record GoalMarking(GoalType type, boolean active, boolean condition, bool
         return new GoalMarking(type, false, false, true);
     }
 
-    /** Starts a fresh activation episode and consumes the current ACL predicate. */
+    /** Starts a fresh activation episode and consumes the current CSL predicate. */
     public GoalMarking update(boolean nextActive, boolean predicate) {
         if (!nextActive) return initial(type);
         boolean entering = !active;

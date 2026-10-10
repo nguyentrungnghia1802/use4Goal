@@ -34,16 +34,16 @@ import org.tzi.use.uml.sys.StatementEvaluationResult;
 import org.tzi.use.uml.sys.soil.MStatement;
 import org.tzi.use.uml.sys.soil.SoilEvaluationContext;
 
-import org.vnu.sme.goal.dsl.acl.mm.AclModel;
-import org.vnu.sme.goal.dsl.acl.parser.AclCompiler;
-import org.vnu.sme.goal.translate.acl2use.Acl2UseTranslator;
+import org.vnu.sme.goal.dsl.csl.mm.CslModel;
+import org.vnu.sme.goal.dsl.csl.parser.CslCompiler;
+import org.vnu.sme.goal.translate.csl2use.Csl2UseTranslator;
 import org.vnu.sme.goal.dsl.aol.parser.AolCompiler;
-import org.vnu.sme.goal.translate.aclaol2soil.AclAol2SoilTranslator;
-import org.vnu.sme.goal.trace.bpmn.BpmnExecutionEngine;
+import org.vnu.sme.goal.translate.cslaol2soil.CslAol2SoilTranslator;
+import org.vnu.sme.goal.trace.bpmnTrace.BpmnExecutionEngine;
 import org.vnu.sme.goal.dsl.bpmn.mm.Activity;
 import org.vnu.sme.goal.dsl.bpmn.mm.FlowElement;
 import org.vnu.sme.goal.dsl.bpmn.mm.Process;
-import org.vnu.sme.goal.trace.bpmn.BpmnPostEffect;
+import org.vnu.sme.goal.trace.bpmnTrace.BpmnPostEffect;
 import org.vnu.sme.goal.dsl.bpmn.parser.BpmnCompiler;
 
 /**
@@ -51,7 +51,7 @@ import org.vnu.sme.goal.dsl.bpmn.parser.BpmnCompiler;
  * AOL population (agents/groups/links) instead of a hand-written {@code
  * .soil} scenario. There is no goal model involved: this produces a trace,
  * it does not judge conformance against one — see {@link
- * AclBpmnIStarConformanceChecker} / {@link ConformanceFlowRunner} for that.
+ * CslBpmnIStarConformanceChecker} / {@link ConformanceFlowRunner} for that.
  *
  * <p>A gateway always takes its first accepted outgoing flow. A concrete AOL
  * population plus deterministic activity effects mean exactly one execution
@@ -72,7 +72,7 @@ public final class AolBpmnTraceRunner {
     public record InstanceTrace(String processId, String selfObjectName, String groupClass,
             List<Frame> frames, boolean ended) {}
 
-    public record Result(MModel useModel, AclModel aclModel, List<InstanceTrace> traces, List<String> errors) {
+    public record Result(MModel useModel, CslModel cslModel, List<InstanceTrace> traces, List<String> errors) {
         public Result {
             traces = List.copyOf(traces);
             errors = List.copyOf(errors);
@@ -82,16 +82,16 @@ public final class AolBpmnTraceRunner {
 
     private AolBpmnTraceRunner() {}
 
-    public static Result run(Path aclFile, Path aolFile, Path bpmnFile) {
+    public static Result run(Path cslFile, Path aolFile, Path bpmnFile) {
         List<String> errors = new ArrayList<>();
 
-        AclCompiler.Result acl;
+        CslCompiler.Result csl;
         try {
-            acl = AclCompiler.compile(aclFile);
+            csl = CslCompiler.compile(cslFile);
         } catch (Exception ex) {
             return failed(errors, "CSL compiler crashed: " + message(ex));
         }
-        if (!acl.ok()) return failed(errors, acl.errors());
+        if (!csl.ok()) return failed(errors, csl.errors());
 
         AolCompiler.Result aol;
         try {
@@ -101,9 +101,9 @@ public final class AolBpmnTraceRunner {
         }
         if (!aol.ok()) return failed(errors, aol.errors());
         try {
-            if (!Files.isSameFile(aclFile, aol.aclFile())) {
-                return failed(errors, "The state snapshot references a different CSL model: " + aol.aclFile()
-                        + " (selected: " + aclFile + ")");
+            if (!Files.isSameFile(cslFile, aol.cslFile())) {
+                return failed(errors, "The state snapshot references a different CSL model: " + aol.cslFile()
+                        + " (selected: " + cslFile + ")");
             }
         } catch (Exception ex) {
             return failed(errors, "Cannot compare CSL references: " + message(ex));
@@ -120,15 +120,15 @@ public final class AolBpmnTraceRunner {
         MModel useModel;
         MSystem system;
         try {
-            String useText = Acl2UseTranslator.translate(acl.model());
+            String useText = Csl2UseTranslator.translate(csl.model());
             StringWriter useErr = new StringWriter();
             useModel = USECompiler.compileSpecification(useText, "csl-generated.use",
                     new PrintWriter(useErr), new ModelFactory());
             if (useModel == null) return failed(errors, "errors compiling generated .use: " + useErr);
             system = new MSystem(useModel);
-            String initialSoil = AclAol2SoilTranslator.transform(acl.model(), aol.model());
+            String initialSoil = CslAol2SoilTranslator.transform(csl.model(), aol.model());
             executeInitialSoil(system, useModel, initialSoil, errors);
-            if (!errors.isEmpty()) return new Result(useModel, acl.model(), List.of(), errors);
+            if (!errors.isEmpty()) return new Result(useModel, csl.model(), List.of(), errors);
         } catch (Exception ex) {
             return failed(errors, "Cannot build the initial state from CSL and the snapshot: " + message(ex));
         }
@@ -154,7 +154,7 @@ public final class AolBpmnTraceRunner {
             }
         }
 
-        return new Result(useModel, acl.model(), traces, errors);
+        return new Result(useModel, csl.model(), traces, errors);
     }
 
     private static InstanceTrace runOne(MSystem system, MModel useModel, Process process,
@@ -237,7 +237,7 @@ public final class AolBpmnTraceRunner {
         return bv.isTrue();
     }
 
-    /** Accepts the same {@code !create}/{@code !set}/{@code !insert} shell syntax AclAol2SoilTranslator emits. */
+    /** Accepts the same {@code !create}/{@code !set}/{@code !insert} shell syntax CslAol2SoilTranslator emits. */
     private static void executeInitialSoil(MSystem system, MModel useModel, String soilText, List<String> errors) {
         int idx = 0;
         for (String raw : soilText.lines().toList()) {

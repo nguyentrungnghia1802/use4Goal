@@ -28,8 +28,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import org.tzi.use.gui.main.MainWindow;
 import org.tzi.use.main.Session;
 import org.vnu.sme.goal.dsl.bpmn.view.BpmnView;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.BpmnScenarioSnapshot;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.NodeOccurrence;
+import org.vnu.sme.goal.dsl.bscn.mm.BpmnScenarioSnapshot;
+import org.vnu.sme.goal.dsl.bscn.mm.NodeOccurrence;
 import org.vnu.sme.goal.verify.conformance.VisualConformanceSession;
 import org.vnu.sme.goal.verify.conformance.VisualConformanceSession.Frame;
 import org.vnu.sme.goal.verify.conformance.ScenarioTraceExplorer;
@@ -43,7 +43,7 @@ import org.vnu.sme.goal.dsl.istar.mm.Resource;
 import org.vnu.sme.goal.dsl.istar.mm.Task;
 import org.vnu.sme.goal.dsl.istar.view.IStarView;
 import org.vnu.sme.goal.dsl.istar.view.NodeBadge;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceEvaluator;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceEvaluator;
 
 /** Synchronized BPMN-token and i*-satisfaction view for one input SOIL scenario. */
 @SuppressWarnings("serial")
@@ -57,7 +57,7 @@ public final class StepConformanceForm extends JDialog {
     private static final Color C_UNKNOWN = new Color(150, 150, 150);
 
     @SuppressWarnings("unused") private final Session useSession;
-    private JTextField istarField, bpmnField, aclField, soilField;
+    private JTextField istarField, bpmnField, cslField, soilField;
     private IStarView istarView;
     private BpmnView bpmnView;
     private JLabel phaseLabel, detailLabel, statusLabel;
@@ -74,7 +74,7 @@ public final class StepConformanceForm extends JDialog {
         buildUI();
         istarField.setText(PREFS.get("conformance4.istarFile", ""));
         bpmnField.setText(PREFS.get("conformance4.bpmn2File", ""));
-        aclField.setText(PREFS.get("conformance4.aclFile", ""));
+        cslField.setText(PREFS.get("conformance4.cslFile", ""));
         soilField.setText(PREFS.get("conformance4.soilFile", ""));
         setSize(1500, 900);
         setLocationRelativeTo(mainWindow);
@@ -100,10 +100,10 @@ public final class StepConformanceForm extends JDialog {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         istarField = new JTextField(52); bpmnField = new JTextField(52);
-        aclField = new JTextField(52); soilField = new JTextField(52);
+        cslField = new JTextField(52); soilField = new JTextField(52);
         panel.add(fileRow("i* goals (.istar):", istarField, "istar"));
         panel.add(fileRow("BPMN2 process (.bpmn2):", bpmnField, "bpmn2"));
-        panel.add(fileRow("ACL structure (.acl):", aclField, "acl"));
+        panel.add(fileRow("CSL structure (.csl):", cslField, "csl"));
         panel.add(fileRow("Input scenario (.soil):", soilField, "soil"));
         JPanel row = new JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
         JButton initialize = new JButton("Load and validate scenario");
@@ -169,11 +169,11 @@ public final class StepConformanceForm extends JDialog {
         try {
             execution = VisualConformanceSession.prepare(
                     Path.of(istarField.getText().trim()), Path.of(bpmnField.getText().trim()),
-                    Path.of(aclField.getText().trim()), Path.of(soilField.getText().trim()), choices);
+                    Path.of(cslField.getText().trim()), Path.of(soilField.getText().trim()), choices);
             bpmnView.setModel(execution.bpmnModel());
             rememberInputs();
             show(0);
-            status("INITIALIZATION PASS — role assignment, multiplicities and ACL constraints are valid.", C_OK);
+            status("INITIALIZATION PASS — role assignment, multiplicities and CSL constraints are valid.", C_OK);
         } catch (Exception ex) {
             phaseLabel.setText("INITIALIZATION FAILED");
             detailLabel.setText(html(ex.getMessage()));
@@ -185,7 +185,7 @@ public final class StepConformanceForm extends JDialog {
         try {
             var assessment = ScenarioTraceExplorer.explore(
                     Path.of(istarField.getText().trim()), Path.of(bpmnField.getText().trim()),
-                    Path.of(aclField.getText().trim()), Path.of(soilField.getText().trim()), 128);
+                    Path.of(cslField.getText().trim()), Path.of(soilField.getText().trim()), 128);
             exploredTraces = assessment.traces();
             changingTraceBox = true;
             traceBox.removeAllItems();
@@ -333,7 +333,7 @@ public final class StepConformanceForm extends JDialog {
     private void rememberInputs() {
         PREFS.put("conformance4.istarFile", istarField.getText().trim());
         PREFS.put("conformance4.bpmn2File", bpmnField.getText().trim());
-        PREFS.put("conformance4.aclFile", aclField.getText().trim());
+        PREFS.put("conformance4.cslFile", cslField.getText().trim());
         PREFS.put("conformance4.soilFile", soilField.getText().trim());
     }
 

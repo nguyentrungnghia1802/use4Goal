@@ -10,9 +10,9 @@ import org.tzi.use.uml.sys.MLink;
 import org.tzi.use.uml.sys.MObject;
 import org.tzi.use.uml.sys.MSystemState;
 
-import org.vnu.sme.goal.dsl.acl.mm.AclModel;
-import org.vnu.sme.goal.dsl.acl.mm.AclOwner;
-import org.vnu.sme.goal.dsl.acl.mm.AclRelation;
+import org.vnu.sme.goal.dsl.csl.mm.CslModel;
+import org.vnu.sme.goal.dsl.csl.mm.CslOwner;
+import org.vnu.sme.goal.dsl.csl.mm.CslRelation;
 import org.vnu.sme.goal.dsl.aol.mm.AolGroupInstance;
 import org.vnu.sme.goal.dsl.aol.mm.AolLink;
 import org.vnu.sme.goal.dsl.aol.mm.AolModel;
@@ -21,17 +21,17 @@ import org.vnu.sme.goal.dsl.aol.mm.AolPlay;
 /**
  * Rebuilds an {@link AolModel} snapshot from one live USE object-graph state, scoped to a
  * single group instance — the reverse direction of {@link
- * org.vnu.sme.goal.translate.aclaol2soil.AclAol2SoilTranslator}. This is what lets an arbitrary point
+ * org.vnu.sme.goal.translate.cslaol2soil.CslAol2SoilTranslator}. This is what lets an arbitrary point
  * of a running BPMN trace be shown in the same {@link AolView} diagram/browser/snapshot the
  * static {@code .aol} file already uses, instead of a bespoke text dump. Follows the same
  * {@code Agent_plays_<Role>} / {@code <Role>_in_<Group>} association-naming convention {@link
- * org.vnu.sme.goal.translate.acl2use.Acl2UseTranslator} generates.
+ * org.vnu.sme.goal.translate.csl2use.Csl2UseTranslator} generates.
  */
 public final class AolStateModel {
 
     private AolStateModel() {}
 
-    public static AolModel build(AclModel acl, MSystemState state, String groupClass, MObject self) {
+    public static AolModel build(CslModel csl, MSystemState state, String groupClass, MObject self) {
         if (self == null) {
             return new AolModel("v1.0", "state", "(unscoped)", List.of(), Map.of(), Map.of(),
                     List.of(), List.of(), List.of());
@@ -40,8 +40,8 @@ public final class AolStateModel {
         List<String> agents = new ArrayList<>();
         Map<String, Map<String, String>> agentAttributeValues = new LinkedHashMap<>();
         List<AolPlay> plays = new ArrayList<>();
-        for (AclOwner owner : acl.owners()) {
-            if (!owner.sourceGroup().equals(groupClass) || acl.findRole(owner.target()).isEmpty()) continue;
+        for (CslOwner owner : csl.owners()) {
+            if (!owner.sourceGroup().equals(groupClass) || csl.findRole(owner.target()).isEmpty()) continue;
             String roleType = owner.target();
             for (MObject roleObject : linkedObjects(state, self, roleType + "_in_" + groupClass, 0, 1)) {
                 MObject agent = linkedObject(state, roleObject, "Agent_plays_" + roleType, 1, 0);
@@ -58,10 +58,10 @@ public final class AolStateModel {
                 List.of(), plays, List.of(), attributeValues(state, self));
 
         // Agent-to-agent relations (e.g. "knowsPhoneOf") are declared directly on the
-        // (abstract-role-realized) Agent class in ACL, not scoped to this group, but only
+        // (abstract-role-realized) Agent class in CSL, not scoped to this group, but only
         // links whose source is one of this group's own agents are relevant to show here.
         List<AolLink> links = new ArrayList<>();
-        for (AclRelation relation : acl.relations()) {
+        for (CslRelation relation : csl.relations()) {
             for (String agentId : agents) {
                 MObject agentObject = state.objectByName(agentId);
                 List<MObject> targets = agentObject == null ? List.of()
@@ -72,7 +72,7 @@ public final class AolStateModel {
             }
         }
 
-        return new AolModel("v1.0", groupClass + "State", acl.name(), agents, Map.of(),
+        return new AolModel("v1.0", groupClass + "State", csl.name(), agents, Map.of(),
                 agentAttributeValues, List.of(group), List.of(), links);
     }
 
@@ -92,7 +92,7 @@ public final class AolStateModel {
         return found.isEmpty() ? null : found.get(0);
     }
 
-    /** Association endpoint positions follow Acl2UseTranslator: source first, target second. */
+    /** Association endpoint positions follow Csl2UseTranslator: source first, target second. */
     private static List<MObject> linkedObjects(MSystemState state, MObject known, String associationName,
             int knownIndex, int resultIndex) {
         MAssociation association = state.system().model().getAssociation(associationName);

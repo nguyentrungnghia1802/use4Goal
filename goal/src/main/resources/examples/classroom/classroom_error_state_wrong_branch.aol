@@ -1,6 +1,6 @@
 // Invalid XOR branch result: electronicSystemAvailable remains true, so the
 // electronic branch is enabled, but this snapshot claims the manual outcome.
-aol v2.0 ClassroomWrongAttendanceBranch for "classroom.acl" {
+aol v2.0 ClassroomWrongAttendanceBranch for "classroom.csl" {
   group Classroom as classroom1 {
     lessonStarted = true;
     slidesReady = true;

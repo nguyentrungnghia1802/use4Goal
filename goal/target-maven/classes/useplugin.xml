@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?use version="7.1.1" ?>
+<plugin name="Conformance of Processes and Goals" version="4.0">
+    <actions>
+        <action label="Process View Model"
+                icon="images/bpmn2.png"
+                class="org.vnu.sme.goal.feature.openbpmn.ActionOpenBpmn"
+                tooltip="Open and inspect a BPMN process model"
+                menu="Conformance of Processes and Goals"
+                menuitem="1. Process View Model"
+                toolbaritem="Process View"
+                id="org.vnu.sme.goal.feature.openbpmn.ActionOpenBpmn">
+        </action>
+
+        <action label="Goal View Model"
+                icon="images/istar.png"
+                class="org.vnu.sme.goal.feature.openistar.ActionOpenIStar"
+                tooltip="Open and inspect an iStar goal model"
+                menu="Conformance of Processes and Goals"
+                menuitem="2. Goal View Model"
+                toolbaritem="Goal View"
+                id="org.vnu.sme.goal.feature.openistar.ActionOpenIStar">
+        </action>
+
+        <action label="State View Model"
+                icon="images/csl.png"
+                class="org.vnu.sme.goal.feature.opencsl.ActionOpenCsl"
+                tooltip="Open and inspect a CSL state model"
+                menu="Conformance of Processes and Goals"
+                menuitem="3. State View Model"
+                toolbaritem="State View"
+                id="org.vnu.sme.goal.feature.opencsl.ActionOpenCsl">
+        </action>
+
+        <action label="Conformance Checking"
+                icon="images/conformance.png"
+                class="org.vnu.sme.goal.feature.cslstate.ActionOpenCslStateEvaluator"
+                tooltip="Check bounded conformance and risk across CSL, BPMN and iStar models"
+                menu="Conformance of Processes and Goals"
+                menuitem="4. Conformance Checking"
+                toolbaritem="Conformance Checking"
+                id="org.vnu.sme.goal.feature.cslstate.ActionOpenCslStateEvaluator">
+        </action>
+
+        <action label="Generate Process Scenarios"
+                icon="images/bpmn2-scenario.png"
+                class="org.vnu.sme.goal.feature.bpmnscenario.ActionOpenBpmnScenario"
+                tooltip="Generate execution scenarios from a BPMN process and an initial CSL state"
+                menu="Conformance of Processes and Goals"
+                menuitem="5. Generate Process Scenarios"
+                toolbaritem="Generate Scenarios"
+                id="org.vnu.sme.goal.feature.bpmnscenario.ActionOpenBpmnScenario">
+        </action>
+        <action label="Norm View Model"
+                class="org.vnu.sme.goal.feature.opennormml.ActionOpenNormML"
+                tooltip="Compile and inspect an independent NormML model"
+                menu="Conformance of Processes and Goals"
+                menuitem="6. Norm View Model"
+                id="org.vnu.sme.goal.feature.opennormml.ActionOpenNormML" />
+    </actions>
+</plugin>

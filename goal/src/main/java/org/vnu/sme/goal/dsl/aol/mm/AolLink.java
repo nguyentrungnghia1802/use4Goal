@@ -3,7 +3,7 @@ package org.vnu.sme.goal.dsl.aol.mm;
 import java.util.List;
 import java.util.Objects;
 
-/** One instantiation of an ACL relation (association/aggregation/composition) between two instances. */
+/** One instantiation of an CSL relation (association/aggregation/composition) between two instances. */
 public record AolLink(String relationName, String sourceInstanceId, List<String> targetInstanceIds) {
     public AolLink {
         Objects.requireNonNull(relationName, "relationName");

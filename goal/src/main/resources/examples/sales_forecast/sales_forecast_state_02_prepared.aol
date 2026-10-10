@@ -2,7 +2,7 @@
 // proposal is prepared and approval has been requested, but review has not
 // started yet.
 // Expected OCL result: 7 true, 0 false.
-aol v2.0 SalesForecastPrepared for "sales_forecast.acl" {
+aol v2.0 SalesForecastPrepared for "sales_forecast.csl" {
   group SalesCase as salescase1 {
     proposalPrepared = true;
     approvalRequested = true;

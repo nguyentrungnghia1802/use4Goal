@@ -26,17 +26,17 @@
       <bpmn:outgoing>Flow_01</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:task id="Prepare" name="Prepare proposal">
-      <bpmn:documentation>ACL effect: proposalPrepared := true; currentRevision := 1.</bpmn:documentation>
+      <bpmn:documentation>CSL effect: proposalPrepared := true; currentRevision := 1.</bpmn:documentation>
       <bpmn:incoming>Flow_01</bpmn:incoming>
       <bpmn:outgoing>Flow_02</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="Validate" name="Validate proposal">
-      <bpmn:documentation>ACL effect: validationRevision := currentRevision.</bpmn:documentation>
+      <bpmn:documentation>CSL effect: validationRevision := currentRevision.</bpmn:documentation>
       <bpmn:incoming>Flow_02</bpmn:incoming>
       <bpmn:outgoing>Flow_03</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="Review" name="Review proposal">
-      <bpmn:documentation>ACL effect: reviewCompleted := true; changesRequested is set by the review outcome.</bpmn:documentation>
+      <bpmn:documentation>CSL effect: reviewCompleted := true; changesRequested is set by the review outcome.</bpmn:documentation>
       <bpmn:incoming>Flow_03</bpmn:incoming>
       <bpmn:outgoing>Flow_04</bpmn:outgoing>
     </bpmn:task>
@@ -47,7 +47,7 @@
       <bpmn:outgoing>Flow_06_NoChange</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:task id="Update" name="Update proposal">
-      <bpmn:documentation>ACL precondition: changesRequested. ACL effect: changesIncorporated := true; currentRevision := currentRevision + 1. validationRevision is NOT updated here. This activity realizes 'Requested changes incorporated' but can invalidate 'Current proposal prepared and validated'.</bpmn:documentation>
+      <bpmn:documentation>CSL precondition: changesRequested. CSL effect: changesIncorporated := true; currentRevision := currentRevision + 1. validationRevision is NOT updated here. This activity realizes 'Requested changes incorporated' but can invalidate 'Current proposal prepared and validated'.</bpmn:documentation>
       <bpmn:incoming>Flow_05_Changed</bpmn:incoming>
       <bpmn:outgoing>Flow_07</bpmn:outgoing>
     </bpmn:task>
@@ -58,12 +58,12 @@
       <bpmn:outgoing>Flow_08</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:task id="Finalize" name="Finalize proposal">
-      <bpmn:documentation>ACL effect: proposalFinalized := true.</bpmn:documentation>
+      <bpmn:documentation>CSL effect: proposalFinalized := true.</bpmn:documentation>
       <bpmn:incoming>Flow_08</bpmn:incoming>
       <bpmn:outgoing>Flow_09</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="Send" name="Send proposal">
-      <bpmn:documentation>ACL effect: proposalSent := true; sentRevision := currentRevision.</bpmn:documentation>
+      <bpmn:documentation>CSL effect: proposalSent := true; sentRevision := currentRevision.</bpmn:documentation>
       <bpmn:incoming>Flow_09</bpmn:incoming>
       <bpmn:outgoing>Flow_10</bpmn:outgoing>
     </bpmn:task>

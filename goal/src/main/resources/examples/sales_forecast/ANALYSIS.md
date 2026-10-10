@@ -79,7 +79,7 @@ verdict.
 3. Does the workaround trace respond within the window, and does it still
    satisfy the approval/risk-control goals?
 
-The ACL predicates make the two outcomes observable:
+The CSL predicates make the two outcomes observable:
 
 | Trace | Approved/current proposal | Within response window | Resulting gap |
 |---|---:|---:|---|
@@ -104,7 +104,7 @@ counterexample itself as a negative contribution.
 - `Approver [1..*]` abstracts the source's several approval units. Those units
   can be expanded later without changing the conflict predicate.
 - The prescribed process and observed workaround are separate BPMN files. They
-  share ACL and iStar state semantics but the workaround is never presented as
+  share CSL and iStar state semantics but the workaround is never presented as
   an officially permitted branch. Both are focused executable reconstructions.
 - `sales_forecast_full.bpmn2` separately reconstructs the full appendix
   process with eight original lanes and 51 flow elements. It is a structural
@@ -114,23 +114,23 @@ counterexample itself as a negative contribution.
   by XOR: its outgoing branches are explicitly Yes/No, while the current BPMN
   engine does not implement inclusive-gateway semantics.
 - Source thresholds (service fee, profitability, and deal amount) are Boolean
-  ACL classifications rather than invented arithmetic formulas. This retains
+  CSL classifications rather than invented arithmetic formulas. This retains
   the decisions visible in the diagram without claiming an unpublished data
   model.
 
 ## Current validation status
 
-- ACL parser: passed.
+- CSL parser: passed.
 - Complete SR iStar syntax/semantic validation: passed (17 actors, 45
   intentional elements, and 21 dependencies).
-- Executable iStar parser and ACL+iStar-to-USE/OCL generation: passed.
+- Executable iStar parser and CSL+iStar-to-USE/OCL generation: passed.
 - BPMN parser: passed for the full published-process reconstruction (eight
   lanes and 51 flow elements), the prescribed process (eight activities, two
   guarded flows), and the workaround process (two activities).
-- Full BPMN ACL+BPMN-to-USE/OCL translation: passed without diagnostics.
+- Full BPMN CSL+BPMN-to-USE/OCL translation: passed without diagnostics.
 - Acceptance tests: passed for both complete-model well-formedness checks and
   all three expected execution verdicts.
-- Integrated ACL+iStar+BPMN-to-Event-B generation: passed for both BPMN files
+- Integrated CSL+iStar+BPMN-to-Event-B generation: passed for both BPMN files
   with no translation diagnostics.
 - Rodin proof obligations and ProB state-space properties have not yet been
   executed; successful generation is not a proof result.

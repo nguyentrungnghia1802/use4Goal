@@ -13,7 +13,7 @@ class AolBpmnTraceRunnerTest {
 
     @Test
     void singleMeetingAolProducesOneEndedTraceThroughEveryActivity() {
-        var result = AolBpmnTraceRunner.run(BASE.resolve("mtg.acl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
+        var result = AolBpmnTraceRunner.run(BASE.resolve("mtg.csl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         assertEquals(1, result.traces().size());
         var trace = result.traces().get(0);
@@ -30,7 +30,7 @@ class AolBpmnTraceRunnerTest {
     @Test
     void twoMeetingsAolProducesOneIndependentTracePerGroupInstance() {
         var result = AolBpmnTraceRunner.run(
-                BASE.resolve("mtg.acl"), BASE.resolve("mtg_two_meetings.aol"), BASE.resolve("mtg.bpmn2"));
+                BASE.resolve("mtg.csl"), BASE.resolve("mtg_two_meetings.aol"), BASE.resolve("mtg.bpmn2"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         assertEquals(2, result.traces().size());
         assertTrue(result.traces().stream().allMatch(AolBpmnTraceRunner.InstanceTrace::ended));

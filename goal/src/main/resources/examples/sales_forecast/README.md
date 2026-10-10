@@ -17,14 +17,14 @@ an independent oracle; it does not claim that they missed the conflict.
 
 ## Files and roles
 
-- `sales_forecast.acl`: shared organizational and proposal state, including
+- `sales_forecast.csl`: shared organizational and proposal state, including
   seven OCL invariants on `SalesCase` that formalize the lifecycle ordering
   (preparation before request, request before review, review before
   approval-gated sending, approved/sent revision consistency).
 - `sales_forecast_state_01_initial.aol` through `sales_forecast_state_05_workaround_invalid.aol`:
-  five AOL v2 state snapshots for the **ACL State Evaluator**, tracing the
-  process lifecycle from the ACL defaults through the on-time, delayed, and
-  workaround end states; see `ACL_STATE_EVALUATOR.md` for the expected
+  five AOL v2 state snapshots for the **CSL State Evaluator**, tracing the
+  process lifecycle from the CSL defaults through the on-time, delayed, and
+  workaround end states; see `CSL_STATE_EVALUATOR.md` for the expected
   true/false OCL result of each.
 - `sales_forecast.istar`: goals and OCL predicates; deliberately contains no
   `Hurt`/`Break` link that would encode the expected answer.
@@ -50,7 +50,7 @@ an independent oracle; it does not claim that they missed the conflict.
   complete process, workaround, shared state, and research gap.
 - `tool/generate_tool_models.mjs`: deterministic generator for both tool
   interchange files.
-- `proposal_review_whole/`: bounded ACL+BPMN+iStar motivating example in
+- `proposal_review_whole/`: bounded CSL+BPMN+iStar motivating example in
   which both BPMN branches reach End, but the update branch sends revision r2
   with validation still attached to r1. Whole consistency returns
   `WEAKLY_CONSISTENT` with one goal-achieving path out of two realizable paths.
@@ -73,7 +73,7 @@ The two iStar files are intentionally not interchangeable. The complete SR
 model is the source-faithful view used to inspect the whole organizational
 rationale. The smaller executable model is the verification slice: it omits
 the source's manually assigned negative contributions so that the checker must
-derive the conflict from the process-generated ACL state.
+derive the conflict from the process-generated CSL state.
 
 ## Why a full BPMN and two executable slices?
 
@@ -88,7 +88,7 @@ to reproduce the motivating conflict.
 The e-mail/Word/Excel workaround is a deviation from the prescribed process,
 not an official gateway choice. Putting it in the same BPMN would incorrectly
 turn non-compliance into permitted control flow. The two processes share the
-same ACL and iStar model, so their final intentional verdicts remain directly
+same CSL and iStar model, so their final intentional verdicts remain directly
 comparable.
 
 ## Repeatable check
@@ -102,11 +102,11 @@ mvn -f goal/pom.xml \
 ```
 
 The test drives the BPMN token engine, applies activity postconditions to the
-ACL/USE state, reevaluates the iStar predicates at every checkpoint, and checks
+CSL/USE state, reevaluates the iStar predicates at every checkpoint, and checks
 the final root goals. It does not assign goal statuses by hand.
 
-The full BPMN also passes BPMN semantic validation and ACL+BPMN-to-USE/OCL
-translation without diagnostics. Both focused ACL+iStar+BPMN combinations can
+The full BPMN also passes BPMN semantic validation and CSL+BPMN-to-USE/OCL
+translation without diagnostics. Both focused CSL+iStar+BPMN combinations can
 be exported to Event-B without translation diagnostics. Rodin proof discharge
 remains a separate verification step.
 
@@ -123,5 +123,5 @@ The appendix uses an inclusive marker for the Yes/No decision on whether a
 presale engineer is required. Because these alternatives are mutually
 exclusive and the current executable dialect has no inclusive-gateway
 semantics, the reconstruction uses XOR. Published numerical thresholds are
-represented by Boolean ACL classifications because the source supplies no
+represented by Boolean CSL classifications because the source supplies no
 data schema or calculation formula from which their values could be derived.

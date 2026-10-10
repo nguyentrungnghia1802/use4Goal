@@ -3,7 +3,7 @@
 // official_on_time.soil: reviewed inside the response window, approved, and
 // the approved revision is sent. This is the "conformant" row of README.md.
 // Expected OCL result: 7 true, 0 false.
-aol v2.0 SalesForecastApprovedOnTime for "sales_forecast.acl" {
+aol v2.0 SalesForecastApprovedOnTime for "sales_forecast.csl" {
   group SalesCase as salescase1 {
     proposalPrepared = true;
     approvalRequested = true;

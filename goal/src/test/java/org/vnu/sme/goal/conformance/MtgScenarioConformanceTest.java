@@ -65,9 +65,9 @@ class MtgScenarioConformanceTest {
 
     @Test
     void oneShotCheckerUsesTheSameScenarioDrivenSemantics() throws Exception {
-        var good = AclBpmnIStarConformanceChecker.check(BASE.resolve("mtg.acl"),
+        var good = CslBpmnIStarConformanceChecker.check(BASE.resolve("mtg.csl"),
                 BASE.resolve("mtg_i1o1p4s1.soil"), BASE.resolve("mtg.istar"), BASE.resolve("mtg.bpmn2"));
-        var counterexample = AclBpmnIStarConformanceChecker.check(BASE.resolve("mtg.acl"),
+        var counterexample = CslBpmnIStarConformanceChecker.check(BASE.resolve("mtg.csl"),
                 BASE.resolve("mtg_i1o1p3s1.soil"), BASE.resolve("mtg.istar"),
                 BASE.resolve("mtg_goal_gap.bpmn2"));
         assertTrue(good.conformant(), () -> "Unexpected conformance errors: " + good.errors());
@@ -99,7 +99,7 @@ class MtgScenarioConformanceTest {
     @Test
     void nondeterministicBpmnIsWeakButNotStrongWhenOnlyOneTraceSatisfiesRoots() {
         var result = ScenarioTraceExplorer.explore(BASE.resolve("mtg.istar"),
-                BASE.resolve("mtg_nondeterministic.bpmn2"), BASE.resolve("mtg.acl"),
+                BASE.resolve("mtg_nondeterministic.bpmn2"), BASE.resolve("mtg.csl"),
                 BASE.resolve("mtg_i1o1p3s1.soil"), 16);
         assertEquals(2, result.traces().size());
         assertTrue(result.weak());
@@ -109,8 +109,8 @@ class MtgScenarioConformanceTest {
 
     @Test
     void incidentResponseWasMigratedFromFinalSnapshotToExecutableInputScenario() throws Exception {
-        Path base = Path.of("src/main/resources/examples/incident_response_acl");
-        var result = AclBpmnIStarConformanceChecker.check(base.resolve("incident_response.acl"),
+        Path base = Path.of("src/main/resources/examples/incident_response_csl");
+        var result = CslBpmnIStarConformanceChecker.check(base.resolve("incident_response.csl"),
                 base.resolve("incident_response.soil"), base.resolve("incident_response.istar"),
                 base.resolve("incident_response.bpmn2"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
@@ -121,7 +121,7 @@ class MtgScenarioConformanceTest {
     @Test
     void ojsNowHasAnExecutableInputScenarioInsteadOfOnlyAolFinalSnapshots() throws Exception {
         Path base = Path.of("src/main/resources/examples/ojs");
-        var result = AclBpmnIStarConformanceChecker.check(base.resolve("ojs.acl"),
+        var result = CslBpmnIStarConformanceChecker.check(base.resolve("ojs.csl"),
                 base.resolve("ojs_input.soil"), base.resolve("ojs.istar"), base.resolve("ojs.bpmn2"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         assertTrue(result.conformant(), () -> "BPMN=" + result.bpmnFailures()
@@ -130,7 +130,7 @@ class MtgScenarioConformanceTest {
 
     private static VisualConformanceSession run(String soil, String bpmn) throws Exception {
         var session = VisualConformanceSession.prepare(BASE.resolve("mtg.istar"), BASE.resolve(bpmn),
-                BASE.resolve("mtg.acl"), BASE.resolve(soil));
+                BASE.resolve("mtg.csl"), BASE.resolve(soil));
         while (session.canAdvance()) session.next();
         return session;
     }

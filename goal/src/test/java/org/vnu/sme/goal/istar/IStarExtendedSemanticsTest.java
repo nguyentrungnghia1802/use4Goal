@@ -9,7 +9,7 @@ import java.nio.file.Path;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
-import org.vnu.sme.goal.dsl.acl.parser.AclCompiler;
+import org.vnu.sme.goal.dsl.csl.parser.CslCompiler;
 import org.vnu.sme.goal.dsl.bpmn.parser.BpmnCompiler;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
 import org.vnu.sme.goal.dsl.istar.parser.IStarCompiler;
@@ -355,8 +355,8 @@ class IStarExtendedSemanticsTest {
 
     @Test
     void salesForecastCaseStudyCompilesSuccessfully() throws Exception {
-        var aclRes = AclCompiler.compile(Path.of("../examples/Forecast/sales-forecast.acl"));
-        assertTrue(aclRes.ok(), () -> String.join("\n", aclRes.errors()));
+        var cslRes = CslCompiler.compile(Path.of("../examples/Forecast/sales-forecast.csl"));
+        assertTrue(cslRes.ok(), () -> String.join("\n", cslRes.errors()));
 
         var bpmnRes = BpmnCompiler.compile(Path.of("../examples/Forecast/sales-forecast.bpmn2"));
         assertTrue(bpmnRes.ok(), () -> String.join("\n", bpmnRes.errors()));
@@ -367,8 +367,8 @@ class IStarExtendedSemanticsTest {
 
     @Test
     void customerComplaintCaseStudyCompilesSuccessfully() throws Exception {
-        var aclRes = AclCompiler.compile(Path.of("../examples/CustomerComplaintManagement/customer-complaint.acl"));
-        assertTrue(aclRes.ok(), () -> String.join("\n", aclRes.errors()));
+        var cslRes = CslCompiler.compile(Path.of("../examples/CustomerComplaintManagement/customer-complaint.csl"));
+        assertTrue(cslRes.ok(), () -> String.join("\n", cslRes.errors()));
 
         var bpmnRes = BpmnCompiler.compile(Path.of("../examples/CustomerComplaintManagement/customer-complaint.bpmn2"));
         assertTrue(bpmnRes.ok(), () -> String.join("\n", bpmnRes.errors()));
@@ -379,8 +379,8 @@ class IStarExtendedSemanticsTest {
 
     @Test
     void meetingSchedulerCaseStudyCompilesSuccessfully() throws Exception {
-        var aclRes = AclCompiler.compile(Path.of("../examples/MeetingScheduler/meeting-scheduler.acl"));
-        assertTrue(aclRes.ok(), () -> String.join("\n", aclRes.errors()));
+        var cslRes = CslCompiler.compile(Path.of("../examples/MeetingScheduler/meeting-scheduler.csl"));
+        assertTrue(cslRes.ok(), () -> String.join("\n", cslRes.errors()));
 
         var bpmnRes = BpmnCompiler.compile(Path.of("../examples/MeetingScheduler/meeting-scheduler.bpmn2"));
         assertTrue(bpmnRes.ok(), () -> String.join("\n", bpmnRes.errors()));

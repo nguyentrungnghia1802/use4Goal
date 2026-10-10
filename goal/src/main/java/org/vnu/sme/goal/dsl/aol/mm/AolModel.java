@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Map;
 
-/** @deprecated Legacy AOL v1 Agent-based state; use {@code AclSystemState}. */
+/** @deprecated Legacy AOL v1 Agent-based state; use {@code CslSystemState}. */
 @Deprecated(forRemoval = false)
-public record AolModel(String version, String name, String aclFile,
+public record AolModel(String version, String name, String cslFile,
                        List<String> agents, Map<String, String> agentProfileRoles,
                        Map<String, Map<String, String>> agentAttributeValues,
                        List<AolGroupInstance> groupInstances,
@@ -14,7 +14,7 @@ public record AolModel(String version, String name, String aclFile,
     public AolModel {
         Objects.requireNonNull(version, "version");
         Objects.requireNonNull(name, "name");
-        Objects.requireNonNull(aclFile, "aclFile");
+        Objects.requireNonNull(cslFile, "cslFile");
         agents = List.copyOf(agents);
         agentProfileRoles = Map.copyOf(agentProfileRoles);
         agentAttributeValues = agentAttributeValues.entrySet().stream().collect(

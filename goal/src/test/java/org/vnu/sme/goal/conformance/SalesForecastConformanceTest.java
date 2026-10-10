@@ -8,11 +8,11 @@ import java.nio.file.Path;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.vnu.sme.goal.dsl.acl.parser.AclCompiler;
+import org.vnu.sme.goal.dsl.csl.parser.CslCompiler;
 import org.vnu.sme.goal.dsl.bpmn.parser.BpmnCompiler;
 import org.vnu.sme.goal.dsl.istar.parser.IStarCompiler;
 import org.vnu.sme.goal.trace.usetrace.IStarUseTraceEvaluator;
-import org.vnu.sme.goal.translate.aclbpmn2use.AclBpmn2UseTranslator;
+import org.vnu.sme.goal.translate.cslbpmn2use.CslBpmn2UseTranslator;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
 
 /** Executable acceptance criteria for the industrial Sales Forecast example. */
@@ -38,9 +38,9 @@ class SalesForecastConformanceTest {
         assertEquals(8, result.model().processes().getFirst().lanes().size());
         assertEquals(51, result.model().flowElementCount());
 
-        var acl = AclCompiler.compile(BASE.resolve("sales_forecast.acl"));
-        assertTrue(acl.ok(), acl.errors()::toString);
-        var translated = AclBpmn2UseTranslator.translate(acl.model(), result.model());
+        var csl = CslCompiler.compile(BASE.resolve("sales_forecast.csl"));
+        assertTrue(csl.ok(), csl.errors()::toString);
+        var translated = CslBpmn2UseTranslator.translate(csl.model(), result.model());
         assertTrue(translated.ok(), translated.diagnostics()::toString);
     }
 
@@ -92,7 +92,7 @@ class SalesForecastConformanceTest {
 
     private static VisualConformanceSession run(String bpmn, String soil) throws Exception {
         var session = VisualConformanceSession.prepare(BASE.resolve("sales_forecast.istar"),
-                BASE.resolve(bpmn), BASE.resolve("sales_forecast.acl"), BASE.resolve(soil));
+                BASE.resolve(bpmn), BASE.resolve("sales_forecast.csl"), BASE.resolve(soil));
         while (session.canAdvance()) session.next();
         assertTrue(session.ended(), "BPMN process must reach its EndEvent");
         return session;

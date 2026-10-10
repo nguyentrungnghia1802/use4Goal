@@ -8,28 +8,28 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-import org.vnu.sme.goal.dsl.acl.ast.AclSourceLocationCS;
-import org.vnu.sme.goal.dsl.acl.mm.AclAttribute;
-import org.vnu.sme.goal.dsl.acl.mm.AclCardinality;
-import org.vnu.sme.goal.dsl.acl.mm.AclCardinalityConstraint;
-import org.vnu.sme.goal.dsl.acl.mm.AclCompatibility;
-import org.vnu.sme.goal.dsl.acl.mm.AclContainment;
-import org.vnu.sme.goal.dsl.acl.mm.AclCompatibilityType;
-import org.vnu.sme.goal.dsl.acl.mm.AclDataType;
-import org.vnu.sme.goal.dsl.acl.mm.AclEndpoint;
-import org.vnu.sme.goal.dsl.acl.mm.AclEntity;
-import org.vnu.sme.goal.dsl.acl.mm.AclEntityMembership;
-import org.vnu.sme.goal.dsl.acl.mm.AclEnum;
-import org.vnu.sme.goal.dsl.acl.mm.AclGroup;
-import org.vnu.sme.goal.dsl.acl.mm.AclModel;
-import org.vnu.sme.goal.dsl.acl.mm.AclNamedDataType;
-import org.vnu.sme.goal.dsl.acl.mm.AclOwner;
-import org.vnu.sme.goal.dsl.acl.mm.AclPrimitiveType;
-import org.vnu.sme.goal.dsl.acl.mm.AclRelation;
-import org.vnu.sme.goal.dsl.acl.mm.AclRole;
-import org.vnu.sme.goal.dsl.acl.mm.RelationKind;
-import org.vnu.sme.goal.dsl.acl.mm.AclRoleMembership;
-import org.vnu.sme.goal.dsl.acl.mm.AclSubgroupMembership;
+import org.vnu.sme.goal.dsl.csl.ast.CslSourceLocationCS;
+import org.vnu.sme.goal.dsl.csl.mm.CslAttribute;
+import org.vnu.sme.goal.dsl.csl.mm.CslCardinality;
+import org.vnu.sme.goal.dsl.csl.mm.CslCardinalityConstraint;
+import org.vnu.sme.goal.dsl.csl.mm.CslCompatibility;
+import org.vnu.sme.goal.dsl.csl.mm.CslContainment;
+import org.vnu.sme.goal.dsl.csl.mm.CslCompatibilityType;
+import org.vnu.sme.goal.dsl.csl.mm.CslDataType;
+import org.vnu.sme.goal.dsl.csl.mm.CslEndpoint;
+import org.vnu.sme.goal.dsl.csl.mm.CslEntity;
+import org.vnu.sme.goal.dsl.csl.mm.CslEntityMembership;
+import org.vnu.sme.goal.dsl.csl.mm.CslEnum;
+import org.vnu.sme.goal.dsl.csl.mm.CslGroup;
+import org.vnu.sme.goal.dsl.csl.mm.CslModel;
+import org.vnu.sme.goal.dsl.csl.mm.CslNamedDataType;
+import org.vnu.sme.goal.dsl.csl.mm.CslOwner;
+import org.vnu.sme.goal.dsl.csl.mm.CslPrimitiveType;
+import org.vnu.sme.goal.dsl.csl.mm.CslRelation;
+import org.vnu.sme.goal.dsl.csl.mm.CslRole;
+import org.vnu.sme.goal.dsl.csl.mm.RelationKind;
+import org.vnu.sme.goal.dsl.csl.mm.CslRoleMembership;
+import org.vnu.sme.goal.dsl.csl.mm.CslSubgroupMembership;
 import org.vnu.sme.goal.dsl.aol.ast.AolAttributeValueCS;
 import org.vnu.sme.goal.dsl.aol.ast.AolAgentCS;
 import org.vnu.sme.goal.dsl.aol.ast.AolEntityInstanceCS;
@@ -44,13 +44,13 @@ import org.vnu.sme.goal.dsl.aol.mm.AolModel;
 import org.vnu.sme.goal.dsl.aol.mm.AolPlay;
 
 /**
- * Validates an .aol object snapshot against the .acl StructuralSpecification it targets:
+ * Validates an .aol object snapshot against the .csl StructuralSpecification it targets:
  * type/cardinality checking (like an object diagram against its class diagram), plus the
  * one check a class diagram could never express -- that no Agent ends up holding two Role
  * types that were never declared compatible (default: incompatible).
  */
 public final class AolModelFactory {
-    public record SemanticError(AclSourceLocationCS location, String message) {}
+    public record SemanticError(CslSourceLocationCS location, String message) {}
     public record Result(AolModel model, List<SemanticError> errors) {
         public Result { errors = List.copyOf(errors); }
         public boolean ok() { return errors.isEmpty() && model != null; }
@@ -58,11 +58,11 @@ public final class AolModelFactory {
 
     private AolModelFactory() {}
 
-    public static Result create(AolModelCS ast, AclModel acl) { return new Build(ast, acl).run(); }
+    public static Result create(AolModelCS ast, CslModel csl) { return new Build(ast, csl).run(); }
 
     private static final class Build {
         private final AolModelCS ast;
-        private final AclModel acl;
+        private final CslModel csl;
         private final List<SemanticError> errors = new ArrayList<>();
         private final Set<String> agentNames = new LinkedHashSet<>();
         private final Map<String, String> agentProfiles = new LinkedHashMap<>();
@@ -76,15 +76,15 @@ public final class AolModelFactory {
         private final Map<String, InstanceRef> instanceIndex = new LinkedHashMap<>();
 
         /** One agent playing one role type, at one point in the group-instance tree. */
-        private record Occurrence(String instanceId, String agentId, String roleType, List<AclGroup> typePath,
+        private record Occurrence(String instanceId, String agentId, String roleType, List<CslGroup> typePath,
                                   List<String> instancePath) {}
 
         private enum InstanceKind { AGENT, PLAY, ENTITY, GROUP }
         private record InstanceRef(InstanceKind kind, String typeName) {}
 
-        Build(AolModelCS ast, AclModel acl) {
+        Build(AolModelCS ast, CslModel csl) {
             this.ast = Objects.requireNonNull(ast, "ast");
-            this.acl = Objects.requireNonNull(acl, "acl");
+            this.csl = Objects.requireNonNull(csl, "csl");
         }
 
         Result run() {
@@ -95,7 +95,7 @@ public final class AolModelFactory {
                     agentValues.put(a.name(), Map.of());
                     continue;
                 }
-                acl.findRole(a.profileRole()).ifPresentOrElse(profile -> {
+                csl.findRole(a.profileRole()).ifPresentOrElse(profile -> {
                     agentProfiles.put(a.name(), a.profileRole());
                     agentValues.put(a.name(), attributeValues(a.attributeValues(), effectiveRoleAttributes(profile.name()),
                             a.location(), "agent '" + a.name() + "' with profile '" + profile.name() + "'"));
@@ -105,7 +105,7 @@ public final class AolModelFactory {
             List<AolEntityInstance> topLevelEntities = new ArrayList<>();
             for (AolEntityInstanceCS e : ast.entities()) {
                 registerInstance(e.location(), e.instanceId(), InstanceKind.ENTITY, e.entityType());
-                acl.findEntity(e.entityType()).ifPresentOrElse(entity -> {
+                csl.findEntity(e.entityType()).ifPresentOrElse(entity -> {
                     Map<String, String> values = attributeValues(e.attributeValues(), entity.attributes(), e.location(),
                             "entity '" + e.entityType() + "'");
                     topLevelEntities.add(new AolEntityInstance(e.entityType(), e.instanceId(), values));
@@ -114,10 +114,10 @@ public final class AolModelFactory {
 
             List<AolGroupInstance> roots = new ArrayList<>();
             for (AolGroupInstanceCS g : ast.groupInstances()) {
-                AclGroup actualRoot = findGroup(g.typeName());
-                if (actualRoot == null || !isGroupOrSubtype(g.typeName(), acl.rootGroup().name())) {
+                CslGroup actualRoot = findGroup(g.typeName());
+                if (actualRoot == null || !isGroupOrSubtype(g.typeName(), csl.rootGroup().name())) {
                     error(g.location(), "top-level group instance '" + g.instanceId() + "' must be of root group type '"
-                            + acl.rootGroup().name() + "' or a subtype, found '" + g.typeName() + "'");
+                            + csl.rootGroup().name() + "' or a subtype, found '" + g.typeName() + "'");
                     continue;
                 }
                 registerInstance(g.location(), g.instanceId(), InstanceKind.GROUP, g.typeName());
@@ -127,8 +127,8 @@ public final class AolModelFactory {
             for (var r : ast.roles()) {
                 registerInstance(r.location(), r.instanceId(), InstanceKind.PLAY, r.roleType());
                 if (agentNames.add(r.instanceId())) {
-                    AclRole role = acl.findRole(r.roleType()).orElse(null);
-                    List<AclAttribute> attrs = role != null ? effectiveRoleAttributes(role.name()) : List.of();
+                    CslRole role = csl.findRole(r.roleType()).orElse(null);
+                    List<CslAttribute> attrs = role != null ? effectiveRoleAttributes(role.name()) : List.of();
                     agentValues.put(r.instanceId(), attributeValues(r.attributeValues(), attrs, r.location(), "role '" + r.roleType() + "'"));
                 }
             }
@@ -152,19 +152,19 @@ public final class AolModelFactory {
             }
             if (!errors.isEmpty()) return new Result(null, errors);
             List<String> agents = List.copyOf(agentNames);
-            return new Result(new AolModel(ast.version(), ast.name(), ast.aclFile(), agents, agentProfiles,
+            return new Result(new AolModel(ast.version(), ast.name(), ast.cslFile(), agents, agentProfiles,
                     agentValues, roots,
                     topLevelEntities, links), errors);
         }
 
-        private List<AclAttribute> effectiveRoleAttributes(String roleName) {
-            Map<String, AclAttribute> result = new LinkedHashMap<>();
+        private List<CslAttribute> effectiveRoleAttributes(String roleName) {
+            Map<String, CslAttribute> result = new LinkedHashMap<>();
             String current = roleName;
             Set<String> seen = new LinkedHashSet<>();
             while (current != null && seen.add(current)) {
-                AclRole role = acl.findRole(current).orElse(null);
+                CslRole role = csl.findRole(current).orElse(null);
                 if (role == null) break;
-                for (AclAttribute attribute : role.attributes()) {
+                for (CslAttribute attribute : role.attributes()) {
                     result.putIfAbsent(attribute.name(), attribute);
                 }
                 current = role.parentRoles().isEmpty() ? null : role.parentRoles().get(0);
@@ -193,10 +193,10 @@ public final class AolModelFactory {
                 String current = child.roleType();
                 Set<String> seen = new LinkedHashSet<>();
                 while (seen.add(current)) {
-                    AclRole role = acl.findRole(current).orElse(null);
+                    CslRole role = csl.findRole(current).orElse(null);
                     if (role == null || role.parentRoles().isEmpty()) break;
                     current = role.parentRoles().get(0);
-                    AclRole ancestor = acl.findRole(current).orElse(null);
+                    CslRole ancestor = csl.findRole(current).orElse(null);
                     if (ancestor == null || ancestor.isAbstract() || ancestor.attributes().isEmpty()) continue;
 
                     List<Occurrence> candidates = occurrences.stream()
@@ -226,7 +226,7 @@ public final class AolModelFactory {
             return prefix.size() <= value.size() && value.subList(0, prefix.size()).equals(prefix);
         }
 
-        private boolean registerInstance(AclSourceLocationCS loc, String id, InstanceKind kind, String typeName) {
+        private boolean registerInstance(CslSourceLocationCS loc, String id, InstanceKind kind, String typeName) {
             if (!instanceIds.add(id)) {
                 error(loc, "duplicate instance id '" + id + "' -- ids must be unique across the whole model"
                         + " so 'link' declarations can resolve them unambiguously");
@@ -236,16 +236,16 @@ public final class AolModelFactory {
             return true;
         }
 
-        private AolGroupInstance buildGroupInstance(AolGroupInstanceCS x, AclGroup type,
-                                                    List<AclGroup> typePath,
+        private AolGroupInstance buildGroupInstance(AolGroupInstanceCS x, CslGroup type,
+                                                    List<CslGroup> typePath,
                                                     List<String> instancePath) {
             Map<String, String> groupValues = attributeValues(x.attributeValues(), effectiveGroupAttributes(type), x.location(),
                     "group '" + type.name() + "'");
-            Map<String, AclRoleMembership> roleTypes = new LinkedHashMap<>();
+            Map<String, CslRoleMembership> roleTypes = new LinkedHashMap<>();
             groupHierarchy(type).forEach(group -> group.roles().forEach(m -> roleTypes.put(m.roleName(), m)));
-            Map<String, AclEntityMembership> entityTypes = new LinkedHashMap<>();
+            Map<String, CslEntityMembership> entityTypes = new LinkedHashMap<>();
             entityTypes.putAll(directEntityTypes(type));
-            Map<String, AclSubgroupMembership> subgroupTypes = new LinkedHashMap<>();
+            Map<String, CslSubgroupMembership> subgroupTypes = new LinkedHashMap<>();
             subgroupTypes.putAll(ownedSubgroupTypes(type));
 
             List<AolPlay> plays = new ArrayList<>();
@@ -254,12 +254,12 @@ public final class AolModelFactory {
             for (AolPlayCS p : x.plays()) {
                 boolean uniqueLocally = playIds.add(p.instanceId());
                 if (!uniqueLocally) error(p.location(), "duplicate role instance id '" + p.instanceId() + "'");
-                AclRoleMembership membership = roleTypes.get(p.roleType());
+                CslRoleMembership membership = roleTypes.get(p.roleType());
                 if (membership == null) {
                     error(p.location(), "role type '" + p.roleType() + "' is not a member of group '" + type.name() + "'");
                     continue;
                 }
-                acl.findRole(p.roleType()).ifPresentOrElse(role -> {
+                csl.findRole(p.roleType()).ifPresentOrElse(role -> {
                     if (role.isAbstract()) {
                         error(p.location(), "abstract role '" + p.roleType() + "' cannot be played directly");
                         return;
@@ -290,7 +290,7 @@ public final class AolModelFactory {
                     error(e.location(), "entity type '" + e.entityType() + "' is not a member of group '" + type.name() + "'");
                     continue;
                 }
-                acl.findEntity(e.entityType()).ifPresentOrElse(entity -> {
+                csl.findEntity(e.entityType()).ifPresentOrElse(entity -> {
                     Map<String, String> values = attributeValues(e.attributeValues(), entity.attributes(), e.location(),
                             "entity '" + e.entityType() + "'");
                     entities.add(new AolEntityInstance(e.entityType(), e.instanceId(), values));
@@ -307,13 +307,13 @@ public final class AolModelFactory {
             for (AolGroupInstanceCS sub : x.subgroups()) {
                 boolean uniqueLocally = subgroupIds.add(sub.instanceId());
                 if (!uniqueLocally) error(sub.location(), "duplicate group instance id '" + sub.instanceId() + "'");
-                AclSubgroupMembership membership = subgroupTypes.get(sub.typeName());
+                CslSubgroupMembership membership = subgroupTypes.get(sub.typeName());
                 if (membership == null) {
                     error(sub.location(), "'" + sub.typeName() + "' is not a subgroup of '" + type.name() + "'");
                     continue;
                 }
                 if (uniqueLocally) registerInstance(sub.location(), sub.instanceId(), InstanceKind.GROUP, sub.typeName());
-                List<AclGroup> childPath = new ArrayList<>(typePath);
+                List<CslGroup> childPath = new ArrayList<>(typePath);
                 childPath.add(membership.group());
                 List<String> childInstances = new ArrayList<>(instancePath);
                 childInstances.add(sub.instanceId());
@@ -324,7 +324,7 @@ public final class AolModelFactory {
             subgroupTypes.forEach((name, membership) -> checkCardinality(x.location(), "subgroup", name,
                     membership.cardinality(), subgroupCounts.getOrDefault(name, 0), type.name()));
 
-            for (AclCardinalityConstraint constraint : type.cardinalityConstraints()) {
+            for (CslCardinalityConstraint constraint : type.cardinalityConstraints()) {
                 Map<String, Integer> counts = switch (constraint.targetKind()) {
                     case ROLE -> roleCounts;
                     case ENTITY -> entityCounts;
@@ -338,70 +338,70 @@ public final class AolModelFactory {
             return new AolGroupInstance(x.typeName(), x.instanceId(), subgroups, plays, entities, groupValues);
         }
 
-        /** Group-to-Group ownership is represented by AclOwner in the current metamodel. */
-        private Map<String, AclSubgroupMembership> ownedSubgroupTypes(AclGroup source) {
-            Map<String, AclSubgroupMembership> result = new LinkedHashMap<>();
-            for (AclOwner owner : acl.owners()) {
+        /** Group-to-Group ownership is represented by CslOwner in the current metamodel. */
+        private Map<String, CslSubgroupMembership> ownedSubgroupTypes(CslGroup source) {
+            Map<String, CslSubgroupMembership> result = new LinkedHashMap<>();
+            for (CslOwner owner : csl.owners()) {
                 if (!isGroupOrSubtype(source.name(), owner.sourceGroup())) continue;
-                acl.groups().stream().filter(group -> group.name().equals(owner.target())).findFirst()
+                csl.groups().stream().filter(group -> group.name().equals(owner.target())).findFirst()
                         .ifPresent(group -> result.put(group.name(),
-                                new AclSubgroupMembership(group, owner.multiplicity())));
+                                new CslSubgroupMembership(group, owner.multiplicity())));
             }
             return result;
         }
 
         /**
          * Structural conformance constraint for Entity placement. An Entity
-         * may occur inside a Group instance only when the ACL specification
+         * may occur inside a Group instance only when the CSL specification
          * declares a direct Relationship between that Group type and the
          * Entity type. Reachability through another Entity is deliberately
          * insufficient: it would allow AOL to invent a different hierarchy.
          */
-        private Map<String, AclEntityMembership> directEntityTypes(AclGroup source) {
-            Map<String, AclEntityMembership> result = new LinkedHashMap<>();
-            for (var relation : acl.relations()) {
+        private Map<String, CslEntityMembership> directEntityTypes(CslGroup source) {
+            Map<String, CslEntityMembership> result = new LinkedHashMap<>();
+            for (var relation : csl.relations()) {
                 String entityName = null;
-                AclCardinality multiplicity = null;
+                CslCardinality multiplicity = null;
                 if (isGroupOrSubtype(source.name(), relation.source().type())
-                        && acl.findEntity(relation.target().type()).isPresent()) {
+                        && csl.findEntity(relation.target().type()).isPresent()) {
                     entityName = relation.target().type();
                     multiplicity = relation.target().multiplicity();
                 } else if (isGroupOrSubtype(source.name(), relation.target().type())
-                        && acl.findEntity(relation.source().type()).isPresent()) {
+                        && csl.findEntity(relation.source().type()).isPresent()) {
                     entityName = relation.source().type();
                     multiplicity = relation.source().multiplicity();
                 }
                 if (entityName != null) {
-                    result.put(entityName, new AclEntityMembership(entityName, multiplicity));
+                    result.put(entityName, new CslEntityMembership(entityName, multiplicity));
                 }
             }
             return result;
         }
 
-        private void checkCardinality(AclSourceLocationCS loc, String kind, String targetName,
-                                      AclCardinality bound, int actual, String groupTypeName) {
+        private void checkCardinality(CslSourceLocationCS loc, String kind, String targetName,
+                                      CslCardinality bound, int actual, String groupTypeName) {
             if (!withinBound(bound, actual)) {
                 error(loc, "group '" + groupTypeName + "': " + kind + " '" + targetName + "' has " + actual
                         + " instance(s), expected [" + boundText(bound) + "]");
             }
         }
 
-        private static boolean withinBound(AclCardinality bound, int actual) {
+        private static boolean withinBound(CslCardinality bound, int actual) {
             boolean withinMax = bound.max().isEmpty() || actual <= bound.max().getAsInt();
             return actual >= bound.min() && withinMax;
         }
 
-        private static String boundText(AclCardinality bound) {
+        private static String boundText(CslCardinality bound) {
             return bound.min() + ".." + (bound.max().isPresent() ? Integer.toString(bound.max().getAsInt()) : "*");
         }
 
-        private Map<String, String> attributeValues(List<AolAttributeValueCS> values, List<AclAttribute> attributes,
-                                                     AclSourceLocationCS loc, String owner) {
-            Map<String, AclAttribute> byName = new LinkedHashMap<>();
+        private Map<String, String> attributeValues(List<AolAttributeValueCS> values, List<CslAttribute> attributes,
+                                                     CslSourceLocationCS loc, String owner) {
+            Map<String, CslAttribute> byName = new LinkedHashMap<>();
             attributes.forEach(a -> byName.put(a.name(), a));
             Map<String, String> result = new LinkedHashMap<>();
             for (AolAttributeValueCS v : values) {
-                AclAttribute attribute = byName.get(v.name());
+                CslAttribute attribute = byName.get(v.name());
                 if (attribute == null) {
                     error(v.location(), "unknown attribute '" + v.name() + "' for " + owner);
                     continue;
@@ -413,7 +413,7 @@ public final class AolModelFactory {
                 }
                 result.put(v.name(), v.rawValue());
             }
-            for (AclAttribute attribute : attributes) {
+            for (CslAttribute attribute : attributes) {
                 if (!attribute.optional() && attribute.defaultValue().isEmpty() && !result.containsKey(attribute.name())) {
                     error(loc, "missing required attribute '" + attribute.name() + "' for " + owner);
                 }
@@ -421,10 +421,10 @@ public final class AolModelFactory {
             return result;
         }
 
-        private boolean validValue(AclDataType type, String value) {
-            if (type instanceof AclEnum e) return e.literals().contains(value);
-            if (type instanceof AclNamedDataType) return true;
-            if (!(type instanceof AclPrimitiveType primitive)) return false;
+        private boolean validValue(CslDataType type, String value) {
+            if (type instanceof CslEnum e) return e.literals().contains(value);
+            if (type instanceof CslNamedDataType) return true;
+            if (!(type instanceof CslPrimitiveType primitive)) return false;
             String raw = value.length() >= 2 && value.startsWith("\"") && value.endsWith("\"")
                     ? value.substring(1, value.length() - 1) : value;
             try {
@@ -466,15 +466,15 @@ public final class AolModelFactory {
                 // Plays in different root Group instances do not share a compatibility scope.
                 return;
             }
-            AclGroup scope = a.typePath().get(lca);
+            CslGroup scope = a.typePath().get(lca);
             boolean aDirect = a.typePath().size() - 1 == lca;
             boolean bDirect = b.typePath().size() - 1 == lca;
             boolean sameGroupInstance = aDirect && bDirect;
-            boolean ok = acl.compatibilities().stream().anyMatch(c -> {
+            boolean ok = csl.compatibilities().stream().anyMatch(c -> {
                 boolean matches = (isRoleOrSubtype(a.roleType(), c.fromRole()) && isRoleOrSubtype(b.roleType(), c.toRole()))
                         || (c.bidirectional() && isRoleOrSubtype(a.roleType(), c.toRole())
                         && isRoleOrSubtype(b.roleType(), c.fromRole()));
-                if (!matches || c.type() != AclCompatibilityType.COMPATIBLE
+                if (!matches || c.type() != CslCompatibilityType.COMPATIBLE
                         || !scope.name().equals(c.groupName())) return false;
                 // 'intra-group' only holds for two occurrences directly in the same group
                 // instance; extendsSubgroups has no meaning there. 'inter-group' keeps the
@@ -495,7 +495,7 @@ public final class AolModelFactory {
             Set<String> seen = new LinkedHashSet<>();
             while (seen.add(current)) {
                 if (current.equals(declared)) return true;
-                var role = acl.findRole(current);
+                var role = csl.findRole(current);
                 if (role.isEmpty() || role.get().parentRoles().isEmpty()) return false;
                 current = role.get().parentRoles().get(0);
             }
@@ -507,7 +507,7 @@ public final class AolModelFactory {
             Set<String> seen = new LinkedHashSet<>();
             while (seen.add(current)) {
                 if (current.equals(declared)) return true;
-                var entity = acl.findEntity(current);
+                var entity = csl.findEntity(current);
                 if (entity.isEmpty() || entity.get().specializes().isEmpty()) return false;
                 current = entity.get().specializes().get();
             }
@@ -520,22 +520,22 @@ public final class AolModelFactory {
             while (seen.add(current)) {
                 if (current.equals(declared)) return true;
                 String currentName = current;
-                var group = acl.groups().stream().filter(g -> g.name().equals(currentName)).findFirst();
+                var group = csl.groups().stream().filter(g -> g.name().equals(currentName)).findFirst();
                 if (group.isEmpty() || group.get().specializes().isEmpty()) return false;
                 current = group.get().specializes().get();
             }
             return false;
         }
 
-        private AclGroup findGroup(String name) {
-            return acl.groups().stream().filter(group -> group.name().equals(name)).findFirst().orElse(null);
+        private CslGroup findGroup(String name) {
+            return csl.groups().stream().filter(group -> group.name().equals(name)).findFirst().orElse(null);
         }
 
         /** Base-to-derived order, so a subtype can refine a same-named inherited member. */
-        private List<AclGroup> groupHierarchy(AclGroup type) {
-            List<AclGroup> hierarchy = new ArrayList<>();
+        private List<CslGroup> groupHierarchy(CslGroup type) {
+            List<CslGroup> hierarchy = new ArrayList<>();
             Set<String> seen = new LinkedHashSet<>();
-            AclGroup current = type;
+            CslGroup current = type;
             while (current != null && seen.add(current.name())) {
                 hierarchy.add(0, current);
                 current = current.specializes().map(this::findGroup).orElse(null);
@@ -543,8 +543,8 @@ public final class AolModelFactory {
             return hierarchy;
         }
 
-        private List<AclAttribute> effectiveGroupAttributes(AclGroup type) {
-            Map<String, AclAttribute> result = new LinkedHashMap<>();
+        private List<CslAttribute> effectiveGroupAttributes(CslGroup type) {
+            Map<String, CslAttribute> result = new LinkedHashMap<>();
             groupHierarchy(type).forEach(group -> group.attributes()
                     .forEach(attribute -> result.put(attribute.name(), attribute)));
             return List.copyOf(result.values());
@@ -553,22 +553,22 @@ public final class AolModelFactory {
         private boolean matchesEndpointType(InstanceRef ref, String endpointType) {
             return switch (ref.kind()) {
                 case AGENT -> isRoleOrSubtype(ref.typeName(), endpointType)
-                        && acl.findRole(endpointType).map(AclRole::isAbstract).orElse(false);
+                        && csl.findRole(endpointType).map(CslRole::isAbstract).orElse(false);
                 case PLAY -> isRoleOrSubtype(ref.typeName(), endpointType);
                 case ENTITY -> isEntityOrSubtype(ref.typeName(), endpointType);
                 case GROUP -> isGroupOrSubtype(ref.typeName(), endpointType);
             };
         }
 
-        /** Instantiates every 'link' against the ACL relation it names: resolves both ends
+        /** Instantiates every 'link' against the CSL relation it names: resolves both ends
          *  through the global instance index built while walking agents/entities/groups above,
          *  checks each end's (sub)type against the relation's two endpoints (order-agnostic --
-         *  ACL relations, like UML associations, don't fix which end is "source"), and checks
+         *  CSL relations, like UML associations, don't fix which end is "source"), and checks
          *  the target count against the matched endpoint's cardinality. */
         private List<AolLink> checkLinks() {
             List<AolLink> result = new ArrayList<>();
             for (AolLinkCS link : ast.links()) {
-                AclRelation relation = acl.relations().stream()
+                CslRelation relation = csl.relations().stream()
                         .filter(r -> r.name().equals(link.relationName())).findFirst().orElse(null);
                 if (relation == null) {
                     relation = findOrgCtxContainmentRelation(link.relationName());
@@ -583,14 +583,14 @@ public final class AolModelFactory {
                             + "' as source of link '" + link.relationName() + "'");
                     continue;
                 }
-                AclEndpoint sourceEndpoint = matchesEndpointType(source, relation.source().type()) ? relation.source()
+                CslEndpoint sourceEndpoint = matchesEndpointType(source, relation.source().type()) ? relation.source()
                         : matchesEndpointType(source, relation.target().type()) ? relation.target() : null;
                 if (sourceEndpoint == null) {
                     error(link.location(), "instance '" + link.sourceInstanceId() + "' (" + source.typeName()
                             + ") does not match either end of relation '" + link.relationName() + "'");
                     continue;
                 }
-                AclEndpoint targetEndpoint = sourceEndpoint == relation.source() ? relation.target() : relation.source();
+                CslEndpoint targetEndpoint = sourceEndpoint == relation.source() ? relation.target() : relation.source();
 
                 List<String> validTargets = new ArrayList<>();
                 for (String targetId : link.targetInstanceIds()) {
@@ -618,16 +618,16 @@ public final class AolModelFactory {
             return result;
         }
 
-        private void error(AclSourceLocationCS loc, String message) { errors.add(new SemanticError(loc, message)); }
-        private void errorNoLocation(String message) { errors.add(new SemanticError(new AclSourceLocationCS(1, 0), message)); }
-        private AclRelation findOrgCtxContainmentRelation(String relationName) {
-            for (AclGroup context : acl.groups()) {
+        private void error(CslSourceLocationCS loc, String message) { errors.add(new SemanticError(loc, message)); }
+        private void errorNoLocation(String message) { errors.add(new SemanticError(new CslSourceLocationCS(1, 0), message)); }
+        private CslRelation findOrgCtxContainmentRelation(String relationName) {
+            for (CslGroup context : csl.groups()) {
                 for (var member : context.members()) {
-                    String name = AclContainment.relationName(context.name(), member.type());
+                    String name = CslContainment.relationName(context.name(), member.type());
                     if (name.equals(relationName)) {
-                        return new AclRelation(RelationKind.COMPOSITION, name,
-                                new AclEndpoint(context.name(), AclCardinality.bounded(1, 1), java.util.Optional.of("orgContext")),
-                                new AclEndpoint(member.type(), member.multiplicity(), java.util.Optional.of(member.type())));
+                        return new CslRelation(RelationKind.COMPOSITION, name,
+                                new CslEndpoint(context.name(), CslCardinality.bounded(1, 1), java.util.Optional.of("orgContext")),
+                                new CslEndpoint(member.type(), member.multiplicity(), java.util.Optional.of(member.type())));
                     }
                 }
             }

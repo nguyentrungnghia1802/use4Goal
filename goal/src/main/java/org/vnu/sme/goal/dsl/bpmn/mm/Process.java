@@ -7,7 +7,7 @@ import java.util.List;
  * declared for it — both the ones inside a Lane and the ones directly
  * at process level. Lane only references a subset of them for partitioning.
  *
- * <p>{@code groupClass}, when present, names the ACL group class one
+ * <p>{@code groupClass}, when present, names the CSL group class one
  * instance of this process is scoped to. A session runs one execution
  * engine per concrete instance of that class, each with {@code self}
  * bound to its own instance, so two instances (two groups) proceed as

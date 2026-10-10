@@ -6,7 +6,7 @@
 // process-ordering invariants that the workaround skips.
 // Expected OCL result: 5 true, 2 false
 // (false: SentRequiresApproval, SentRequiresReview).
-aol v2.0 SalesForecastWorkaroundInvalid for "sales_forecast.acl" {
+aol v2.0 SalesForecastWorkaroundInvalid for "sales_forecast.csl" {
   group SalesCase as salescase1 {
     proposalPrepared = true;
     proposalSent = true;

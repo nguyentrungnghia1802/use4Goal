@@ -23,14 +23,14 @@ import org.tzi.use.uml.ocl.value.BooleanValue;
 import org.tzi.use.uml.ocl.value.VarBindings;
 import org.tzi.use.uml.sys.MObject;
 import org.tzi.use.uml.sys.MSystemState;
-import org.vnu.sme.goal.dsl.acl.parser.AclCompiler;
-import org.vnu.sme.goal.dsl.acl.mm.AclModel;
-import org.vnu.sme.goal.translate.acl2use.Acl2UseTranslator;
-import org.vnu.sme.goal.trace.bpmn.BpmnExecutionEngine;
+import org.vnu.sme.goal.dsl.csl.parser.CslCompiler;
+import org.vnu.sme.goal.dsl.csl.mm.CslModel;
+import org.vnu.sme.goal.translate.csl2use.Csl2UseTranslator;
+import org.vnu.sme.goal.trace.bpmnTrace.BpmnExecutionEngine;
 import org.vnu.sme.goal.dsl.bpmn.mm.Activity;
 import org.vnu.sme.goal.dsl.bpmn.mm.BpmnModel;
 import org.vnu.sme.goal.dsl.bpmn.mm.FlowElement;
-import org.vnu.sme.goal.trace.bpmn.BpmnPostEffect;
+import org.vnu.sme.goal.trace.bpmnTrace.BpmnPostEffect;
 import org.vnu.sme.goal.dsl.bpmn.parser.BpmnCompiler;
 import org.vnu.sme.goal.dsl.istar.mm.GoalModel;
 import org.vnu.sme.goal.dsl.istar.mm.Actor;
@@ -40,9 +40,9 @@ import org.vnu.sme.goal.dsl.istar.mm.IntentionalElement;
 import org.vnu.sme.goal.dsl.istar.mm.OrRefinement;
 import org.vnu.sme.goal.dsl.istar.mm.Refinement;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceCompiler;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceCompiler.Checkpoint;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceEvaluator;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceCompiler;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceCompiler.Checkpoint;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceEvaluator;
 
 /**
  * Executes one BPMN process over a SOIL input scenario. SOIL is initialization
@@ -60,7 +60,7 @@ public final class VisualConformanceSession {
     private final Path executionFile;
     private final String initialSoil;
     private final GoalModel goalModel;
-    private final AclModel aclModel;
+    private final CslModel cslModel;
     private MModel useModel;
     private final BpmnModel bpmnModel;
     // Keyed by "process run id": the pool id alone when the pool declares no
@@ -78,13 +78,13 @@ public final class VisualConformanceSession {
     private int choiceCursor;
 
     private VisualConformanceSession(Path istarFile, Path useFile, Path executionFile,
-            String initialSoil, AclModel aclModel, IStarUseTraceCompiler.Result initialTrace, BpmnModel bpmnModel,
+            String initialSoil, CslModel cslModel, IStarUseTraceCompiler.Result initialTrace, BpmnModel bpmnModel,
             List<org.vnu.sme.goal.dsl.bpmn.mm.Process> processModels, List<Integer> choicePlan) throws Exception {
         this.istarFile = istarFile;
         this.useFile = useFile;
         this.executionFile = executionFile;
         this.initialSoil = initialSoil;
-        this.aclModel = aclModel;
+        this.cslModel = cslModel;
         this.goalModel = initialTrace.model();
         this.useModel = initialTrace.useModel();
         this.bpmnModel = bpmnModel;
@@ -98,7 +98,7 @@ public final class VisualConformanceSession {
             }
             MClass selfClass = useModel.getClass(process.groupClass());
             if (selfClass == null) {
-                throw new IllegalArgumentException("Unknown ACL group class '" + process.groupClass()
+                throw new IllegalArgumentException("Unknown CSL group class '" + process.groupClass()
                         + "' named by pool " + process.id());
             }
             for (MObject self : checkpoint.state().objectsOfClass(selfClass)) {
@@ -118,34 +118,34 @@ public final class VisualConformanceSession {
         engine.start(evaluator);
     }
 
-    public static VisualConformanceSession prepare(Path istar, Path bpmn, Path acl, Path soil) throws Exception {
-        return prepare(istar, bpmn, acl, soil, List.of());
+    public static VisualConformanceSession prepare(Path istar, Path bpmn, Path csl, Path soil) throws Exception {
+        return prepare(istar, bpmn, csl, soil, List.of());
     }
 
-    public static VisualConformanceSession prepare(Path istar, Path bpmn, Path acl, Path soil,
+    public static VisualConformanceSession prepare(Path istar, Path bpmn, Path csl, Path soil,
             List<Integer> choicePlan) throws Exception {
         require(istar, ".istar");
         require(bpmn, ".bpmn2");
-        require(acl, ".csl");
+        require(csl, ".csl");
         require(soil, ".soil");
 
-        AclCompiler.Result aclResult = AclCompiler.compile(acl);
-        if (!aclResult.ok()) throw new IllegalArgumentException(String.join("\n", aclResult.errors()));
+        CslCompiler.Result cslResult = CslCompiler.compile(csl);
+        if (!cslResult.ok()) throw new IllegalArgumentException(String.join("\n", cslResult.errors()));
         BpmnCompiler.Result bpmnResult = BpmnCompiler.compile(bpmn);
         if (!bpmnResult.ok()) throw new IllegalArgumentException(String.join("\n", bpmnResult.errors()));
         if (bpmnResult.model().processes().isEmpty()) throw new IllegalArgumentException("BPMN has no process");
 
         Path useFile = Files.createTempFile("csl-visual-", ".use");
-        Files.writeString(useFile, Acl2UseTranslator.translate(aclResult.model()));
+        Files.writeString(useFile, Csl2UseTranslator.translate(cslResult.model()));
         String initialSoil = Files.readString(soil).stripTrailing() + "\n";
         Path executionFile = Files.createTempFile("scenario-trace-", ".soil");
         Files.writeString(executionFile, initialSoil);
         IStarUseTraceCompiler.Result trace = IStarUseTraceCompiler.compile(
-                istar, useFile, executionFile, aclResult.model(),
+                istar, useFile, executionFile, cslResult.model(),
                 IStarUseTraceCompiler.countExecutableStatements(initialSoil));
         if (!trace.ok()) throw new IllegalArgumentException(String.join("\n", trace.errors()));
         if (trace.checkpoints().isEmpty()) throw new IllegalArgumentException("input scenario creates no state");
-        return new VisualConformanceSession(istar, useFile, executionFile, initialSoil, aclResult.model(), trace,
+        return new VisualConformanceSession(istar, useFile, executionFile, initialSoil, cslResult.model(), trace,
                 bpmnResult.model(), bpmnResult.model().processes(), choicePlan);
     }
 
@@ -187,7 +187,7 @@ public final class VisualConformanceSession {
             effects += "\n-- effect of " + activity.id() + "\n" + statement + "\n";
             Files.writeString(executionFile, initialSoil + effects);
             IStarUseTraceCompiler.Result trace = IStarUseTraceCompiler.compile(
-                    istarFile, useFile, executionFile, aclModel,
+                    istarFile, useFile, executionFile, cslModel,
                     IStarUseTraceCompiler.countExecutableStatements(initialSoil));
             if (!trace.ok()) throw new IllegalStateException(String.join("\n", trace.errors()));
             useModel = trace.useModel();
@@ -334,7 +334,7 @@ public final class VisualConformanceSession {
     private static void requireValidState(MSystemState state, String phase) {
         StringWriter report = new StringWriter();
         if (!state.check(new PrintWriter(report), false, true, true, List.of())) {
-            throw new IllegalStateException(phase + " failed ACL/USE constraints:\n" + report.toString().strip());
+            throw new IllegalStateException(phase + " failed CSL/USE constraints:\n" + report.toString().strip());
         }
     }
 

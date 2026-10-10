@@ -1,4 +1,4 @@
-package org.vnu.sme.goal.translate.aclistarbpmn2eventb;
+package org.vnu.sme.goal.translate.cslistarbpmn2eventb;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,7 +16,7 @@ class EventBExportServiceTest {
     @Test void exportsMeetingSchedulerAsRodinSources() throws Exception {
         Path examples = Path.of("src/main/resources/examples/mtg");
         EventBExportResult result = new EventBExportService().export(new EventBExportRequest(
-                examples.resolve("mtg.acl"), examples.resolve("mtg.istar"), examples.resolve("mtg.bpmn2"),
+                examples.resolve("mtg.csl"), examples.resolve("mtg.istar"), examples.resolve("mtg.bpmn2"),
                 output, "MeetingSchedulerEventB"));
         assertTrue(result.success(), () -> String.join("\n", result.diagnostics()));
         assertTrue(result.diagnostics().stream().noneMatch(x -> x.startsWith("Unsupported")),
@@ -48,13 +48,13 @@ class EventBExportServiceTest {
                 "BPMN End(self) must be disabled until its iStar root marking has completed");
         assertTrue(machineText.contains("self ↦ performer ∈ owns_Initiator"));
         assertFalse(contextText.contains("R_Participant ⊆ R_MeetingParty"),
-                "ACL Role inheritance is a play relation, not Event-B set inclusion");
+                "CSL Role inheritance is a play relation, not Event-B set inclusion");
         assertTrue(machineText.contains("plays_Participant ∈ R_MeetingParty ↔ R_Participant"));
         assertTrue(machineText.contains("∀member·member∈R_Organizer ⇒ owns_Organizer∼[{member}] ≠ ∅"));
         assertTrue(machineText.contains("owns_Initiator ∧ g↦r2∈owns_Organizer"),
                 "non-compatible roles in one Group must conflict");
         assertFalse(machineText.contains("owns_Initiator ∧ g↦r2∈owns_Participant"),
-                "an ACL compatible pair must not receive the default conflict axiom");
+                "an CSL compatible pair must not receive the default conflict axiom");
         assertFalse(machineText.contains("owns_Organizer ∧ g↦r2∈owns_Secretary"));
         assertTrue(machineText.contains("G_MeetingOrganized_A ⊆ R_Initiator"));
         assertTrue(machineText.contains("G_MeetingOrganized_P ⊆ R_Initiator"));

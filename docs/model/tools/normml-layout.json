@@ -1,0 +1,92 @@
+{
+  "Organization": {
+    "x": 407,
+    "y": 264,
+    "width": 183,
+    "height": 75
+  },
+  "Agent": {
+    "x": 72,
+    "y": 636,
+    "width": 230,
+    "height": 80
+  },
+  "Role": {
+    "x": 108,
+    "y": 216,
+    "width": 218,
+    "height": 68
+  },
+  "Norm": {
+    "x": 539,
+    "y": 456,
+    "width": 231,
+    "height": 159
+  },
+  "Resource": {
+    "x": 624,
+    "y": 886,
+    "width": 230,
+    "height": 80
+  },
+  "Action": {
+    "x": 672,
+    "y": 696,
+    "width": 159,
+    "height": 122
+  },
+  "NormConstraint": {
+    "x": 1056,
+    "y": 516,
+    "width": 147,
+    "height": 44
+  },
+  "Before": {
+    "x": 900,
+    "y": 622,
+    "width": 87,
+    "height": 58
+  },
+  "After": {
+    "x": 1008,
+    "y": 624,
+    "width": 99,
+    "height": 56
+  },
+  "Between": {
+    "x": 1139,
+    "y": 622,
+    "width": 87,
+    "height": 56
+  },
+  "If": {
+    "x": 1247,
+    "y": 624,
+    "width": 171,
+    "height": 84
+  },
+  "Date": {
+    "x": 1285,
+    "y": 408,
+    "width": 195,
+    "height": 80
+  },
+  "Sanction": {
+    "x": 851,
+    "y": 288,
+    "width": 230,
+    "height": 84
+  },
+  "NormType": {
+    "x": 60,
+    "y": 756,
+    "width": 195,
+    "height": 87
+  },
+  "SanctionType": {
+    "x": 1056,
+    "y": 183,
+    "width": 230,
+    "height": 84
+  }
+}

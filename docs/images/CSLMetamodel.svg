@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="1180" viewBox="0 0 1480 1180">
+  <rect width="1480" height="1180" fill="white"/>
+  <text x="45" y="45" font-family="sans-serif" font-size="26" fill="#182534" font-weight="bold">CSL — Composite State Language</text>
+  <text x="45" y="76" font-family="sans-serif" font-size="15" fill="#182534" font-weight="normal">Metamodel from csl.ecore · references and multiplicities shown in each class</text>
+  <rect x="520" y="120" width="420" height="124" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="520" y1="157" x2="940" y2="157" stroke="#34465b"/>
+  <text x="534" y="145" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">CslModel</text>
+  <text x="534" y="180" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">name : EString</text>
+  <text x="534" y="204" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ objects : Object [0..*]</text>
+  <text x="534" y="228" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ dataTypes : DataType [0..*]</text>
+  <rect x="520" y="320" width="420" height="100" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="520" y1="357" x2="940" y2="357" stroke="#34465b"/>
+  <text x="534" y="345" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Object «abstract»</text>
+  <text x="534" y="380" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">name : EString</text>
+  <text x="534" y="404" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ attributes : Attribute [0..*]</text>
+  <rect x="50" y="600" width="420" height="100" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="50" y1="637" x2="470" y2="637" stroke="#34465b"/>
+  <text x="64" y="625" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Entity</text>
+  <text x="64" y="660" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">extends Object</text>
+  <text x="64" y="684" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">→ generalization : Entity [0..1]</text>
+  <rect x="520" y="600" width="420" height="124" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="520" y1="637" x2="940" y2="637" stroke="#34465b"/>
+  <text x="534" y="625" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Role</text>
+  <text x="534" y="660" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">extends Object</text>
+  <text x="534" y="684" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">→ roleGeneralization : Role [0..1]</text>
+  <text x="534" y="708" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">→ compatibility : Role [0..*]</text>
+  <rect x="520" y="830" width="420" height="148" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="520" y1="867" x2="940" y2="867" stroke="#34465b"/>
+  <text x="534" y="855" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">OrgCtx</text>
+  <text x="534" y="890" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">extends Object</text>
+  <text x="534" y="914" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ entities : Entity [0..*]</text>
+  <text x="534" y="938" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ roles : Role [0..*]</text>
+  <text x="534" y="962" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ orgctx : OrgCtx [0..*]</text>
+  <rect x="50" y="120" width="420" height="100" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="50" y1="157" x2="470" y2="157" stroke="#34465b"/>
+  <text x="64" y="145" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Association</text>
+  <text x="64" y="180" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">extends Object</text>
+  <text x="64" y="204" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ ends : AssociationEnd [2..*]</text>
+  <rect x="50" y="320" width="420" height="148" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="50" y1="357" x2="470" y2="357" stroke="#34465b"/>
+  <text x="64" y="345" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">AssociationEnd</text>
+  <text x="64" y="380" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">role : EString</text>
+  <text x="64" y="404" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">lower : EInt = 1</text>
+  <text x="64" y="428" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">upper : EInt = 1</text>
+  <text x="64" y="452" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">→ type : Object [1..1]</text>
+  <rect x="990" y="120" width="420" height="172" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="990" y1="157" x2="1410" y2="157" stroke="#34465b"/>
+  <text x="1004" y="145" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Attribute</text>
+  <text x="1004" y="180" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">name : EString</text>
+  <text x="1004" y="204" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">optional : EBoolean = false</text>
+  <text x="1004" y="228" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">mutable : EBoolean = false</text>
+  <text x="1004" y="252" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">defaultValue : EString</text>
+  <text x="1004" y="276" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">→ type : DataType [1..1]</text>
+  <rect x="990" y="430" width="420" height="76" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="990" y1="467" x2="1410" y2="467" stroke="#34465b"/>
+  <text x="1004" y="455" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">DataType</text>
+  <text x="1004" y="490" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">name : EString</text>
+  <rect x="990" y="600" width="420" height="100" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="990" y1="637" x2="1410" y2="637" stroke="#34465b"/>
+  <text x="1004" y="625" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Enumeration</text>
+  <text x="1004" y="660" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">extends DataType</text>
+  <text x="1004" y="684" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">literals : EString</text>
+  <rect x="990" y="830" width="420" height="124" rx="6" fill="#fffde8" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="990" y1="867" x2="1410" y2="867" stroke="#34465b"/>
+  <text x="1004" y="855" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">Invariant</text>
+  <text x="1004" y="890" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">name : EString</text>
+  <text x="1004" y="914" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">→ contextType : Object [1..1]</text>
+  <text x="1004" y="938" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">oclBody : EString</text>
+  <rect x="50" y="890" width="420" height="124" rx="6" fill="#ecf5e6" stroke="#34465b" stroke-width="1.5"/>
+  <line x1="50" y1="927" x2="470" y2="927" stroke="#34465b"/>
+  <text x="64" y="915" font-family="sans-serif" font-size="17" fill="#182534" font-weight="bold">AssociationRelKind</text>
+  <text x="64" y="950" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">PLAIN</text>
+  <text x="64" y="974" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">AGGREGATION</text>
+  <text x="64" y="998" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">COMPOSITION</text>
+  <text x="45" y="1150" font-family="sans-serif" font-size="14" fill="#182534" font-weight="normal">◆ containment     → non-containment reference     * unbounded     inherited features appear in the superclass</text>
+</svg>

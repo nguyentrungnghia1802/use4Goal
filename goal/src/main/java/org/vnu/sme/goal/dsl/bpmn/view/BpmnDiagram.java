@@ -45,8 +45,8 @@ import org.tzi.use.gui.views.diagrams.util.Direction;
 import org.vnu.sme.goal.dsl.bpmn.mm.BpmnModel;
 import org.vnu.sme.goal.dsl.bpmn.mm.EventTrigger;
 import org.vnu.sme.goal.dsl.bpmn.mm.GatewayKind;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.BpmnScenarioSnapshot;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.NodeOccurrence;
+import org.vnu.sme.goal.dsl.bscn.mm.BpmnScenarioSnapshot;
+import org.vnu.sme.goal.dsl.bscn.mm.NodeOccurrence;
 import org.w3c.dom.Element;
 
 @SuppressWarnings("serial")

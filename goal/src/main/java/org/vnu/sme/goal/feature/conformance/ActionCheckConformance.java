@@ -9,7 +9,7 @@ import org.tzi.use.gui.main.MainWindow;
 import org.tzi.use.main.Session;
 import org.tzi.use.runtime.gui.IPluginAction;
 import org.tzi.use.runtime.gui.IPluginActionDelegate;
-import org.vnu.sme.goal.verify.conformance.AclBpmnIStarConformanceChecker;
+import org.vnu.sme.goal.verify.conformance.CslBpmnIStarConformanceChecker;
 import org.vnu.sme.goal.feature.conformance.ConformanceForm;
 
 public final class ActionCheckConformance implements IPluginActionDelegate {
@@ -28,13 +28,13 @@ public final class ActionCheckConformance implements IPluginActionDelegate {
     }
 
     /** Four-input entry point used by the action UI and by repeatable scenario checks. */
-    public static AclBpmnIStarConformanceChecker.Result check(
-            Path istar, Path bpmn, Path acl, Path soil) throws Exception {
+    public static CslBpmnIStarConformanceChecker.Result check(
+            Path istar, Path bpmn, Path csl, Path soil) throws Exception {
         requireInput(istar, ".istar");
         requireInput(bpmn, ".bpmn2");
-        requireInput(acl, ".acl");
+        requireInput(csl, ".csl");
         requireInput(soil, ".soil");
-        return AclBpmnIStarConformanceChecker.check(acl, soil, istar, bpmn);
+        return CslBpmnIStarConformanceChecker.check(csl, soil, istar, bpmn);
     }
 
     private static void requireInput(Path file, String extension) {

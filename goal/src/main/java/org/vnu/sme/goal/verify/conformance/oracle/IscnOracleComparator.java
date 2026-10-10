@@ -14,11 +14,11 @@ import org.vnu.sme.goal.verify.conformance.semantics.IStarMarking;
 import org.vnu.sme.goal.dsl.iscn.mm.ScenarioInstance;
 import org.vnu.sme.goal.dsl.iscn.mm.ScenarioStmt;
 import org.vnu.sme.goal.dsl.iscn.parser.IStarScenarioCompiler;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceCompiler.Checkpoint;
-import org.vnu.sme.goal.trace.usetrace.IStarUseTraceCompiler.InstanceKey;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceCompiler.Checkpoint;
+import org.vnu.sme.goal.trace.istarTrace.IStarUseTraceCompiler.InstanceKey;
 
 /**
- * Compares the final iStar marking derived from the ACL/AOL/BPMN/OCL execution
+ * Compares the final iStar marking derived from the CSL/AOL/BPMN/OCL execution
  * with the facts explicitly observed by ISCN fire/assign/aggregate statements.
  * Derived values on unrelated per-actor markings are intentionally not treated
  * as assertions.

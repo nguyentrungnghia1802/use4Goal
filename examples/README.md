@@ -17,6 +17,6 @@ The five evaluated case studies are `ProposalReview`, `Forecast`,
 The four adapted cases also contain a `paper/` directory holding the models
 used by the reproducible evaluation in `evaluation/`.
 
-CSL replaces the former ACL public name. The compiler still accepts the legacy
-`acl` header and old boundary header during migration, while all official files
+CSL replaces the former CSL public name. The compiler still accepts the legacy
+`csl` header and old boundary header during migration, while all official files
 and generated output use `csl`.

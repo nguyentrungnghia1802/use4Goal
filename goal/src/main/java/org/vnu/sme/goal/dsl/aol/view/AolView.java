@@ -23,7 +23,7 @@ import org.tzi.use.gui.main.ViewFrame;
 import org.tzi.use.gui.views.PrintableView;
 import org.tzi.use.gui.views.View;
 import org.vnu.sme.goal.dsl.aol.mm.AolModel;
-import org.vnu.sme.goal.dsl.aol.state.AclSystemState;
+import org.vnu.sme.goal.dsl.aol.state.CslSystemState;
 import org.vnu.sme.goal.gui.DiagramModelBrowser;
 
 @SuppressWarnings("serial")
@@ -35,7 +35,7 @@ public final class AolView extends JPanel implements View, PrintableView {
     private final JTextArea specArea = new JTextArea();
     private Path sourceFile;
     private AolModel model;
-    private AclSystemState state;
+    private CslSystemState state;
     private String stateText;
 
     private AolView(MainWindow mainWindow, Placement placement) {
@@ -85,7 +85,7 @@ public final class AolView extends JPanel implements View, PrintableView {
         view.showInPopupWindow();
     }
 
-    public static void openUseDesktop(MainWindow mainWindow, AclSystemState state,
+    public static void openUseDesktop(MainWindow mainWindow, CslSystemState state,
                                       String aolText, Path sourceFile) {
         AolView view = new AolView(mainWindow, Placement.USE_DESKTOP);
         view.setSourceFile(sourceFile);
@@ -93,7 +93,7 @@ public final class AolView extends JPanel implements View, PrintableView {
         view.showInUseDesktop();
     }
 
-    public static void openPopupWindow(MainWindow mainWindow, AclSystemState state,
+    public static void openPopupWindow(MainWindow mainWindow, CslSystemState state,
                                        String aolText, Path sourceFile) {
         AolView view = new AolView(mainWindow, Placement.POPUP_WINDOW);
         view.setSourceFile(sourceFile);
@@ -128,7 +128,7 @@ public final class AolView extends JPanel implements View, PrintableView {
         specArea.setCaretPosition(0);
     }
 
-    public void setState(AclSystemState state, String aolText) {
+    public void setState(CslSystemState state, String aolText) {
         this.model = null;
         this.state = state;
         this.stateText = aolText;

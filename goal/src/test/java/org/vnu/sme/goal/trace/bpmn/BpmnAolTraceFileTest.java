@@ -17,11 +17,11 @@ class BpmnAolTraceFileTest {
 
     @Test
     void writtenTraceReadsBackWithTheSameActivitySequenceAndAttributeHistory(@TempDir Path dir) throws Exception {
-        var runResult = AolBpmnTraceRunner.run(BASE.resolve("mtg.acl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
+        var runResult = AolBpmnTraceRunner.run(BASE.resolve("mtg.csl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
         assertTrue(runResult.ok(), () -> String.join("\n", runResult.errors()));
 
         Path file = dir.resolve("mtg.bpmntrace");
-        BpmnAolTraceFile.write(file, "mtg.acl", runResult);
+        BpmnAolTraceFile.write(file, "mtg.csl", runResult);
         BpmnAolTraceFile.TraceFile loaded = BpmnAolTraceFile.read(file);
 
         assertEquals(1, loaded.traces().size());
@@ -49,7 +49,7 @@ class BpmnAolTraceFileTest {
         // The delta lines captured at generation time must survive the round trip too.
         assertTrue(afterCheckCalendar.delta().stream().anyMatch(d -> d.contains("timetableCollected")));
 
-        // mtg.acl's knowsPhoneOf association (bob -> alice, carol) must survive the round trip.
+        // mtg.csl's knowsPhoneOf association (bob -> alice, carol) must survive the round trip.
         var bobKnows = afterCheckCalendar.model().links().stream()
                 .filter(l -> l.sourceInstanceId().equals("bob")).findFirst().orElseThrow();
         assertEquals("knowsPhoneOf", bobKnows.relationName());

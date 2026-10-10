@@ -1,6 +1,6 @@
 // Invalid result of beginLesson: the Classroom changes, but the Teacher-side
 // effect required by beginLesson's postcondition is missing.
-aol v2.0 ClassroomBadBegin for "classroom.acl" {
+aol v2.0 ClassroomBadBegin for "classroom.csl" {
   group Classroom as classroom1 {
     lessonStarted = true;
   }

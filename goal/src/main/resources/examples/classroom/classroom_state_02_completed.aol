@@ -1,6 +1,6 @@
 // A completed, consistent lesson and attendance state.
 // Expected OCL result: 4 true, 0 false.
-aol v2.0 ClassroomCompleted for "classroom.acl" {
+aol v2.0 ClassroomCompleted for "classroom.csl" {
   group Classroom as classroom1 {
     lessonStarted = true;
     attendanceRecorded = true;

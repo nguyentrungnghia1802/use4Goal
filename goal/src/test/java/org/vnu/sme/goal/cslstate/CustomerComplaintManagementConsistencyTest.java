@@ -1,0 +1,45 @@
+package org.vnu.sme.goal.cslstate;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.nio.file.Path;
+
+import org.junit.jupiter.api.Test;
+import org.vnu.sme.goal.verify.cslstate.CslBpmnWholeProcessValidator.ConsistencyVerdict;
+import org.vnu.sme.goal.verify.cslstate.CslBpmnWholeProcessValidator.RiskVerdict;
+import org.vnu.sme.goal.verify.cslstate.CslStateEvaluationSession;
+
+class CustomerComplaintManagementConsistencyTest {
+    private static final Path EXAMPLE = Path.of(
+            "src/main/resources/examples/customer_complaint_management");
+
+    @Test
+    void detectsPrematureClosureAmongOtherwiseConformantComplaintRoutes() throws Exception {
+        CslStateEvaluationSession session = CslStateEvaluationSession.load(
+                EXAMPLE.resolve("customer_complaint_management.csl"));
+        session.loadBpmn(EXAMPLE.resolve("customer_complaint_management.bpmn2"));
+        session.loadIStar(EXAMPLE.resolve("customer_complaint_management.istar"));
+        session.loadBoundary(EXAMPLE.resolve("customer_complaint_management.cslboundary"));
+
+        long started = System.nanoTime();
+        var result = session.validateWholeBpmnProcess();
+        long elapsedMillis = (System.nanoTime() - started) / 1_000_000;
+        System.out.printf("CustomerComplaintManagement: executions=%d, conformant=%d, "
+                        + "nonConformant=%d, risky=%d, time=%d ms%n",
+                result.realizableExecutions(), result.goalAchievingExecutions(),
+                result.nonGoalAchievingExecutions(), result.riskyExecutions(), elapsedMillis);
+        System.out.println(result.summary());
+
+        assertEquals(ConsistencyVerdict.WEAK_CONFORMANCE, result.consistency(), result::summary);
+        assertEquals(RiskVerdict.RISKY, result.risk(), result::summary);
+        assertEquals(10, result.realizableExecutions(), result::summary);
+        assertEquals(9, result.goalAchievingExecutions(), result::summary);
+        assertEquals(1, result.nonGoalAchievingExecutions(), result::summary);
+        assertEquals(1, result.riskyExecutions(), result::summary);
+        assertTrue(result.processes().get(0).counterexample().stream()
+                .anyMatch(step -> step.contains("closePendingComplaint")));
+        assertTrue(result.processes().get(0).counterexampleGoals().stream()
+                .anyMatch(goal -> goal.goal().endsWith("ResolutionIntegrity")));
+    }
+}

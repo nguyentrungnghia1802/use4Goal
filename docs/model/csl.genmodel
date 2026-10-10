@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/goal/target/generated-sources/csl-ecore" modelPluginID="org.vnu.sme.goal"
+    modelName="CSL" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    operationReflection="true">
+  <foreignModel>csl.ecore</foreignModel>
+  <genPackages prefix="Csl" basePackage="org.vnu.sme.goal.dsl.csl.ecore" disposableProviderFactory="true"
+      ecorePackage="csl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="csl.ecore#//AssociationRelKind">
+      <genEnumLiterals ecoreEnumLiteral="csl.ecore#//AssociationRelKind/PLAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="csl.ecore#//AssociationRelKind/AGGREGATION"/>
+      <genEnumLiterals ecoreEnumLiteral="csl.ecore#//AssociationRelKind/COMPOSITION"/>
+    </genEnums>
+    <genClasses ecoreClass="csl.ecore#//CslModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//CslModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//CslModel/objects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//CslModel/dataTypes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="csl.ecore#//Object">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Object/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//Object/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference csl.ecore#//Entity/generalization"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference csl.ecore#//Role/roleGeneralization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference csl.ecore#//Role/compatibility"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//OrgCtx">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//OrgCtx/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//OrgCtx/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//OrgCtx/orgctx"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//Association">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference csl.ecore#//Association/ends"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//AssociationEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//AssociationEnd/role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//AssociationEnd/lower"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//AssociationEnd/upper"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference csl.ecore#//AssociationEnd/type"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Attribute/optional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Attribute/mutable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Attribute/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference csl.ecore#//Attribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//DataType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//Enumeration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Enumeration/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="csl.ecore#//Invariant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Invariant/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference csl.ecore#//Invariant/contextType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute csl.ecore#//Invariant/oclBody"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

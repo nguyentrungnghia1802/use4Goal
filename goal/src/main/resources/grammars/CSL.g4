@@ -1,6 +1,6 @@
 grammar CSL;
 
-@header { package org.vnu.sme.goal.dsl.acl.parser; }
+@header { package org.vnu.sme.goal.dsl.csl.parser; }
 
 // CSL core v4 — shared organizational structure and state.
 // Object has exactly three concrete kinds: Entity, Role and OrgCtx.
@@ -8,17 +8,17 @@ grammar CSL;
 // Role specialization is UML-style inheritance of the SAME role instance.
 // Agent/player/enactment belong to M0 and have no declaration syntax here.
 //
-// Associations and state invariants belong to AclModel, outside orgContext.
+// Associations and state invariants belong to CslModel, outside orgContext.
 // Entity/Role/OrgCtx names are model-wide identifiers; forward references work.
-// AclSemanticValidator resolves them and checks the Ecore well-formedness rules:
+// CslSemanticValidator resolves them and checks the Ecore well-formedness rules:
 //   same-kind acyclic inheritance, acyclic context nesting, unique names,
 //   entity-centered associations (at most one non-Entity end), valid bounds.
 // Those reference-dependent rules cannot be enforced by a context-free rule.
 // Grammar itself enforces containment, attribute modifiers and association arity.
 // No Group, membership counts, canPlay or process operations in the new core.
 
-// "acl" remains accepted as a migration alias for existing saved models.
-model : ('csl' | 'acl') VERSION IDENT '{' topLevelDecl* '}' EOF ;
+// Canonical Composite State Language entry point.
+model : 'csl' VERSION IDENT '{' topLevelDecl* '}' EOF ;
 
 topLevelDecl
     : enumDecl
@@ -83,7 +83,7 @@ cardinality
     ;
 
 // These are M1 domain-state invariants, distinct from M2 Ecore constraints.
-// Bodies are captured for the OCL parser; ACL does not define behavior.
+// Bodies are captured for the OCL parser; CSL does not define behavior.
 invariantDecl : 'context' IDENT 'inv' IDENT ':' oclExpression ';' ;
 oclExpression : oclToken+ ;
 oclToken
@@ -94,7 +94,7 @@ oclToken
     | '+' | '-' | '*' | '/'
     ;
 oclKeyword
-    : 'acl' | 'enum' | 'datatype' | 'entity' | 'role'
+    : 'csl' | 'enum' | 'datatype' | 'entity' | 'role'
     | 'specializes' | 'extends' | 'orgContext'
     | 'association' | 'aggregation' | 'composition' | 'compatible'
     | 'context' | 'inv' | 'attribute' | 'optional' | 'required'

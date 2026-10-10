@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<normml:NormModel xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:normml="https://vnu.edu.vn/sme/goal/normml/2.0" xmi:version="2.0" name="ProposalReviewPolicies">
+  <organizations name="ReviewOrganization" xmi:id="reviewOrg">
+    <roles name="Manager" xmi:id="manager" resources="resource0 resource1 resource2"/>
+  </organizations>
+  <dataTypes name="Boolean" xmi:id="boolean"/>
+  <resources xsi:type="normml:AgentAction" name="FinalizeProposal" xmi:id="resource0">
+    <actions xsi:type="normml:AtomicAction" xmi:id="finalizeAction" kind="AtomicExecute"/>
+  </resources>
+  <resources xsi:type="normml:AgentAction" name="SendProposal" xmi:id="resource1">
+    <actions xsi:type="normml:AtomicAction" xmi:id="sendAction" kind="AtomicExecute">
+      <condition condExpr="self.proposal.validated = true" condLang="OCL"/>
+    </actions>
+  </resources>
+  <resources xsi:type="normml:AttributeResource" name="Validated" dataType="boolean" xmi:id="resource2">
+    <actions xsi:type="normml:AtomicAction" xmi:id="read" kind="AtomicRead"/>
+    <actions xsi:type="normml:AtomicAction" xmi:id="update" kind="AtomicUpdate"/>
+    <actions xsi:type="normml:CompositeAction" xmi:id="full" kind="AttributeFullAccess" subordinateActions="read update"/>
+  </resources>
+  <dates xmi:id="start" value="2026-10-01T00:00:00.000Z"/>
+  <dates xmi:id="end" value="2026-11-01T00:00:00.000Z"/>
+  <norms name="SendAfterFinalization" type="NormObligation" access="sendAction" roles="manager">
+    <constraints xsi:type="normml:After" afterActions="finalizeAction"/>
+    <constraints xsi:type="normml:If">
+      <condition condExpr="self.proposal.currentRevision = self.proposal.validationRevision" condLang="OCL"/>
+    </constraints>
+  </norms>
+  <norms name="EditDuringReview" type="NormPermission" access="full" roles="manager">
+    <constraints xsi:type="normml:Between" dates="start end" startDate="start" endDate="end"/>
+  </norms>
+</normml:NormModel>

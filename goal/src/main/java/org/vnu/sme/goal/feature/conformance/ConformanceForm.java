@@ -32,12 +32,12 @@ import org.vnu.sme.goal.dsl.istar.view.IStarView;
 
 /**
  * Four-input conformance UI:
- * ACL + initial SOIL + i* goals + BPMN2/OCL proposed solution.
+ * CSL + initial SOIL + i* goals + BPMN2/OCL proposed solution.
  */
 public final class ConformanceForm extends JDialog {
 
     private static final Preferences PREFS = Preferences.userNodeForPackage(ConformanceForm.class);
-    private static final String PREF_ACL = "conformance4.aclFile";
+    private static final String PREF_CSL = "conformance4.cslFile";
     private static final String PREF_SOIL = "conformance4.soilFile";
     private static final String PREF_ISTAR = "conformance4.istarFile";
     private static final String PREF_BPMN2 = "conformance4.bpmn2File";
@@ -50,7 +50,7 @@ public final class ConformanceForm extends JDialog {
     @SuppressWarnings("unused")
     private final MainWindow mainWindow;
 
-    private JTextField aclField;
+    private JTextField cslField;
     private JTextField soilField;
     private JTextField istarField;
     private JTextField bpmn2Field;
@@ -60,11 +60,11 @@ public final class ConformanceForm extends JDialog {
     private BpmnView bpmn2View;
 
     public ConformanceForm(Session session, MainWindow mainWindow) {
-        super(mainWindow, "ACL / SOIL / i* / BPMN2 Conformance Checker", false);
+        super(mainWindow, "CSL / SOIL / i* / BPMN2 Conformance Checker", false);
         this.session = session;
         this.mainWindow = mainWindow;
         buildUI();
-        aclField.setText(PREFS.get(PREF_ACL, ""));
+        cslField.setText(PREFS.get(PREF_CSL, ""));
         soilField.setText(PREFS.get(PREF_SOIL, ""));
         istarField.setText(PREFS.get(PREF_ISTAR, ""));
         bpmn2Field.setText(PREFS.get(PREF_BPMN2, ""));
@@ -86,14 +86,14 @@ public final class ConformanceForm extends JDialog {
                 new MatteBorder(0, 0, 1, 0, UIManager.getColor("Separator.foreground")),
                 new EmptyBorder(2, 4, 2, 4)));
 
-        aclField = new JTextField(42);
+        cslField = new JTextField(42);
         soilField = new JTextField(42);
         istarField = new JTextField(42);
         bpmn2Field = new JTextField(42);
 
         p.add(fileRow("i* goals (.istar):", istarField, "iStar 2.0 (*.istar)", "istar"));
         p.add(fileRow("BPMN2 solution (.bpmn2):", bpmn2Field, "BPMN 2.0 (*.bpmn2)", "bpmn2"));
-        p.add(fileRow("ACL structure (.acl):", aclField, "ACL (*.acl)", "acl"));
+        p.add(fileRow("CSL structure (.csl):", cslField, "CSL (*.csl)", "csl"));
         p.add(fileRow("Scenario (.soil):", soilField, "SOIL (*.soil)", "soil"));
 
         JPanel runRow = new JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 6, 6));
@@ -161,20 +161,20 @@ public final class ConformanceForm extends JDialog {
     }
 
     private void doCheck() {
-        String aclPath = aclField.getText().trim();
+        String cslPath = cslField.getText().trim();
         String soilPath = soilField.getText().trim();
         String istarPath = istarField.getText().trim();
         String bpmnPath = bpmn2Field.getText().trim();
         resultArea.setText("");
 
-        if (aclPath.isEmpty() || soilPath.isEmpty() || istarPath.isEmpty() || bpmnPath.isEmpty()) {
-            status("Please select all 4 files (.acl, .soil, .istar, .bpmn2).", C_ERR);
+        if (cslPath.isEmpty() || soilPath.isEmpty() || istarPath.isEmpty() || bpmnPath.isEmpty()) {
+            status("Please select all 4 files (.csl, .soil, .istar, .bpmn2).", C_ERR);
             return;
         }
 
         try {
             var result = ActionCheckConformance.check(
-                    Path.of(istarPath), Path.of(bpmnPath), Path.of(aclPath), Path.of(soilPath));
+                    Path.of(istarPath), Path.of(bpmnPath), Path.of(cslPath), Path.of(soilPath));
 
             if (!result.ok()) {
                 result.errors().forEach(this::appendResult);
@@ -189,15 +189,15 @@ public final class ConformanceForm extends JDialog {
             appendResult("Generated USE : " + result.generatedUse());
             appendResult("Execution SOIL: " + result.executionSoil());
             appendResult("Checkpoints   : " + result.checkpoints());
-            appendResult("ACL invariants: " + (result.aclFailures().isEmpty() ? "PASS" : "FAIL"));
-            result.aclFailures().forEach(f -> appendResult("  - " + f));
+            appendResult("CSL invariants: " + (result.cslFailures().isEmpty() ? "PASS" : "FAIL"));
+            result.cslFailures().forEach(f -> appendResult("  - " + f));
             appendResult("BPMN OCL      : " + (result.bpmnFailures().isEmpty() ? "PASS" : "FAIL"));
             result.bpmnFailures().forEach(f -> appendResult("  - " + f));
             appendResult("i* root goals : " + (result.goalFailures().isEmpty() ? "PASS" : "FAIL"));
             result.goalFailures().forEach(f -> appendResult("  - " + f));
             appendResult("Verdict       : " + result.verdict());
 
-            PREFS.put(PREF_ACL, aclPath);
+            PREFS.put(PREF_CSL, cslPath);
             PREFS.put(PREF_SOIL, soilPath);
             PREFS.put(PREF_ISTAR, istarPath);
             PREFS.put(PREF_BPMN2, bpmnPath);

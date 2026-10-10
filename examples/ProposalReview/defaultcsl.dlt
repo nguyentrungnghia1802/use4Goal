@@ -38,7 +38,7 @@
         <hidden>false</hidden>
     </node>
     <node height="69.0" id="role::ProposalParticipant"
-        sizeCalculated="false" type="AclNode" width="167.0">
+        sizeCalculated="false" type="CslNode" width="167.0">
         <name>role::ProposalParticipant</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>742.0</x>
@@ -47,7 +47,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::ProposalManager"
-        sizeCalculated="false" type="AclNode" width="165.0">
+        sizeCalculated="false" type="CslNode" width="165.0">
         <name>role::ProposalManager</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>518.0</x>
@@ -56,7 +56,7 @@
         <hidden>false</hidden>
     </node>
     <node height="58.0" id="role::Customer" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>role::Customer</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>525.0</x>
@@ -65,7 +65,7 @@
         <hidden>false</hidden>
     </node>
     <node height="99.0" id="group::Proposal" sizeCalculated="false"
-        type="AclNode" width="181.0">
+        type="CslNode" width="181.0">
         <name>group::Proposal</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>517.0</x>
@@ -74,7 +74,7 @@
         <hidden>false</hidden>
     </node>
     <node height="156.0" id="enum::ProposalState" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>enum::ProposalState</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>85.0</x>
@@ -83,7 +83,7 @@
         <hidden>false</hidden>
     </node>
     <node height="84.0" id="enum::ReviewDecision" sizeCalculated="false"
-        type="AclNode" width="165.0">
+        type="CslNode" width="165.0">
         <name>enum::ReviewDecision</name>
         <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
             <x>750.0</x>
@@ -847,14 +847,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::Customer</source>
         <target>role::ProposalParticipant</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::Customer::role::ProposalParticipant::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::Customer::role::ProposalParticipant::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -867,7 +867,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::Customer::role::ProposalParticipant::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::Customer::role::ProposalParticipant::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>
@@ -882,14 +882,14 @@
         </waypoints>
         <hidden>false</hidden>
     </edge>
-    <edge type="AclEdge">
+    <edge type="CslEdge">
         <source>role::ProposalManager</source>
         <target>role::ProposalParticipant</target>
         <name>generalization</name>
         <properties/>
         <waypoints>
             <edgeproperty
-                id="acl::GENERALIZATION::role::ProposalManager::role::ProposalParticipant::0::WayPoint::0"
+                id="csl::GENERALIZATION::role::ProposalManager::role::ProposalParticipant::0::WayPoint::0"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>0</name>
@@ -902,7 +902,7 @@
                 <hidden>false</hidden>
             </edgeproperty>
             <edgeproperty
-                id="acl::GENERALIZATION::role::ProposalManager::role::ProposalParticipant::0::WayPoint::1"
+                id="csl::GENERALIZATION::role::ProposalManager::role::ProposalParticipant::0::WayPoint::1"
                 sizeCalculated="true" type="WayPoint"
                 userDefined="false" visible="true">
                 <name>1</name>

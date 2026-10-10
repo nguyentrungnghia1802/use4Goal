@@ -1,4 +1,4 @@
--- Generated from ACL. Regenerate instead of editing this file.
+-- Generated from CSL. Regenerate instead of editing this file.
 -- Role 'extends' is a play chain (Owner[1]--Role[mult] association), not USE
 -- generalization: no two Role classes are ever related by '<'. Every generated
 -- class has a technical id : Integer used to preserve object identity in filmstrips.
@@ -115,7 +115,7 @@ self.play_student->forAll(r2 : Student |
 
 constraints
 
--- ===== ACL compatibility constraints already included above =====
+-- ===== CSL compatibility constraints already included above =====
 
 -- ===== iStar Goal conditions and Task pre/post predicates are class operations, declared above on each host class (see USE 'operations' section) =====
 

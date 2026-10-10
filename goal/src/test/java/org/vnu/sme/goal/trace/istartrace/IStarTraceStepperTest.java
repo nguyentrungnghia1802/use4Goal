@@ -18,11 +18,11 @@ class IStarTraceStepperTest {
 
     @Test
     void replaysEveryStatementAndExposesRawTemporalMarking() throws Exception {
-        Path acl = directory.resolve("monitor.acl");
+        Path csl = directory.resolve("monitor.csl");
         Path istar = directory.resolve("monitor.istar");
         Path trace = directory.resolve("monitor.soil");
-        Files.writeString(acl, """
-                acl v2.0 TraceMonitor {
+        Files.writeString(csl, """
+                csl v2.0 TraceMonitor {
                   role Controller {
                     enabled : Boolean;
                     signal : Boolean;
@@ -51,7 +51,7 @@ class IStarTraceStepperTest {
                 !set controller.signal := false
                 """);
 
-        IStarTraceStepper.Result result = new IStarTraceStepper().load(acl, istar, trace);
+        IStarTraceStepper.Result result = new IStarTraceStepper().load(csl, istar, trace);
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         assertEquals(8, result.steps().size());
         InstanceKey key = new InstanceKey("Controller", "controller");
@@ -74,7 +74,7 @@ class IStarTraceStepperTest {
     void mtgTraceContainsOneAtomicInitialCheckpointBeforeBusinessSteps() {
         Path mtg = Path.of("src/main/resources/examples/mtg");
         IStarTraceStepper.Result result = new IStarTraceStepper().load(
-                mtg.resolve("mtg.acl"), mtg.resolve("mtg.istar"), mtg.resolve("mtg_execution_trace.soil"));
+                mtg.resolve("mtg.csl"), mtg.resolve("mtg.istar"), mtg.resolve("mtg_execution_trace.soil"));
 
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         assertEquals(11, result.steps().size());

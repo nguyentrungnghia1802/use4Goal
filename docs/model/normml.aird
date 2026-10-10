@@ -1,0 +1,1896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_normmlAnalysis" selectedViews="_normmlView" version="15.4.1.202403191723">
+    <semanticResources>normml.ecore</semanticResources>
+    <semanticResources>normml.genmodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_normmlView">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_normml2" name="NormMLMetamodel" repPath="#_normmlDiagram" changeId="1791299812973">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="normml.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_normmlDiagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_normml3" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_normml4" type="Sirius" element="_normmlDiagram" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_normml7" type="2003" element="_normml5">
+          <children xmi:type="notation:Node" xmi:id="_normml8" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml9" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml12" type="3010" element="_normml10">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml13" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml14"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml15"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml16"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml17" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml18" x="1600" y="180" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml21" type="2003" element="_normml19">
+          <children xmi:type="notation:Node" xmi:id="_normml22" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml23" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml26" type="3010" element="_normml24">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml27" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml28"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml31" type="3010" element="_normml29">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml32" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml33"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml34"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml35"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml36" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml37" x="539" y="456" width="231" height="159"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml40" type="2003" element="_normml38">
+          <children xmi:type="notation:Node" xmi:id="_normml41" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml42" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml45" type="3010" element="_normml43">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml46" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml47"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml48"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml49"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml50" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml51" x="624" y="886" width="230" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml54" type="2003" element="_normml52">
+          <children xmi:type="notation:Node" xmi:id="_normml55" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml56" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml57"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml58"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml59" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml60" x="1930" y="180" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml63" type="2003" element="_normml61">
+          <children xmi:type="notation:Node" xmi:id="_normml64" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml65" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml66"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml67"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml68" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml69" x="2260" y="180" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml72" type="2003" element="_normml70">
+          <children xmi:type="notation:Node" xmi:id="_normml73" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml74" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml75"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml76"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml77" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml78" x="2590" y="180" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml81" type="2003" element="_normml79">
+          <children xmi:type="notation:Node" xmi:id="_normml82" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml83" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml84"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml85"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml86" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml87" x="1600" y="480" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml90" type="2003" element="_normml88">
+          <children xmi:type="notation:Node" xmi:id="_normml91" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml92" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml93"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml94"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml95" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml96" x="1930" y="480" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml99" type="2003" element="_normml97">
+          <children xmi:type="notation:Node" xmi:id="_normml100" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml101" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml102"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml103"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml104" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml105" x="672" y="696" width="159" height="122"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml108" type="2003" element="_normml106">
+          <children xmi:type="notation:Node" xmi:id="_normml109" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml110" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml113" type="3010" element="_normml111">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml114" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml115"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml116"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml117"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml118" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml119" x="2260" y="480" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml122" type="2003" element="_normml120">
+          <children xmi:type="notation:Node" xmi:id="_normml123" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml124" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml127" type="3010" element="_normml125">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml128" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml129"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml130"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml131"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml132" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml133" x="2590" y="480" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml136" type="2003" element="_normml134">
+          <children xmi:type="notation:Node" xmi:id="_normml137" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml138" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml139"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml140"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml141" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml142" x="1056" y="516" width="147" height="44"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml145" type="2003" element="_normml143">
+          <children xmi:type="notation:Node" xmi:id="_normml146" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml147" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml148"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml149"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml150" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml151" x="900" y="622" width="87" height="58"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml154" type="2003" element="_normml152">
+          <children xmi:type="notation:Node" xmi:id="_normml155" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml156" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml157"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml158"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml159" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml160" x="1008" y="624" width="99" height="56"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml163" type="2003" element="_normml161">
+          <children xmi:type="notation:Node" xmi:id="_normml164" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml165" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml166"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml167"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml168" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml169" x="1139" y="622" width="87" height="56"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml172" type="2003" element="_normml170">
+          <children xmi:type="notation:Node" xmi:id="_normml173" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml174" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml175"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml176"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml177" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml178" x="1297" y="636" width="171" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml181" type="2003" element="_normml179">
+          <children xmi:type="notation:Node" xmi:id="_normml182" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml183" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml186" type="3010" element="_normml184">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml187" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml188"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml189"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml190"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml191" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml192" x="1285" y="408" width="195" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml195" type="2003" element="_normml193">
+          <children xmi:type="notation:Node" xmi:id="_normml196" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml197" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml200" type="3010" element="_normml198">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml201" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml202"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml205" type="3010" element="_normml203">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml206" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml207"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml208"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml209"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml210" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml211" x="851" y="288" width="230" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml214" type="2003" element="_normml212">
+          <children xmi:type="notation:Node" xmi:id="_normml215" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml216" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml219" type="3010" element="_normml217">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml220" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml221"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml224" type="3010" element="_normml222">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml225" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml226"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml229" type="3010" element="_normml227">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml230" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml231"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml232"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml233"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml234" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml235" x="36" y="851" width="195" height="87"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml238" type="2003" element="_normml236">
+          <children xmi:type="notation:Node" xmi:id="_normml239" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml240" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml243" type="3010" element="_normml241">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml244" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml245"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml248" type="3010" element="_normml246">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml249" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml250"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml251"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml252"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml253" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml254" x="1056" y="183" width="230" height="84"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml257" type="2003" element="_normml255">
+          <children xmi:type="notation:Node" xmi:id="_normml258" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml259" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml262" type="3010" element="_normml260">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml263" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml264"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml267" type="3010" element="_normml265">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml268" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml269"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml272" type="3010" element="_normml270">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml273" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml274"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml277" type="3010" element="_normml275">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml278" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml279"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml282" type="3010" element="_normml280">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml283" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml284"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml287" type="3010" element="_normml285">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml288" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml289"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml292" type="3010" element="_normml290">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml293" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml294"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml295"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml296"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml297" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml298" x="1600" y="780" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml301" type="2003" element="_normml299">
+          <children xmi:type="notation:Node" xmi:id="_normml302" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml303" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml306" type="3010" element="_normml304">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml307" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml308"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml311" type="3010" element="_normml309">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml312" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml313"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml316" type="3010" element="_normml314">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml317" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml318"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml321" type="3010" element="_normml319">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml322" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml323"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml326" type="3010" element="_normml324">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml327" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml328"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml331" type="3010" element="_normml329">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml332" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml333"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml334"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml335"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml336" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml337" x="1930" y="780" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml340" type="2003" element="_normml338">
+          <children xmi:type="notation:Node" xmi:id="_normml341" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml342" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml345" type="3010" element="_normml343">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml346" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml347"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml348"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml349"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml350" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml351" x="468" y="212" width="183" height="75"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml354" type="2003" element="_normml352">
+          <children xmi:type="notation:Node" xmi:id="_normml355" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml356" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml359" type="3010" element="_normml357">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml360" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml361"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml362"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml363"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml364" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml365" x="36" y="612" width="230" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml368" type="2003" element="_normml366">
+          <children xmi:type="notation:Node" xmi:id="_normml369" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml370" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml373" type="3010" element="_normml371">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml374" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml375"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml376"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml377"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml378" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml379" x="108" y="216" width="218" height="68"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml382" type="2003" element="_normml380">
+          <children xmi:type="notation:Node" xmi:id="_normml383" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml384" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml387" type="3010" element="_normml385">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml388" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml389"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml390"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml391"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml392" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml393" x="2260" y="780" width="260" height="230"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_normml396" type="2003" element="_normml394">
+          <children xmi:type="notation:Node" xmi:id="_normml397" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_normml398" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_normml401" type="3010" element="_normml399">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml402" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml403"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_normml406" type="3010" element="_normml404">
+              <styles xmi:type="notation:FontStyle" xmi:id="_normml407" fontName="Sans" fontHeight="10"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_normml408"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_normml409"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_normml410"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_normml411" fontName="Sans" fontHeight="10"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml412" x="1092" y="768" width="260" height="230"/>
+        </children>
+        <edges xmi:type="notation:Edge" xmi:id="_normml416" type="4001" element="_normml413" source="_normml7" target="_normml21">
+          <children xmi:type="notation:Node" xmi:id="_normml417" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml418" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml419" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml420" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml421" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml422" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml423" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml424" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml425" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml429" type="4001" element="_normml426" source="_normml7" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml430" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml431" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml432" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml433" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml434" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml435" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml436" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml437" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml438" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml442" type="4001" element="_normml439" source="_normml7" target="_normml195">
+          <children xmi:type="notation:Node" xmi:id="_normml443" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml444" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml445" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml446" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml447" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml448" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml449" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml450" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml451" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml455" type="4001" element="_normml452" source="_normml7" target="_normml181">
+          <children xmi:type="notation:Node" xmi:id="_normml456" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml457" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml458" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml459" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml460" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml461" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml462" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml463" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml464" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml468" type="4001" element="_normml465" source="_normml7" target="_normml340">
+          <children xmi:type="notation:Node" xmi:id="_normml469" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml470" x="31" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml471" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml472" x="9" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml473" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml474" x="52" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml475" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml476" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml477" points="[-129, -49, 1042, -3]$[-1080, -49, 91, -3]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml481" type="4001" element="_normml478" source="_normml7" target="_normml354">
+          <children xmi:type="notation:Node" xmi:id="_normml482" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml483" x="-6" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml484" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml485" x="-1" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml486" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml487" x="-35" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml488" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml489" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml490" points="[-129, 31, 1450, -326]$[-772, 31, 807, -326]$[-772, 328, 807, -29]$[-1465, 328, 114, -29]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml494" type="4001" element="_normml491" source="_normml7" target="_normml382">
+          <children xmi:type="notation:Node" xmi:id="_normml495" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml496" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml497" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml498" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml499" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml500" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml501" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml502" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml503" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml507" type="4001" element="_normml504" source="_normml21" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml508" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml509" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml510" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml511" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml512" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml513" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml514" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml515" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml516" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml520" type="4001" element="_normml517" source="_normml21" target="_normml136">
+          <children xmi:type="notation:Node" xmi:id="_normml521" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml522" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml523" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml524" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml525" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml526" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml527" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml528" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml529" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml533" type="4001" element="_normml530" source="_normml21" target="_normml195">
+          <children xmi:type="notation:Node" xmi:id="_normml534" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml535" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml536" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml537" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml538" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml539" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml540" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml541" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml542" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml546" type="4001" element="_normml543" source="_normml21" target="_normml195">
+          <children xmi:type="notation:Node" xmi:id="_normml547" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml548" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml549" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml550" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml551" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml552" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml553" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml554" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml555" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml559" type="4001" element="_normml556" source="_normml21" target="_normml368">
+          <children xmi:type="notation:Node" xmi:id="_normml560" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml561" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml562" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml563" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml564" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml565" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml566" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml567" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml568" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml572" type="4001" element="_normml569" source="_normml21" target="_normml354">
+          <children xmi:type="notation:Node" xmi:id="_normml573" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml574" x="-23" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml575" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml576" x="-2" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml577" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml578" x="-34" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml579" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml580" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml581" points="[-114, 70, 389, -47]$[-234, 70, 269, -47]$[-234, 82, 269, -35]$[-389, 82, 114, -35]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml585" type="4001" element="_normml582" source="_normml21" target="_normml340">
+          <children xmi:type="notation:Node" xmi:id="_normml586" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml587" x="-26" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml588" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml589" x="-8" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml590" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml591" x="-44" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml592" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml593" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml594" points="[-17, -78, 78, 208]$[-17, -249, 78, 37]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml598" type="4001" element="_normml595" source="_normml40" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml599" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml600" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml601" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml602" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml603" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml604" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml605" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml606" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml607" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml611" type="4001" element="_normml608" source="_normml54" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml612" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml613" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml614" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml615" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml616" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml617" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml618" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml619" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml620" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml624" type="4001" element="_normml621" source="_normml63" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml625" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml626" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml627" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml628" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml629" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml630" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml631" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml632" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml633" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml637" type="4001" element="_normml634" source="_normml63" target="_normml382">
+          <children xmi:type="notation:Node" xmi:id="_normml638" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml639" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml640" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml641" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml642" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml643" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml644" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml645" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml646" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml650" type="4001" element="_normml647" source="_normml72" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml651" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml652" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml653" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml654" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml655" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml656" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml657" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml658" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml659" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml663" type="4001" element="_normml660" source="_normml81" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml664" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml665" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml666" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml667" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml668" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml669" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml670" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml671" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml672" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml676" type="4001" element="_normml673" source="_normml90" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml677" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml678" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml679" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml680" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml681" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml682" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml683" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml684" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml685" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml689" type="4001" element="_normml686" source="_normml90" target="_normml382">
+          <children xmi:type="notation:Node" xmi:id="_normml690" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml691" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml692" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml693" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml694" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml695" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml696" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml697" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml698" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml702" type="4001" element="_normml699" source="_normml99" target="_normml396">
+          <children xmi:type="notation:Node" xmi:id="_normml703" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml704" x="58" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml705" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml706" x="14" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml707" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml708" x="29" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml709" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml710" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml711" points="[79, 5, -392, -121]$[282, 5, -189, -121]$[282, 57, -189, -69]$[342, 57, -129, -69]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml715" type="4001" element="_normml712" source="_normml108" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml716" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml717" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml718" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml719" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml720" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml721" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml722" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml723" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml724" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml728" type="4001" element="_normml725" source="_normml122" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml729" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml730" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml731" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml732" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml733" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml734" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml735" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml736" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml737" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml741" type="4001" element="_normml738" source="_normml122" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml742" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml743" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml744" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml745" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml746" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml747" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml748" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml749" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml750" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml754" type="4001" element="_normml751" source="_normml136" target="_normml181">
+          <children xmi:type="notation:Node" xmi:id="_normml755" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml756" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml757" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml758" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml759" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml760" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml761" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml762" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml763" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml767" type="4001" element="_normml764" source="_normml145" target="_normml136">
+          <children xmi:type="notation:Node" xmi:id="_normml768" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml769" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml770" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml771" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml772" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml773" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml774" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml775" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml776" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml780" type="4001" element="_normml777" source="_normml145" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml781" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml782" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml783" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml784" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml785" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml786" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml787" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml788" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml789" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml793" type="4001" element="_normml790" source="_normml154" target="_normml136">
+          <children xmi:type="notation:Node" xmi:id="_normml794" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml795" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml796" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml797" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml798" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml799" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml800" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml801" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml802" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml806" type="4001" element="_normml803" source="_normml154" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml807" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml808" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml809" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml810" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml811" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml812" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml813" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml814" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml815" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml819" type="4001" element="_normml816" source="_normml163" target="_normml136">
+          <children xmi:type="notation:Node" xmi:id="_normml820" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml821" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml822" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml823" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml824" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml825" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml826" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml827" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml828" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml832" type="4001" element="_normml829" source="_normml163" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml833" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml834" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml835" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml836" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml837" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml838" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml839" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml840" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml841" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml845" type="4001" element="_normml842" source="_normml163" target="_normml99">
+          <children xmi:type="notation:Node" xmi:id="_normml846" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml847" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml848" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml849" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml850" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml851" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml852" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml853" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml854" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml858" type="4001" element="_normml855" source="_normml163" target="_normml181">
+          <children xmi:type="notation:Node" xmi:id="_normml859" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml860" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml861" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml862" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml863" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml864" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml865" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml866" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml867" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml871" type="4001" element="_normml868" source="_normml163" target="_normml181">
+          <children xmi:type="notation:Node" xmi:id="_normml872" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml873" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml874" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml875" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml876" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml877" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml878" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml879" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml880" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml884" type="4001" element="_normml881" source="_normml172" target="_normml136">
+          <children xmi:type="notation:Node" xmi:id="_normml885" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml886" x="31" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml887" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml888" x="-11" y="-2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml889" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml890" x="9" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml891" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml892" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml893" points="[-66, -41, 187, 99]$[-66, -76, 187, 64]$[-220, -76, 33, 64]$[-220, -119, 33, 21]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml897" type="4001" element="_normml894" source="_normml172" target="_normml396">
+          <children xmi:type="notation:Node" xmi:id="_normml898" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml899" x="10" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml900" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml901" x="4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml902" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml903" x="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml904" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml905" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml906" points="[-37, 41, 123, -164]$[-37, 91, 123, -114]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml910" type="4001" element="_normml907" source="_normml340" target="_normml340">
+          <children xmi:type="notation:Node" xmi:id="_normml911" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml912" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml913" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml914" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml915" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml916" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml917" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml918" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml919" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6Q7_Y8GYEfGCf-IILZbC8A" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6Q7_YsGYEfGCf-IILZbC8A" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml923" type="4001" element="_normml920" source="_normml340" target="_normml368">
+          <children xmi:type="notation:Node" xmi:id="_normml924" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml925" x="30" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml926" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml927" x="52" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml928" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml929" x="9" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml930" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml931" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml932" points="[-90, -26, 252, -27]$[-234, -26, 108, -27]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml936" type="4001" element="_normml933" source="_normml340" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml937" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml938" x="-4" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml939" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml940" x="54" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml941" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml942" x="-1" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml943" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml944" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml945" points="[14, 37, -166, -640]$[14, 364, -166, -313]$[164, 364, -16, -313]$[164, 638, -16, -39]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml949" type="4001" element="_normml946" source="_normml354" target="_normml368">
+          <children xmi:type="notation:Node" xmi:id="_normml950" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml951" x="-12" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml952" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml953" x="-20" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml954" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml955" x="-4" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml956" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml957" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml958" points="[15, -39, -51, 363]$[15, -369, -51, 33]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml962" type="4001" element="_normml959" source="_normml354" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml963" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml964" x="30" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml965" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml966" x="15" y="-48"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml967" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml968" x="18" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml969" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml970" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml971" points="[86, 39, -502, -235]$[86, 149, -502, -125]$[501, 149, -87, -125]$[501, 235, -87, -39]"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_normml975" type="4001" element="_normml972" source="_normml368" target="_normml40">
+          <children xmi:type="notation:Node" xmi:id="_normml976" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml977" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml978" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml979" y="-12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_normml980" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_normml981" y="-12"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_normml982" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_normml983" fontName="Sans"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_normml984" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml5" name="NormModel" outgoingEdges="_normml413 _normml426 _normml439 _normml452 _normml465 _normml478 _normml491" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//NormModel"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//NormModel"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml6" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml10" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//NormModel/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//NormModel/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml11" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml19" name="Norm" outgoingEdges="_normml504 _normml517 _normml530 _normml543 _normml556 _normml569 _normml582" incomingEdges="_normml413" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Norm"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Norm"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml20" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml24" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Norm/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Norm/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml25" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml29" name="type : NormType">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Norm/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Norm/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml30" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml38" name="Resource" outgoingEdges="_normml595" incomingEdges="_normml426 _normml608 _normml621 _normml647 _normml660 _normml673 _normml933 _normml959 _normml972" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Resource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Resource"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml39" borderSize="1" borderSizeComputationExpression="1" foregroundColor="228,228,228">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml43" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Resource/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Resource/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml44" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml52" name="EntityResource" outgoingEdges="_normml608" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//EntityResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//EntityResource"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml53" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml61" name="AttributeResource" outgoingEdges="_normml621 _normml634" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AttributeResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AttributeResource"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml62" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml70" name="AssociationEndResource" outgoingEdges="_normml647" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AssociationEndResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AssociationEndResource"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml71" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml79" name="AgentAction" outgoingEdges="_normml660" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AgentAction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AgentAction"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml80" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml88" name="MessageResource" outgoingEdges="_normml673 _normml686" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//MessageResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//MessageResource"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml89" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml97" name="Action" outgoingEdges="_normml699" incomingEdges="_normml504 _normml595 _normml712 _normml725 _normml738 _normml777 _normml803 _normml829 _normml842" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Action"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Action"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml98" borderSize="1" borderSizeComputationExpression="1" foregroundColor="228,228,228">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml106" name="AtomicAction" outgoingEdges="_normml712" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AtomicAction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AtomicAction"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml107" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml111" name="kind : AtomicActionKind">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//AtomicAction/kind"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//AtomicAction/kind"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml112" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml120" name="CompositeAction" outgoingEdges="_normml725 _normml738" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//CompositeAction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//CompositeAction"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml121" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml125" name="kind : CompositeActionKind">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//CompositeAction/kind"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//CompositeAction/kind"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml126" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml134" name="NormConstraint" outgoingEdges="_normml751" incomingEdges="_normml517 _normml764 _normml790 _normml816 _normml881" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//NormConstraint"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//NormConstraint"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml135" borderSize="1" borderSizeComputationExpression="1" foregroundColor="228,228,228">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml143" name="Before" outgoingEdges="_normml764 _normml777" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Before"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Before"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml144" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml152" name="After" outgoingEdges="_normml790 _normml803" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//After"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//After"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml153" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml161" name="Between" outgoingEdges="_normml816 _normml829 _normml842 _normml855 _normml868" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Between"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Between"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml162" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml170" name="If" outgoingEdges="_normml881 _normml894" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//If"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//If"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml171" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml179" name="Date" incomingEdges="_normml452 _normml751 _normml855 _normml868" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Date"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Date"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml180" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml184" name="value : EDate">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Date/value"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Date/value"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml185" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml193" name="Sanction" incomingEdges="_normml439 _normml530 _normml543" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Sanction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Sanction"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml194" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml198" name="type : SanctionType">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Sanction/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Sanction/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml199" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml203" name="description : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Sanction/description"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Sanction/description"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml204" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml212" name="NormType" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="normml.ecore#//NormType"/>
+      <semanticElements xmi:type="ecore:EEnum" href="normml.ecore#//NormType"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml213" borderSize="1" borderSizeComputationExpression="1" foregroundColor="221,236,202">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml217" name="NormProhibition">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//NormType/NormProhibition"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//NormType/NormProhibition"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml218" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml222" name="NormPermission">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//NormType/NormPermission"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//NormType/NormPermission"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml223" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml227" name="NormObligation">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//NormType/NormObligation"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//NormType/NormObligation"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml228" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml236" name="SanctionType" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="normml.ecore#//SanctionType"/>
+      <semanticElements xmi:type="ecore:EEnum" href="normml.ecore#//SanctionType"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml237" borderSize="1" borderSizeComputationExpression="1" foregroundColor="221,236,202">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml241" name="Punishment">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//SanctionType/Punishment"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//SanctionType/Punishment"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml242" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml246" name="Reward">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//SanctionType/Reward"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//SanctionType/Reward"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml247" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml255" name="AtomicActionKind" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="normml.ecore#//AtomicActionKind"/>
+      <semanticElements xmi:type="ecore:EEnum" href="normml.ecore#//AtomicActionKind"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml256" borderSize="1" borderSizeComputationExpression="1" foregroundColor="221,236,202">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml260" name="AtomicCreate">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicCreate"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicCreate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml261" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml265" name="AtomicRead">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicRead"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicRead"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml266" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml270" name="AtomicUpdate">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicUpdate"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicUpdate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml271" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml275" name="AtomicDelete">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicDelete"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicDelete"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml276" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml280" name="AtomicExecute">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicExecute"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicExecute"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml281" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml285" name="AtomicSend">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicSend"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicSend"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml286" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml290" name="AtomicReceive">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicReceive"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//AtomicActionKind/AtomicReceive"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml291" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml299" name="CompositeActionKind" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="normml.ecore#//CompositeActionKind"/>
+      <semanticElements xmi:type="ecore:EEnum" href="normml.ecore#//CompositeActionKind"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml300" borderSize="1" borderSizeComputationExpression="1" foregroundColor="221,236,202">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml304" name="EntityRead">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/EntityRead"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/EntityRead"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml305" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml309" name="EntityUpdate">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/EntityUpdate"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/EntityUpdate"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml310" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml314" name="EntityFullAccess">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/EntityFullAccess"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/EntityFullAccess"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml315" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml319" name="AttributeFullAccess">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/AttributeFullAccess"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/AttributeFullAccess"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml320" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml324" name="AssociationEndFullAccess">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/AssociationEndFullAccess"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/AssociationEndFullAccess"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml325" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml329" name="MessageFullAccess">
+        <target xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/MessageFullAccess"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="normml.ecore#//CompositeActionKind/MessageFullAccess"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml330" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml338" name="Organization" outgoingEdges="_normml907 _normml920 _normml933" incomingEdges="_normml465 _normml582 _normml907" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Organization"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Organization"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml339" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml343" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Organization/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Organization/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml344" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml352" name="Agent" outgoingEdges="_normml946 _normml959" incomingEdges="_normml478 _normml569" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Agent"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Agent"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml353" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml357" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Agent/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Agent/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml358" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml366" name="Role" outgoingEdges="_normml972" incomingEdges="_normml556 _normml920 _normml946" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Role"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Role"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml367" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml371" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Role/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Role/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml372" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml380" name="DataType" incomingEdges="_normml491 _normml634 _normml686" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//DataType"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//DataType"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml381" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml385" name="name : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//DataType/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//DataType/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml386" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_normml394" name="Condition" incomingEdges="_normml699 _normml894" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Condition"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Condition"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_normml395" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml399" name="condExpr : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Condition/condExpr"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Condition/condExpr"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml400" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_normml404" name="condLang : EString">
+        <target xmi:type="ecore:EAttribute" href="normml.ecore#//Condition/condLang"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="normml.ecore#//Condition/condLang"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_normml405" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml413" name="norms [0..*]" sourceNode="_normml5" targetNode="_normml19">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/norms"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/norms"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml414" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml415" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml426" name="resources [0..*]" sourceNode="_normml5" targetNode="_normml38">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/resources"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/resources"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml427" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml428" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml439" name="sanctions [0..*]" sourceNode="_normml5" targetNode="_normml193">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/sanctions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/sanctions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml440" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml441" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml452" name="dates [0..*]" sourceNode="_normml5" targetNode="_normml179">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/dates"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/dates"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml453" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml454" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml465" name="organizations [0..*]" sourceNode="_normml5" targetNode="_normml338">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/organizations"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/organizations"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml466" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml467" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml478" name="agents [0..*]" sourceNode="_normml5" targetNode="_normml352">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/agents"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/agents"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml479" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml480" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml491" name="dataTypes [0..*]" sourceNode="_normml5" targetNode="_normml380">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormModel/dataTypes"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormModel/dataTypes"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml492" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml493" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml504" name="access [1..*]" sourceNode="_normml19" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/access"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/access"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml505" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml506" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml517" name="constraints [0..*]" sourceNode="_normml19" targetNode="_normml134">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/constraints"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/constraints"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml518" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml519" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml530" name="sanctions [0..*]" sourceNode="_normml19" targetNode="_normml193">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/sanctions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/sanctions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml531" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml532" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml543" name="activatedBy [0..*]" sourceNode="_normml19" targetNode="_normml193">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/activatedBy"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/activatedBy"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml544" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml545" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml556" name="roles [0..*]" sourceNode="_normml19" targetNode="_normml366">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/roles"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/roles"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml557" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml558" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml569" name="agents [0..*]" sourceNode="_normml19" targetNode="_normml352">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/agents"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/agents"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml570" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml571" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml582" name="organizations [0..*]" sourceNode="_normml19" targetNode="_normml338">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Norm/organizations"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Norm/organizations"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml583" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml584" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml595" name="actions [1..*]" sourceNode="_normml38" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Resource/actions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Resource/actions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml596" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml597" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml608" sourceNode="_normml52" targetNode="_normml38">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//EntityResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//EntityResource"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml609" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml610" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml621" sourceNode="_normml61" targetNode="_normml38">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AttributeResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AttributeResource"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml622" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml623" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml634" name="dataType [1..1]" sourceNode="_normml61" targetNode="_normml380">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//AttributeResource/dataType"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//AttributeResource/dataType"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml635" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml636" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml647" sourceNode="_normml70" targetNode="_normml38">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AssociationEndResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AssociationEndResource"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml648" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml649" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml660" sourceNode="_normml79" targetNode="_normml38">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AgentAction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AgentAction"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml661" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml662" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml673" sourceNode="_normml88" targetNode="_normml38">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//MessageResource"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//MessageResource"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml674" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml675" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml686" name="dataType [0..1]" sourceNode="_normml88" targetNode="_normml380">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//MessageResource/dataType"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//MessageResource/dataType"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml687" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml688" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml699" name="condition [0..1]" sourceNode="_normml97" targetNode="_normml394">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Action/condition"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Action/condition"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml700" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml701" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml712" sourceNode="_normml106" targetNode="_normml97">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//AtomicAction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//AtomicAction"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml713" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml714" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml725" sourceNode="_normml120" targetNode="_normml97">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//CompositeAction"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//CompositeAction"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml726" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml727" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml738" name="subordinateActions [1..*]" sourceNode="_normml120" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//CompositeAction/subordinateActions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//CompositeAction/subordinateActions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml739" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml740" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml751" name="dates [0..*]" sourceNode="_normml134" targetNode="_normml179">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//NormConstraint/dates"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//NormConstraint/dates"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml752" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml753" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml764" sourceNode="_normml143" targetNode="_normml134">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Before"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Before"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml765" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml766" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml777" name="beforeActions [0..*]" sourceNode="_normml143" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Before/beforeActions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Before/beforeActions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml778" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml779" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml790" sourceNode="_normml152" targetNode="_normml134">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//After"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//After"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml791" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml792" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml803" name="afterActions [0..*]" sourceNode="_normml152" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//After/afterActions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//After/afterActions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml804" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml805" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml816" sourceNode="_normml161" targetNode="_normml134">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//Between"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//Between"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml817" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml818" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml829" name="afterActions [0..*]" sourceNode="_normml161" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Between/afterActions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Between/afterActions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml830" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml831" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml842" name="beforeActions [0..*]" sourceNode="_normml161" targetNode="_normml97">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Between/beforeActions"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Between/beforeActions"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml843" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml844" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml855" name="startDate [0..1]" sourceNode="_normml161" targetNode="_normml179">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Between/startDate"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Between/startDate"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml856" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml857" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml868" name="endDate [0..1]" sourceNode="_normml161" targetNode="_normml179">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Between/endDate"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Between/endDate"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml869" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml870" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml881" sourceNode="_normml170" targetNode="_normml134">
+      <target xmi:type="ecore:EClass" href="normml.ecore#//If"/>
+      <semanticElements xmi:type="ecore:EClass" href="normml.ecore#//If"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml882" targetArrow="InputClosedArrow" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml883" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml894" name="condition [1..1]" sourceNode="_normml170" targetNode="_normml394">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//If/condition"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//If/condition"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml895" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml896" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml907" name="subOrganizations [0..*]" sourceNode="_normml338" targetNode="_normml338">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Organization/subOrganizations"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Organization/subOrganizations"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml908" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml909" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml920" name="roles [0..*]" sourceNode="_normml338" targetNode="_normml366">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Organization/roles"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Organization/roles"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml921" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml922" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml933" name="resources [0..*]" sourceNode="_normml338" targetNode="_normml38">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Organization/resources"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Organization/resources"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml934" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml935" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml946" name="plays [0..*]" sourceNode="_normml352" targetNode="_normml366">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Agent/plays"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Agent/plays"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml947" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml948" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml959" name="resources [0..*]" sourceNode="_normml352" targetNode="_normml38">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Agent/resources"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Agent/resources"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml960" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml961" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_normml972" name="resources [0..*]" sourceNode="_normml366" targetNode="_normml38">
+      <target xmi:type="ecore:EReference" href="normml.ecore#//Role/resources"/>
+      <semanticElements xmi:type="ecore:EReference" href="normml.ecore#//Role/resources"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_normml973" routingStyle="manhattan" strokeColor="65,75,85">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_normml974" labelSize="9" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_normml985"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <target xmi:type="ecore:EPackage" href="normml.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

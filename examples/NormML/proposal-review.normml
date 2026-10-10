@@ -1,0 +1,56 @@
+// After the author submits a proposal, the reviewer must review it.
+normml ProposalReview {
+  Organization reviewOffice { }
+
+  // Each role declares its own behavior once.
+  Role author {
+    organization: @reviewOffice;
+    resources: [@submitProposal, @changeProposal];
+  }
+  Role reviewer {
+    organization: @reviewOffice;
+    resources: [@reviewProposal, @readReport];
+  }
+  // Alice plays reviewer; no duplicate resources declaration is needed.
+  Agent alice { plays: [@reviewer]; }
+
+  // AgentAction is the behavior resource; AtomicExecute is its execution.
+  AgentAction submitProposal { actions: [@executeSubmit]; }
+  AtomicAction executeSubmit { kind: AtomicExecute; }
+  AgentAction reviewProposal { actions: [@executeReview]; }
+  AtomicAction executeReview { kind: AtomicExecute; }
+
+  Norm review {
+    type: NormObligation;
+    roles: [@reviewer];
+    access: [@executeReview];
+    constraints: [@afterSubmission];
+    sanctions: [@missedReview];
+  }
+  After afterSubmission { afterActions: [@executeSubmit]; }
+  Sanction missedReview {
+    type: Punishment;
+    description: "Penalty for violating the review obligation; violation timing is defined by the execution semantics.";
+  }
+  // Permission to read the review report after reviewing the proposal.
+  AgentAction readReport { actions: [@executeReadReport]; }
+  AtomicAction executeReadReport { kind: AtomicExecute; }
+  Norm readPermission {
+    type: NormPermission;
+    roles: [@reviewer];
+    access: [@executeReadReport];
+    constraints: [@afterReview];
+  }
+  After afterReview { afterActions: [@executeReview]; }
+
+  // Prohibition of changing the proposal after it has been submitted.
+  AgentAction changeProposal { actions: [@executeChange]; }
+  AtomicAction executeChange { kind: AtomicExecute; }
+  Norm noChangeAfterSubmission {
+    type: NormProhibition;
+    roles: [@author];
+    access: [@executeChange];
+    constraints: [@changeAfterSubmission];
+  }
+  After changeAfterSubmission { afterActions: [@executeSubmit]; }
+}

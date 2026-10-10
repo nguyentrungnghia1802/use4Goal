@@ -3,11 +3,11 @@ package org.vnu.sme.goal.dsl.aol.ast;
 import java.util.List;
 import java.util.Objects;
 
-import org.vnu.sme.goal.dsl.acl.ast.AclSourceLocationCS;
+import org.vnu.sme.goal.dsl.csl.ast.CslSourceLocationCS;
 
-/** Instantiates a named ACL relation from one source instance id to one-or-more target instance ids. */
+/** Instantiates a named CSL relation from one source instance id to one-or-more target instance ids. */
 public record AolLinkCS(String relationName, String sourceInstanceId, List<String> targetInstanceIds,
-                        AclSourceLocationCS location) {
+                        CslSourceLocationCS location) {
     public AolLinkCS {
         Objects.requireNonNull(relationName, "relationName");
         Objects.requireNonNull(sourceInstanceId, "sourceInstanceId");

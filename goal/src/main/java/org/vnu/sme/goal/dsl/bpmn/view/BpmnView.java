@@ -22,7 +22,7 @@ import org.tzi.use.gui.main.ViewFrame;
 import org.tzi.use.gui.views.PrintableView;
 import org.tzi.use.gui.views.View;
 import org.vnu.sme.goal.dsl.bpmn.mm.BpmnModel;
-import org.vnu.sme.goal.dsl.bpmnscenario.mm.BpmnScenarioSnapshot;
+import org.vnu.sme.goal.dsl.bscn.mm.BpmnScenarioSnapshot;
 import org.vnu.sme.goal.gui.DiagramModelBrowser;
 
 @SuppressWarnings("serial")

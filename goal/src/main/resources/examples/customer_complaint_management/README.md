@@ -6,11 +6,11 @@ Complaint Management* described in
 
 ## Files
 
-- `customer_complaint_management.acl`: shared organizational and complaint
+- `customer_complaint_management.csl`: shared organizational and complaint
   state.
 - `customer_complaint_management.bpmn2`: the executable BPMN process.
 - `customer_complaint_management.istar`: the intentional requirements.
-- `customer_complaint_management.aclboundary`: the finite exploration bound.
+- `customer_complaint_management.cslboundary`: the finite exploration bound.
 
 The plugin uses the `.bpmn2` suffix for its textual BPMN DSL.
 
@@ -26,7 +26,7 @@ proven directly from the original diagram.
 
 All remaining branches model ordinary complaint handling, optional
 examination and improvement, and the no-refund, low-value-refund, and
-high-value-refund routes. Monetary values use thousands of NIS, so the ACL
+high-value-refund routes. Monetary values use thousands of NIS, so the CSL
 integer boundary `0..8` contains the threshold `5` and representative values
 `4` and `6`.
 
@@ -37,7 +37,7 @@ From the `goal` directory, run:
 ```sh
 /run/media/qbert/1C8099B8809998BA/env/apache-maven-3.9.9/bin/mvn \
   -q -DisolatedPluginBuild \
-  -Dtest=org.vnu.sme.goal.aclstate.CustomerComplaintManagementConsistencyTest \
+  -Dtest=org.vnu.sme.goal.cslstate.CustomerComplaintManagementConsistencyTest \
   test
 ```
 

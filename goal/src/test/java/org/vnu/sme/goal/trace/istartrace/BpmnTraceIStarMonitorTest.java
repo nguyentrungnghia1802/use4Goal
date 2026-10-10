@@ -7,14 +7,14 @@ import java.nio.file.Path;
 
 import org.junit.jupiter.api.Test;
 import org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus;
-import org.vnu.sme.goal.trace.istartrace.nativeacl.BpmnTraceIStarMonitor;
+import org.vnu.sme.goal.trace.istartrace.nativecsl.BpmnTraceIStarMonitor;
 
 class BpmnTraceIStarMonitorTest {
     private static final Path MTG = Path.of("src/main/resources/examples/mtg");
 
     @Test
     void evaluatesMtgBpmnTraceWithoutUseOrSoil() {
-        var result = BpmnTraceIStarMonitor.run(MTG.resolve("mtg.acl"), MTG.resolve("mtg.istar"),
+        var result = BpmnTraceIStarMonitor.run(MTG.resolve("mtg.csl"), MTG.resolve("mtg.istar"),
                 MTG.resolve("mtg1.bpmntrace"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         assertEquals(1, result.processes().size());

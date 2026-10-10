@@ -1,24 +1,24 @@
-# ProposalReview — bounded ACL/BPMN/iStar inconsistency
+# ProposalReview — bounded CSL/BPMN/iStar inconsistency
 
 This is the executable counterpart of the paper's `ProposalReview`
 motivating example. It is intentionally separate from the older
-`tool/proposal_review.*` reconstruction, whose ACL and BPMN currently use
+`tool/proposal_review.*` reconstruction, whose CSL and BPMN currently use
 different state schemas.
 
 ## Files
 
-- `proposal_review.acl`: the only system-state space;
+- `proposal_review.csl`: the only system-state space;
 - `proposal_review.bpmn2`: the AS-IS process with the missing re-validation;
-- `proposal_review.istar`: intentions evaluated over generated ACL paths;
-- `proposal_review.aclboundary`: finite Kodkod scope;
+- `proposal_review.istar`: intentions evaluated over generated CSL paths;
+- `proposal_review.cslboundary`: finite Kodkod scope;
 - `ProposalReviewWholeConsistencyTest`: repeatable expected result.
 
-Load the four model files in **ACL State Evaluator**, then press
+Load the four model files in **CSL State Evaluator**, then press
 **Validate whole consistency**. No AOL snapshot or scenario is needed.
 
 ## Shared-state distinction
 
-The essential ACL attributes are:
+The essential CSL attributes are:
 
 ```text
 currentRevision    : { none, r1, r2 }
@@ -48,9 +48,9 @@ validationRevision = r1
 The later Finalize and Send activities preserve both revision attributes.
 They do not silently repair the invalidated goal.
 
-The ACL intentionally does **not** declare “current revision is validated” as
-an invariant. It is an iStar requirement. If it were an ACL invariant, the
-defective branch would simply become an impossible ACL/BPMN path instead of a
+The CSL intentionally does **not** declare “current revision is validated” as
+an invariant. It is an iStar requirement. If it were an CSL invariant, the
+defective branch would simply become an impossible CSL/BPMN path instead of a
 cross-model counterexample.
 
 ## Two bounded BPMN executions
@@ -64,7 +64,7 @@ The XOR gateway yields exactly two maximal executions in this boundary.
 
 Both executions reach `proposalCompleted`, so there is no BPMN deadlock. The
 second execution fails only after BPMN effects and iStar goal conditions are
-interpreted over the same evolving ACL state.
+interpreted over the same evolving CSL state.
 
 Expected whole result:
 
@@ -118,5 +118,5 @@ At the static model level, every expected activity appears present: prepare,
 validate, review, update, finalize, and send. A static activity-to-goal mapping
 therefore looks complete. The inconsistency is temporal: Update changes the
 identity of the current revision after validation. Only evaluation over the
-shared ACL state path exposes that the earlier validation no longer concerns
+shared CSL state path exposes that the earlier validation no longer concerns
 the proposal that is finally sent.

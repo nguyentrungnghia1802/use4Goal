@@ -4,7 +4,7 @@
 // Department/Team/AuditCommittee tree and its own agent pool (no agent
 // shared across the two corporations).
 
-aol v1.0 EnterpriseTwoCorporations for "enterprise.acl" {
+aol v1.0 EnterpriseTwoCorporations for "enterprise.csl" {
 
   // ---- Corporation #1: TechNova ----
   agent Executive     as alice { name = "Alice Nguyen"; email = "alice@technova.example"; employeeId = "TN-001"; hireDate = "2015-01-01"; managementLevel = 5; budgetAuthority = 300000.0; title = "CEO"; }
@@ -47,7 +47,7 @@ aol v1.0 EnterpriseTwoCorporations for "enterprise.acl" {
 
   // Document is reached only through the explicit `auditDocuments`
   // composition, not a Group member list -- Budget extends Document, and
-  // Budget is a Group member elsewhere in this ACL via the legacy form.
+  // Budget is a Group member elsewhere in this CSL via the legacy form.
   entity Document as tn_doc { title = "TechNova Security Review"; version = 2; classification = Confidential; }
 
   link mentors: alice -> dave;

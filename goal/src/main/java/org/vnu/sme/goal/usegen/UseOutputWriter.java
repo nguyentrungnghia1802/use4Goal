@@ -7,7 +7,7 @@ import java.nio.file.Path;
 
 /**
  * Shared "write generated USE/TOCL text into a folder" step, used by every
- * folder-output translation action (iStar+ACL, BPMN+ACL, ...). Always writes
+ * folder-output translation action (iStar+CSL, BPMN+CSL, ...). Always writes
  * {@code <modelName>.use}; writes {@code <modelName>.tocl} only when the
  * translator actually produced temporal content, since {@code always}/{@code
  * sometime}/{@code alwaysPast} are not core OCL and only some source models

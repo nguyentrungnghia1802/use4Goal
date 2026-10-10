@@ -16,12 +16,12 @@ class AolStateModelTest {
 
     @Test
     void initialFrameReconstructsTheAolPopulationThatSeededIt() {
-        var result = AolBpmnTraceRunner.run(BASE.resolve("mtg.acl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
+        var result = AolBpmnTraceRunner.run(BASE.resolve("mtg.csl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         var trace = result.traces().get(0);
         var initial = trace.frames().get(0);
 
-        AolModel model = AolStateModel.build(result.aclModel(), initial.state(), trace.groupClass(),
+        AolModel model = AolStateModel.build(result.cslModel(), initial.state(), trace.groupClass(),
                 initial.state().objectByName(trace.selfObjectName()));
 
         assertEquals(1, model.groupInstances().size());
@@ -37,7 +37,7 @@ class AolStateModelTest {
         assertEquals("false", model.agentAttributeValues().get("carol").get("hasCalendar"));
         assertEquals("false", byAgent.get("alice").attributeValues().get("timetableCollected"));
 
-        // mtg.acl's knowsPhoneOf association (bob -> alice, carol) must show up as a link.
+        // mtg.csl's knowsPhoneOf association (bob -> alice, carol) must show up as a link.
         var bobKnows = model.links().stream().filter(l -> l.sourceInstanceId().equals("bob")).findFirst().orElseThrow();
         assertEquals("knowsPhoneOf", bobKnows.relationName());
         assertEquals(java.util.Set.of("alice", "carol"), java.util.Set.copyOf(bobKnows.targetInstanceIds()));
@@ -45,13 +45,13 @@ class AolStateModelTest {
 
     @Test
     void laterFrameReflectsActivityEffectsAlreadyApplied() {
-        var result = AolBpmnTraceRunner.run(BASE.resolve("mtg.acl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
+        var result = AolBpmnTraceRunner.run(BASE.resolve("mtg.csl"), BASE.resolve("mtg.aol"), BASE.resolve("mtg.bpmn2"));
         assertTrue(result.ok(), () -> String.join("\n", result.errors()));
         var trace = result.traces().get(0);
         var afterCheckCalendar = trace.frames().stream()
                 .filter(f -> "checkCalendar".equals(f.activityId())).findFirst().orElseThrow();
 
-        AolModel model = AolStateModel.build(result.aclModel(), afterCheckCalendar.state(), trace.groupClass(),
+        AolModel model = AolStateModel.build(result.cslModel(), afterCheckCalendar.state(), trace.groupClass(),
                 afterCheckCalendar.state().objectByName(trace.selfObjectName()));
 
         var alice = model.groupInstances().get(0).plays().stream()

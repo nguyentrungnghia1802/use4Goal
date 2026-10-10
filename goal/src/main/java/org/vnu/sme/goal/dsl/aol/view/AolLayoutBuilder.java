@@ -14,10 +14,10 @@ import org.vnu.sme.goal.dsl.aol.mm.AolGroupInstance;
 import org.vnu.sme.goal.dsl.aol.mm.AolLink;
 import org.vnu.sme.goal.dsl.aol.mm.AolModel;
 import org.vnu.sme.goal.dsl.aol.mm.AolPlay;
-import org.vnu.sme.goal.dsl.aol.state.AclSystemState;
+import org.vnu.sme.goal.dsl.aol.state.CslSystemState;
 
 /**
- * Recursive tree layout: unlike ACL's type-level layout (roles/entities live in one shared
+ * Recursive tree layout: unlike CSL's type-level layout (roles/entities live in one shared
  * pool referenced by possibly many groups), an AOL instance tree has no sharing -- each play
  * and entity instance belongs to exactly one group instance -- so each group instance's
  * subtree width is computed bottom-up once, then positions are assigned top-down centered
@@ -113,13 +113,13 @@ public final class AolLayoutBuilder {
         return new AolLayout(nodes, edges, Math.max(maxRight + MARGIN, 700), Math.max(maxBottom + MARGIN, 500));
     }
 
-    public static AolLayout build(AclSystemState state) {
+    public static AolLayout build(CslSystemState state) {
         Map<String, AolNode> nodes = new LinkedHashMap<>();
         List<AolEdge> edges = new ArrayList<>();
         if (state == null) return new AolLayout(nodes, edges, 900, 600);
 
         for (var object : state.objects().values().stream()
-                .sorted(Comparator.comparing(AclSystemState.ObjectValue::id)).toList()) {
+                .sorted(Comparator.comparing(CslSystemState.ObjectValue::id)).toList()) {
             List<String> details = object.attributes().entrySet().stream()
                     .map(entry -> entry.getKey() + " = " + entry.getValue()).toList();
             AolNodeKind kind = switch (object.kind()) {

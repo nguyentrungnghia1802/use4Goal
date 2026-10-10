@@ -3,12 +3,12 @@
 // review finishes after the response window closes, yet the process still
 // only sends the approved current revision. This is README.md's
 // "non-conformant" delayed row at the goal level (RespondQuicklyAndFlexibly /
-// CustomerSatisfied stay unfulfilled) -- but every ACL invariant here still
+// CustomerSatisfied stay unfulfilled) -- but every CSL invariant here still
 // holds, because "approved-only sending" was respected. That gap is the
 // point: these seven structural invariants cannot by themselves distinguish
 // this state from state 03; only the iStar goal model can.
 // Expected OCL result: 7 true, 0 false.
-aol v2.0 SalesForecastApprovedDelayed for "sales_forecast.acl" {
+aol v2.0 SalesForecastApprovedDelayed for "sales_forecast.csl" {
   group SalesCase as salescase1 {
     proposalPrepared = true;
     approvalRequested = true;

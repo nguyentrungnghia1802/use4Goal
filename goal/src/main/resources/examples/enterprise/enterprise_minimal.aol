@@ -4,7 +4,7 @@
 // Contractor, no Contract/Document/Budget-bearing detail beyond the
 // required Budget[1], no links). Useful as a boundary/smoke-test fixture.
 
-aol v1.0 EnterpriseMinimal for "enterprise.acl" {
+aol v1.0 EnterpriseMinimal for "enterprise.csl" {
 
   agent Executive     as alice { name = "Alice Nguyen"; email = "alice@acme.example"; employeeId = "E001"; hireDate = "2010-03-01"; managementLevel = 5; budgetAuthority = 500000.0; title = "Chair"; }
   agent Executive     as bob   { name = "Bob Tran";     email = "bob@acme.example";   employeeId = "E002"; hireDate = "2011-06-15"; managementLevel = 5; budgetAuthority = 450000.0; title = "CFO"; }

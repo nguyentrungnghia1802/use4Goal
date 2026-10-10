@@ -1,6 +1,6 @@
-# State-Aware ACL and iStar Development Models
+# State-Aware CSL and iStar Development Models
 
-This directory contains the experimental 3.0 state-aware ACL and iStar
+This directory contains the experimental 3.0 state-aware CSL and iStar
 metamodels. Use it to inspect how stable runtime identities, changing system
 states, intentional models, and goal evaluations are represented together.
 
@@ -11,10 +11,10 @@ and does not replace the canonical 2.0 metamodels or the current Java compiler.
 
 | Order | File | What it represents |
 |---|---|---|
-| 1 | `acl-state.ecore` | ACL schema plus the system-history runtime metamodel |
+| 1 | `csl-state.ecore` | CSL schema plus the system-history runtime metamodel |
 | 2 | `istar-state.ecore` | Intentional specification plus the goal-trace metamodel |
-| 3 | `mtg-development.acl.xmi` | Meeting Scheduler ACL model (M1) |
-| 4 | `mtg-development.istar.xmi` | iStar model whose actor views reference ACL actors |
+| 3 | `mtg-development.csl.xmi` | Meeting Scheduler CSL model (M1) |
+| 4 | `mtg-development.istar.xmi` | iStar model whose actor views reference CSL actors |
 | 5 | `mtg-development.state.xmi` | Runtime identities and system states `s0` and `s1` |
 | 6 | `mtg-development.goaltrace.xmi` | Complete iStar reevaluations for `s0` and `s1` |
 
@@ -37,7 +37,7 @@ inspect them immediately as trees or create local EcoreTools diagrams.
 
 ### Tree view
 
-1. Right-click `acl-state.ecore` or `istar-state.ecore`.
+1. Right-click `csl-state.ecore` or `istar-state.ecore`.
 2. Select **Open With > Sample Ecore Model Editor**.
 3. Expand the `EPackage`, **EClassifiers**, and individual EClasses.
 4. Select an element and use the **Properties** view to inspect its type,
@@ -64,15 +64,15 @@ the `.ecore` metamodel.
 Open each `.xmi` file with **Open With > Sample Ecore Model Editor**. Expand
 the nodes and keep the **Properties** view visible.
 
-### ACL specification view
+### CSL specification view
 
-Open `mtg-development.acl.xmi` to inspect classifiers, attributes,
+Open `mtg-development.csl.xmi` to inspect classifiers, attributes,
 relationships, and the Actor classifiers used by the iStar model.
 
 ### iStar intentional view
 
 Open `mtg-development.istar.xmi` and expand `actorViews`. Each view points to
-an Actor declared in the ACL model and contains that actor's goals, tasks,
+an Actor declared in the CSL model and contains that actor's goals, tasks,
 resources, qualities, refinements, and dependencies.
 
 ### System history view
@@ -81,7 +81,7 @@ Open `mtg-development.state.xmi` and inspect:
 
 - `instances` for stable runtime identities;
 - the `s0` and `s1` checkpoints for state-specific values and links; and
-- references from each occurrence to its classifier in the ACL model.
+- references from each occurrence to its classifier in the CSL model.
 
 Comparing `s0` with `s1` shows what changed without changing the identity of
 the runtime objects.
@@ -117,7 +117,7 @@ an `.xmi` root evaluates the instance and its semantic invariants.
 The development metamodels use separate namespaces:
 
 ```text
-https://vnu.edu.vn/sme/goal/acl/state/3.0
+https://vnu.edu.vn/sme/goal/csl/state/3.0
 https://vnu.edu.vn/sme/goal/istar/state/3.0
 ```
 
@@ -127,6 +127,6 @@ the invariants and M0 examples have been accepted.
 
 ## Semantic documentation
 
-- [ACL state model](../../docs/semantics/development/acl-state-model.md)
+- [CSL state model](../../docs/semantics/development/csl-state-model.md)
 - [iStar state model](../../docs/semantics/development/istar-state-model.md)
 - [Meeting Scheduler stateful example](../../docs/semantics/development/mtg-stateful-example.md)

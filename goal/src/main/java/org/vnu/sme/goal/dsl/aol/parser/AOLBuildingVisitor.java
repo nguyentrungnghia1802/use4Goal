@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import org.vnu.sme.goal.dsl.acl.ast.AclSourceLocationCS;
+import org.vnu.sme.goal.dsl.csl.ast.CslSourceLocationCS;
 import org.vnu.sme.goal.dsl.aol.ast.AolAgentCS;
 import org.vnu.sme.goal.dsl.aol.ast.AolAttributeValueCS;
 import org.vnu.sme.goal.dsl.aol.ast.AolEntityInstanceCS;
@@ -117,7 +117,7 @@ public final class AOLBuildingVisitor extends AOLBaseVisitor<AolModelCS> {
         return text.length() >= 2 ? text.substring(1, text.length() - 1) : text;
     }
 
-    private static AclSourceLocationCS location(ParserRuleContext ctx) {
-        return new AclSourceLocationCS(ctx.getStart().getLine(), ctx.getStart().getCharPositionInLine());
+    private static CslSourceLocationCS location(ParserRuleContext ctx) {
+        return new CslSourceLocationCS(ctx.getStart().getLine(), ctx.getStart().getCharPositionInLine());
     }
 }

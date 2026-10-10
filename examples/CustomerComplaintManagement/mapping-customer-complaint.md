@@ -88,7 +88,7 @@ Theo lựa chọn của bạn: OCL được nhúng dạng text tham khảo, khô
 
 ---
 
-## ACL redesign (structural pass)
+## CSL redesign (structural pass)
 
 `customer-complaint.csl` was reworked into a structural model:
 
@@ -106,7 +106,7 @@ Theo lựa chọn của bạn: OCL được nhúng dạng text tham khảo, khô
   passes, `RefundApproval` (`complaintRefundChain` / `refundStepDecidedBy`)
   for the CM -> CFO -> CEO chain, `complaintOwnedBy` for the FieldMan link.
 - `refundAmount` is an `Integer` (whole NIS).
-- New file `customer-complaint.aclboundary` (30 snapshots, 3 `Examination`
+- New file `customer-complaint.cslboundary` (30 snapshots, 3 `Examination`
   + 3 `RefundApproval` rows).
 
 Milestone Booleans the goals/gateways observe one-by-one

@@ -1,7 +1,7 @@
 // Full OJS snapshot. Alice is the same persistent Agent and plays Author in
 // both Submission instances: submissionA and submissionB.
 
-aol v1.0 OJSTwoSubmissions for "ojs.acl" {
+aol v1.0 OJSTwoSubmissions for "ojs.csl" {
   agent alice, adminLan, editorMai, editHoa, reviewerAn, reviewerBinh, memberNam;
 
   group OJS as systemOjs {
@@ -10,7 +10,7 @@ aol v1.0 OJSTwoSubmissions for "ojs.acl" {
       play Member as aliceMembership by alice;
     }
 
-    group Journal as journalAcl {
+    group Journal as journalCsl {
       play Admin as journalAdmin by adminLan;
 
       entity Issue as issue2026 {
@@ -37,7 +37,7 @@ aol v1.0 OJSTwoSubmissions for "ojs.acl" {
 
           entity SubmissionRecord as paperA {
             submissionID = 101;
-            title = "Constraint-aware ACL Modeling";
+            title = "Constraint-aware CSL Modeling";
             summary = "A metamodel-driven organizational language";
           }
           entity ReviewRound as paperARound1 {
@@ -46,8 +46,8 @@ aol v1.0 OJSTwoSubmissions for "ojs.acl" {
           }
           entity ArticleFile as paperAFile {
             fileID = 10001;
-            fileName = "acl-modeling.pdf";
-            filePath = "/ojs/101/acl-modeling.pdf";
+            fileName = "csl-modeling.pdf";
+            filePath = "/ojs/101/csl-modeling.pdf";
             fileType = "application/pdf";
           }
         }
@@ -68,8 +68,8 @@ aol v1.0 OJSTwoSubmissions for "ojs.acl" {
 
           entity SubmissionRecord as paperB {
             submissionID = 102;
-            title = "Visualizing Runtime ACL States";
-            summary = "AOL snapshots for ACL systems";
+            title = "Visualizing Runtime CSL States";
+            summary = "AOL snapshots for CSL systems";
           }
           entity ReviewRound as paperBRound1 {
             roundNumber = 1;
@@ -83,7 +83,7 @@ aol v1.0 OJSTwoSubmissions for "ojs.acl" {
           }
           entity PublishedArticle as publishedPaperB {
             publishedID = 9001;
-            DOI = "10.0000/ojs.acl.102";
+            DOI = "10.0000/ojs.csl.102";
             pageNumbers = "1-18";
           }
         }

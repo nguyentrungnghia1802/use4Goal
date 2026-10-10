@@ -5,7 +5,7 @@
 //   * this file preserves the source actors, rationales, dependencies and
 //     qualitative contribution links for visual/source comparison;
 //   * sales_forecast.istar is the executable conflict slice whose verdict is
-//     calculated from ACL state without copying the source Hurt/Break answer.
+//     calculated from CSL state without copying the source Hurt/Break answer.
 //
 // The source publishes the SR graph, but not executable predicates for all of
 // its nodes.  Elements without OCL are therefore intentionally structural;

@@ -13,15 +13,15 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
-import org.vnu.sme.goal.dsl.acl.mm.AclModel;
-import org.vnu.sme.goal.dsl.acl.parser.AclCompiler;
+import org.vnu.sme.goal.dsl.csl.mm.CslModel;
+import org.vnu.sme.goal.dsl.csl.parser.CslCompiler;
 import org.vnu.sme.goal.dsl.aol.ast.AolModelCS;
 import org.vnu.sme.goal.dsl.aol.mm.AolModel;
 
 /** Compiles an .aol object snapshot against the CSL model named in its {@code for} clause. */
 public final class AolCompiler {
 
-    public record Result(AolModelCS ast, AclModel acl, Path aclFile, AolModel model, List<String> errors) {
+    public record Result(AolModelCS ast, CslModel csl, Path cslFile, AolModel model, List<String> errors) {
         public Result { errors = List.copyOf(errors); }
         public boolean ok() { return errors.isEmpty() && model != null; }
     }
@@ -52,31 +52,31 @@ public final class AolCompiler {
         if (!errors.isEmpty()) return new Result(null, null, null, null, errors);
 
         AolModelCS ast = new AOLBuildingVisitor().visitModel(tree);
-        Path aclFile = file.toAbsolutePath().getParent().resolve(ast.aclFile()).normalize();
+        Path cslFile = file.toAbsolutePath().getParent().resolve(ast.cslFile()).normalize();
 
-        AclCompiler.Result aclResult;
+        CslCompiler.Result cslResult;
         try {
-            aclResult = AclCompiler.compile(aclFile);
+            cslResult = CslCompiler.compile(cslFile);
         } catch (IOException ex) {
-            errors.add("cannot read CSL file '" + aclFile + "': " + ex.getMessage());
-            return new Result(ast, null, aclFile, null, errors);
+            errors.add("cannot read CSL file '" + cslFile + "': " + ex.getMessage());
+            return new Result(ast, null, cslFile, null, errors);
         }
-        if (!aclResult.ok()) {
-            errors.add("errors in referenced CSL specification '" + aclFile + "':");
-            errors.addAll(aclResult.errors());
-            return new Result(ast, aclResult.model(), aclFile, null, errors);
+        if (!cslResult.ok()) {
+            errors.add("errors in referenced CSL specification '" + cslFile + "':");
+            errors.addAll(cslResult.errors());
+            return new Result(ast, cslResult.model(), cslFile, null, errors);
         }
 
-        AolModelFactory.Result factory = AolModelFactory.create(ast, aclResult.model());
+        AolModelFactory.Result factory = AolModelFactory.create(ast, cslResult.model());
         for (AolModelFactory.SemanticError error : factory.errors()) {
             errors.add(format(sourceName, error.location().line(), error.location().column(), "semantic", error.message()));
         }
-        return new Result(ast, aclResult.model(), aclFile, factory.model(), errors);
+        return new Result(ast, cslResult.model(), cslFile, factory.model(), errors);
     }
 
-    public static Result compileContent(String aolContent, Path aclFile) {
+    public static Result compileContent(String aolContent, Path cslFile) {
         Objects.requireNonNull(aolContent, "aolContent");
-        Objects.requireNonNull(aclFile, "aclFile");
+        Objects.requireNonNull(cslFile, "cslFile");
         List<String> errors = new ArrayList<>();
         CharStream input = CharStreams.fromString(aolContent);
         String sourceName = "counterexample.aol";
@@ -96,28 +96,28 @@ public final class AolCompiler {
         parser.addErrorListener(listener);
 
         AOLParser.ModelContext tree = parser.model();
-        if (!errors.isEmpty()) return new Result(null, null, aclFile, null, errors);
+        if (!errors.isEmpty()) return new Result(null, null, cslFile, null, errors);
 
         AolModelCS ast = new AOLBuildingVisitor().visitModel(tree);
 
-        AclCompiler.Result aclResult;
+        CslCompiler.Result cslResult;
         try {
-            aclResult = AclCompiler.compile(aclFile);
+            cslResult = CslCompiler.compile(cslFile);
         } catch (IOException ex) {
-            errors.add("cannot read CSL file '" + aclFile + "': " + ex.getMessage());
-            return new Result(ast, null, aclFile, null, errors);
+            errors.add("cannot read CSL file '" + cslFile + "': " + ex.getMessage());
+            return new Result(ast, null, cslFile, null, errors);
         }
-        if (!aclResult.ok()) {
-            errors.add("errors in referenced CSL specification '" + aclFile + "':");
-            errors.addAll(aclResult.errors());
-            return new Result(ast, aclResult.model(), aclFile, null, errors);
+        if (!cslResult.ok()) {
+            errors.add("errors in referenced CSL specification '" + cslFile + "':");
+            errors.addAll(cslResult.errors());
+            return new Result(ast, cslResult.model(), cslFile, null, errors);
         }
 
-        AolModelFactory.Result factory = AolModelFactory.create(ast, aclResult.model());
+        AolModelFactory.Result factory = AolModelFactory.create(ast, cslResult.model());
         for (AolModelFactory.SemanticError error : factory.errors()) {
             errors.add(format(sourceName, error.location().line(), error.location().column(), "semantic", error.message()));
         }
-        return new Result(ast, aclResult.model(), aclFile, factory.model(), errors);
+        return new Result(ast, cslResult.model(), cslFile, factory.model(), errors);
     }
 
     private static String format(String sourceName, int line, int column, String phase, String message) {

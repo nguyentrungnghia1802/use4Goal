@@ -72,6 +72,11 @@
     <build>
         <resources>
             <resource>
+                <directory>${project.basedir}/../docs/model</directory>
+                <targetPath>metamodel</targetPath>
+                <includes><include>normml.ecore</include></includes>
+            </resource>
+            <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
                     <!-- Canonical case studies live in the repository-level examples/ directory. -->

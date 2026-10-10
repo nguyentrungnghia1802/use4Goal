@@ -2,8 +2,8 @@
 -- one Teacher and two Students, each played through the Agent -> Person ->
 -- (Teacher | Student) chain, all owned by one Classroom group occurrence.
 --
--- Written by hand rather than derived from a .aol snapshot: AclAol2SoilTranslator
--- (goal/src/main/java/.../translate/aclaol2soil) only generates a direct
+-- Written by hand rather than derived from a .aol snapshot: CslAol2SoilTranslator
+-- (goal/src/main/java/.../translate/cslaol2soil) only generates a direct
 -- "Agent_plays_<Role>" insert for a group-owned role and has no logic to walk
 -- a role's own extends-chain (Person -> Teacher/Student here), so an .aol file
 -- using `agent Person as ...; play Teacher as ... by ...;` currently fails to

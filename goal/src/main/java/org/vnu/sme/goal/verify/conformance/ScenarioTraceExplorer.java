@@ -19,7 +19,7 @@ public final class ScenarioTraceExplorer {
 
     private ScenarioTraceExplorer() {}
 
-    public static Assessment explore(Path istar, Path bpmn, Path acl, Path soil, int maxTraces) {
+    public static Assessment explore(Path istar, Path bpmn, Path csl, Path soil, int maxTraces) {
         Queue<List<Integer>> pending = new ArrayDeque<>();
         Set<List<Integer>> seen = new HashSet<>();
         List<Trace> traces = new ArrayList<>();
@@ -29,7 +29,7 @@ public final class ScenarioTraceExplorer {
             if (!seen.add(plan)) continue;
             try {
                 VisualConformanceSession session = VisualConformanceSession.prepare(
-                        istar, bpmn, acl, soil, plan);
+                        istar, bpmn, csl, soil, plan);
                 while (session.canAdvance()) session.next();
                 boolean ended = session.ended();
                 List<String> failures = ended ? session.rootGoalFailures()
@@ -78,7 +78,7 @@ public final class ScenarioTraceExplorer {
             Set<String> nowFailed = new HashSet<>();
             session.rootGoalFailures(frame).forEach(text -> nowFailed.add(text.substring(0, text.indexOf(" = "))));
             for (String id : onceFulfilled) if (nowFailed.contains(id)) return false;
-            var inst = org.vnu.sme.goal.trace.usetrace.IStarUseTraceEvaluator.evaluate(
+            var inst = org.vnu.sme.goal.trace.istarTrace.IStarUseTraceEvaluator.evaluate(
                     session.goalModel(), frame.checkpoint());
             inst.instanceMarking().goalTaskStatuses().forEach((id, status) -> {
                 if (status == org.vnu.sme.goal.verify.conformance.semantics.GoalTaskStatus.FULFILLED) {

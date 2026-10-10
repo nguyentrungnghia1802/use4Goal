@@ -10,11 +10,11 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 import org.vnu.sme.goal.analysis.mapping.SemanticMappingAnalyzer;
-import org.vnu.sme.goal.dsl.acl.parser.AclCompiler;
-import org.vnu.sme.goal.dsl.acl.mm.AclAttribute;
-import org.vnu.sme.goal.dsl.acl.mm.AclModel;
-import org.vnu.sme.goal.dsl.acl.mm.AclPrimitiveType;
-import org.vnu.sme.goal.dsl.acl.mm.AclRole;
+import org.vnu.sme.goal.dsl.csl.parser.CslCompiler;
+import org.vnu.sme.goal.dsl.csl.mm.CslAttribute;
+import org.vnu.sme.goal.dsl.csl.mm.CslModel;
+import org.vnu.sme.goal.dsl.csl.mm.CslPrimitiveType;
+import org.vnu.sme.goal.dsl.csl.mm.CslRole;
 import org.vnu.sme.goal.dsl.bpmn.mm.ActivityConstraint;
 import org.vnu.sme.goal.dsl.bpmn.mm.BpmnModel;
 import org.vnu.sme.goal.dsl.bpmn.mm.Lane;
@@ -26,22 +26,22 @@ import org.vnu.sme.goal.dsl.istar.mm.GoalType;
 import org.vnu.sme.goal.dsl.istar.mm.IStarOclConstraint;
 import org.vnu.sme.goal.dsl.istar.mm.Role;
 import org.vnu.sme.goal.dsl.istar.parser.IStarCompiler;
-import org.vnu.sme.goal.translate.aclistarbpmn2eventb.EventBExportRequest;
-import org.vnu.sme.goal.translate.aclistarbpmn2eventb.EventBExportService;
+import org.vnu.sme.goal.translate.cslistarbpmn2eventb.EventBExportRequest;
+import org.vnu.sme.goal.translate.cslistarbpmn2eventb.EventBExportService;
 
 class SemanticMappingAnalyzerTest {
     private static final Path EXAMPLES=Path.of("src/main/resources/examples/mtg");
     @TempDir Path output;
 
     @Test void generatesMappingsCoverageAndOrphanDiagnosticsWithoutATrace() throws Exception {
-        var acl=AclCompiler.compile(EXAMPLES.resolve("mtg_old.acl"));
+        var csl=CslCompiler.compile(EXAMPLES.resolve("mtg_old.csl"));
         var istar=IStarCompiler.compile(EXAMPLES.resolve("mtg_old.istar"));
         var bpmn=BpmnCompiler.compile(EXAMPLES.resolve("mtg_old.bpmn2"));
-        assertTrue(acl.ok(),()->String.join("\n",acl.errors()));
+        assertTrue(csl.ok(),()->String.join("\n",csl.errors()));
         assertTrue(istar.ok(),()->String.join("\n",istar.errors()));
         assertTrue(bpmn.ok(),()->String.join("\n",bpmn.errors()));
 
-        var result=SemanticMappingAnalyzer.analyze(acl.model(),istar.model(),bpmn.model());
+        var result=SemanticMappingAnalyzer.analyze(csl.model(),istar.model(),bpmn.model());
         assertFalse(result.mappings().isEmpty());
         assertTrue(result.mappings().stream().anyMatch(x->x.activityIds().contains("decideMeetingDetails")
                 && x.taskId().equals("DecideDetails")),result.mappings().toString());
@@ -56,7 +56,7 @@ class SemanticMappingAnalyzerTest {
 
     @Test void eventBExportIncludesMappingReportsAndProofObligations() throws Exception {
         var export=new EventBExportService().export(new EventBExportRequest(
-                EXAMPLES.resolve("mtg_old.acl"),EXAMPLES.resolve("mtg_old.istar"),EXAMPLES.resolve("mtg_old.bpmn2"),
+                EXAMPLES.resolve("mtg_old.csl"),EXAMPLES.resolve("mtg_old.istar"),EXAMPLES.resolve("mtg_old.bpmn2"),
                 output,"MappingEventB"));
         assertTrue(export.success(),()->String.join("\n",export.diagnostics()));
         Path report=export.projectDirectory().resolve("MappingEventB_mapping.md");
@@ -74,11 +74,11 @@ class SemanticMappingAnalyzerTest {
 
     @Test void reportsUnmappedTasksUncoveredRootsAndOrphanActivities() {
         var attributes=List.of(
-                new AclAttribute("done",AclPrimitiveType.BOOLEAN,false,true,Optional.empty()),
-                new AclAttribute("missing",AclPrimitiveType.BOOLEAN,false,true,Optional.empty()),
-                new AclAttribute("auditNoise",AclPrimitiveType.BOOLEAN,false,true,Optional.empty()));
-        var acl=new AclModel("3.0","DiagnosticAcl",List.of(),List.of(),
-                List.of(new AclRole("Worker",List.of(),attributes)),List.of(),List.of(),List.of(),List.of(),List.of());
+                new CslAttribute("done",CslPrimitiveType.BOOLEAN,false,true,Optional.empty()),
+                new CslAttribute("missing",CslPrimitiveType.BOOLEAN,false,true,Optional.empty()),
+                new CslAttribute("auditNoise",CslPrimitiveType.BOOLEAN,false,true,Optional.empty()));
+        var csl=new CslModel("3.0","DiagnosticCsl",List.of(),List.of(),
+                List.of(new CslRole("Worker",List.of(),attributes)),List.of(),List.of(),List.of(),List.of(),List.of());
 
         Goal root=new Goal("Root",GoalType.ACHIEVE), missingRoot=new Goal("MissingRoot",GoalType.ACHIEVE);
         var required=new org.vnu.sme.goal.dsl.istar.mm.Task("Required",null,
@@ -100,7 +100,7 @@ class SemanticMappingAnalyzerTest {
                 List.of(work,orphan),List.of());
         var bpmn=new BpmnModel("DiagnosticBpmn");bpmn.addProcess(process);
 
-        var result=SemanticMappingAnalyzer.analyze(acl,goals,bpmn);
+        var result=SemanticMappingAnalyzer.analyze(csl,goals,bpmn);
         assertTrue(result.diagnostics().stream().anyMatch(x->x.code().equals("UNMAPPED_TASK")
                 &&x.elementId().equals("Missing")),result.diagnostics().toString());
         assertTrue(result.diagnostics().stream().anyMatch(x->x.code().equals("UNCOVERED_ROOT_GOAL")
@@ -111,12 +111,12 @@ class SemanticMappingAnalyzerTest {
 
     @Test void comparesARecomputedMappingWithAPreviousCsv() throws Exception {
         var first=new EventBExportService().export(new EventBExportRequest(
-                EXAMPLES.resolve("mtg_old.acl"),EXAMPLES.resolve("mtg_old.istar"),EXAMPLES.resolve("mtg_old.bpmn2"),
+                EXAMPLES.resolve("mtg_old.csl"),EXAMPLES.resolve("mtg_old.istar"),EXAMPLES.resolve("mtg_old.bpmn2"),
                 output,"FirstMapping"));
         assertTrue(first.success(),()->String.join("\n",first.diagnostics()));
         Path previous=first.projectDirectory().resolve("FirstMapping_mapping.csv");
         var second=new EventBExportService().export(new EventBExportRequest(
-                EXAMPLES.resolve("mtg_old.acl"),EXAMPLES.resolve("mtg_old.istar"),EXAMPLES.resolve("mtg_old.bpmn2"),
+                EXAMPLES.resolve("mtg_old.csl"),EXAMPLES.resolve("mtg_old.istar"),EXAMPLES.resolve("mtg_old.bpmn2"),
                 output,"SecondMapping",previous));
         assertTrue(second.success(),()->String.join("\n",second.diagnostics()));
         String diff=Files.readString(second.projectDirectory().resolve("SecondMapping_mapping_diff.md"));

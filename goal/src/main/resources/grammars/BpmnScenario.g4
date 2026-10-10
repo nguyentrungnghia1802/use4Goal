@@ -1,6 +1,6 @@
 grammar BpmnScenario;
 
-@header { package org.vnu.sme.goal.dsl.bpmnscenario.parser; }
+@header { package org.vnu.sme.goal.dsl.bscn.parser; }
 
 // =====================================================================
 //  BPMN Scenario — an instance-level script/snapshot for a BPMN process.

@@ -1,6 +1,6 @@
 // Invalid control-flow step after beginLesson: lesson delivery is recorded
 // before either enabled preparation activity has established its postcondition.
-aol v2.0 ClassroomEarlyDelivery for "classroom.acl" {
+aol v2.0 ClassroomEarlyDelivery for "classroom.csl" {
   group Classroom as classroom1 {
     lessonStarted = true;
     lessonDelivered = true;

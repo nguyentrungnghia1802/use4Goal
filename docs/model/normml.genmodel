@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<genmodel:GenModel xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.vnu.sme.goal.istar.metamodel/target/generated-sources/normml" modelPluginID="org.vnu.sme.goal.normml" modelName="NormML" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" xmi:version="2.0">
+  <foreignModel>normml.ecore</foreignModel>
+  <genPackages prefix="NormML" basePackage="org.vnu.sme.goal.dsl.normml.ecore" ecorePackage="normml.ecore#/">
+    <genClasses ecoreClass="normml.ecore#//NormModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//NormModel/name"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/norms"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/resources"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/sanctions"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/dates"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/organizations"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/agents"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//NormModel/dataTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Norm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Norm/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Norm/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/access"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//Norm/constraints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/sanctions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/activatedBy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/roles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/agents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Norm/organizations"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Resource/model"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//Resource/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Resource/name"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//EntityResource"/>
+    <genClasses ecoreClass="normml.ecore#//AttributeResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//AttributeResource/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//AssociationEndResource"/>
+    <genClasses ecoreClass="normml.ecore#//AgentAction"/>
+    <genClasses ecoreClass="normml.ecore#//MessageResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//MessageResource/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Action/resource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Action/norms"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//Action/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//AtomicAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//AtomicAction/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//CompositeAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//CompositeAction/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//CompositeAction/subordinateActions"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//NormConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//NormConstraint/norm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//NormConstraint/dates"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Before">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Before/beforeActions"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//After">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//After/afterActions"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Between">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Between/afterActions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Between/beforeActions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Between/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Between/endDate"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//If">
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//If/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Date">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Date/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Date/value"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Sanction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Sanction/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Sanction/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Sanction/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Sanction/sanctionedNorms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Sanction/activatedNorms"/>
+    </genClasses>
+    <genEnums ecoreEnum="normml.ecore#//NormType">
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//NormType/NormProhibition"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//NormType/NormPermission"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//NormType/NormObligation"/>
+    </genEnums>
+    <genEnums ecoreEnum="normml.ecore#//SanctionType">
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//SanctionType/Punishment"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//SanctionType/Reward"/>
+    </genEnums>
+    <genEnums ecoreEnum="normml.ecore#//AtomicActionKind">
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicCreate"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicRead"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicUpdate"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicDelete"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicExecute"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicSend"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//AtomicActionKind/AtomicReceive"/>
+    </genEnums>
+    <genEnums ecoreEnum="normml.ecore#//CompositeActionKind">
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//CompositeActionKind/EntityRead"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//CompositeActionKind/EntityUpdate"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//CompositeActionKind/EntityFullAccess"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//CompositeActionKind/AttributeFullAccess"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//CompositeActionKind/AssociationEndFullAccess"/>
+      <genEnumLiterals ecoreEnumLiteral="normml.ecore#//CompositeActionKind/MessageFullAccess"/>
+    </genEnums>
+    <genClasses ecoreClass="normml.ecore#//Organization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Organization/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Organization/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Organization/subOrganizations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Organization/parent"/>
+      <genFeatures createChild="true" ecoreFeature="ecore:EReference normml.ecore#//Organization/roles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Organization/norms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Organization/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Agent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Agent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Agent/model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Agent/plays"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Agent/norms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Agent/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Role/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Role/organization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Role/players"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Role/norms"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//Role/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//DataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//DataType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference normml.ecore#//DataType/model"/>
+    </genClasses>
+    <genClasses ecoreClass="normml.ecore#//Condition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Condition/condExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute normml.ecore#//Condition/condLang"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
